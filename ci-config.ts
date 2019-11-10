@@ -13,6 +13,7 @@ export const config = {
 				hg clean --all
 				cordova prepare
 				echo {} > ./deploy/deploy.private.json
+				mkdir ./BottleMobile/.tmp
 				echo {} > ./BottleMobile/.tmp/spritegroups.json
 				mkdir .tmp
 				npm install
