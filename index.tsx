@@ -65,7 +65,8 @@ function execS(cmd, opt) {
 export class BuildTask
 {
 	private runner: () => Promise<void>;
-	private completed: boolean;
+	private promise: Promise<void>;
+	private status: "pending" | "running" | "completed" | "failed" = "pending";
 	constructor(public project: keyof typeof config.projects, public revision: string)
 	{
 		let c = config.projects[project];
@@ -74,9 +75,19 @@ export class BuildTask
 
 	public async start()
 	{
-		if (this.completed)
+		if (this.status == "failed" || this.status == "completed")
 			return;
-		await this.runner();
-		this.completed = true;
+
+		this.status = "running";
+		try
+		{
+			await (this.promise || (this.promise = this.runner()));
+		}
+		catch (e)
+		{
+			console.error(e);
+			this.status = "failed";
+		}
+		this.status = "completed";
 	}
 }
