@@ -11,6 +11,8 @@ export const config = {
 				hg pull -r ${revision}
 				hg update -r ${revision} --clean
 				hg clean --all
+				echo {} > ./deploy/deploy.private.json
+				mkdir .tmp
 				npm install
 				cd deploy
 				npm install
