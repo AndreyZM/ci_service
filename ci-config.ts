@@ -24,6 +24,7 @@ export const config = {
 				cd ../deploy
 				npm install
 				gulp make -f gulp_deploy.js
+				gulp default -f gulp_deploy.js --testname=test_${revision}
 			`,
 			}
 		}
