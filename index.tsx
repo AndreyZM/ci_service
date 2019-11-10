@@ -86,8 +86,10 @@ export class BuildTask
 		catch (e)
 		{
 			console.error(e);
+			console.log("Task failed");
 			this.status = "failed";
 		}
 		this.status = "completed";
+		console.log("Task completed");
 	}
 }
