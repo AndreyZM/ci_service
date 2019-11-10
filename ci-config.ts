@@ -16,6 +16,7 @@ export const config = {
 				echo {} > ./BottleMobile/.tmp/spritegroups.json
 				mkdir .tmp
 				cd ./BottleMobile
+				cordova platform add ios android browser
 				cordova prepare
 				npm install
 				cd ../deploy
