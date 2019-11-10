@@ -57,7 +57,7 @@ httpsServer.listen(config.httpsPort);
 function execS(cmd, opt) {
 	return new Promise<string>((resolve, reject) =>
 	{
-		let p = process.exec(cmd, opt, (error, stdout, stderr) =>
+		let p = process.exec(cmd, { ...opt, maxBuffer: 50 * 1024 * 1024 }, (error, stdout, stderr) =>
 		{
 			if (error)
 			{
@@ -81,7 +81,7 @@ export class BuildTask
 	constructor(public project: keyof typeof config.projects, public revision: string)
 	{
 		let c = config.projects[project];
-		this.runner = () => execS(c.scripts.repo_prepare(this.revision), { cwd: c.respositoryFolder });
+		this.runner = () => execS(c.scripts.repo_prepare(this.revision), { cwd: c.respositoryFolder, });
 	}
 
 	public async start()
