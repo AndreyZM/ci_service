@@ -50,8 +50,8 @@ app.get("/build", (req, res) =>
 	runTask(new BuildTask("bottle_client_mobile", "default"));
 });
 
-httpServer.listen(80);
-httpsServer.listen(443);
+httpServer.listen(config.httpPort);
+httpsServer.listen(config.httpsPort);
 
 function execS(cmd, opt) {
 	return new Promise<void>((r) =>

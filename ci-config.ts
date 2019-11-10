@@ -1,4 +1,6 @@
 export const config = {
+	httpPort: 8080,
+	httpsPort: 8081,
 	projects: {
 		bottle_client_mobile: {
 			repositoryUrl: "https://hg.rockstonecorp.com/bottle_client_mobile",
