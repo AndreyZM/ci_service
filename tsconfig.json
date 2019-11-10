@@ -1,0 +1,50 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"resolveJsonModule": true,
+
+		"noEmitOnError": true,
+		"removeComments": false,
+
+		"strict": true,
+		"noImplicitReturns": true,
+		"noImplicitAny": false,
+		"noUnusedLocals": false,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitThis": true,
+		"noStrictGenericChecks": false,
+		"noUnusedParameters": false,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+
+		"incremental": true,
+		"tsBuildInfoFile": "./.tmp/tsconfig.tsbuildinfo",
+
+		"suppressExcessPropertyErrors": false,
+
+		"strictNullChecks": false,
+		"strictPropertyInitialization": false,
+
+		"sourceMap": true,
+		"rootDir": ".",
+		"moduleResolution": "node",
+		"allowJs": true,
+		"module": "commonjs",
+		"target": "es5",
+		"jsx": "react",
+		"outDir": "./scripts/compiled",
+
+		"types": [
+			"node"
+		],
+		"lib": [
+			"es2017",
+			"dom"
+		],
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+	],
+	"exclude": ["platforms", "node_modules", "bower_components", "plugins", "merges", "res", "bin", "bld", "./scripts/test"]
+}

@@ -1,0 +1,70 @@
+{
+	"defaultSeverity": "error",
+	"extends": [
+		"tslint:recommended"
+	],
+	"linterOptions": {
+		"exclude": [
+			"scripts/definitions/**",
+			"scripts/typings/**",
+			"node_modules/**",
+			"plugins/**",
+			"scripts/js_lib/**"
+		]
+	},
+	"jsRules": {},
+	"rules": {
+		"forin": false,
+
+		"eofline": false,
+		"one-line": false,
+		"prefer-const": false,
+		"max-line-length": false,
+		"max-classes-per-file": false,
+		"no-console": false,
+		"object-literal-sort-keys": false,
+		"no-bitwise": false,
+		"no-string-literal": false,
+		"prefer-for-of": false,
+		"curly": false,
+
+		"indent": [true, "tabs"],
+		"array-type": [true, "array"],
+		"no-empty": [true, "allow-empty-catch"],
+		"trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+
+		"member-ordering": [true, {
+			"order": [
+				"private-static-field",
+				"protected-static-field",
+				"public-static-field",
+
+				"private-instance-field",
+				"protected-instance-field",
+				"public-instance-field",
+
+				"public-constructor",
+				"protected-constructor",
+				"private-constructor",
+
+				"public-static-method",
+				"protected-static-method",
+				"private-static-method",
+
+				"public-instance-method",
+				"protected-instance-method",
+				"private-instance-method"
+			]
+		}],
+
+		"variable-name": {
+			"options": [
+				"check-format",
+				"require-const-for-all-caps",
+				"allow-leading-underscore",
+				"ban-keywords"
+			]
+		}
+	},
+	"rulesDirectory": []
+}
