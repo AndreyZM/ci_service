@@ -11,13 +11,14 @@ export const config = {
 				hg pull -r ${revision}
 				hg update -r ${revision} --clean
 				hg clean --all
-				cordova prepare
 				echo {} > ./deploy/deploy.private.json
 				mkdir ./BottleMobile/.tmp
 				echo {} > ./BottleMobile/.tmp/spritegroups.json
 				mkdir .tmp
+				cd ./BottleMobile
+				cordova prepare
 				npm install
-				cd deploy
+				cd ../deploy
 				npm install
 				gulp make -f gulp_deploy.js
 			`,
