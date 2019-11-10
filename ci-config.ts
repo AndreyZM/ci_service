@@ -12,6 +12,7 @@ export const config = {
 				hg update -r ${revision} --clean
 				hg clean --all
 				echo {} > ./deploy/deploy.private.json
+				echo {} > ./BottleMobile/.tmp/spritegroups.json
 				mkdir .tmp
 				npm install
 				cd deploy
