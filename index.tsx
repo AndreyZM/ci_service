@@ -57,7 +57,7 @@ httpsServer.listen(config.httpsPort);
 function execS(cmd, opt) {
 	return new Promise<void>((r) =>
 	{
-		let p = process.exec(cmd, opt, (o, e) => (r()));
+		let p = process.exec(cmd, opt, (exception, output, error) => (console.log(exception, output, error), r()));
 		p.stdout.on("data", console.log);
 		p.stderr.on("data", console.error);
 	});
