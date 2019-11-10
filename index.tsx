@@ -1,13 +1,13 @@
+import * as child_process from "child_process";
 import * as express from "express";
 import * as fs from "fs";
 import * as http from "http";
 import * as https from "https";
+import * as React from "react";
 import * as ReactDOMServer from "react-dom/server";
-import * as process from "child_process";
+import { config } from "./ci-config";
 import { htmlPage } from "./web/Html";
 import { RootPage } from "./web/RootPage";
-import * as React from "react";
-import { config } from "./ci-config";
 
 let privateKey  = fs.readFileSync("./certs/key.pem", "utf8");
 let certificate = fs.readFileSync("./certs/cert.pem", "utf8");
@@ -57,7 +57,7 @@ httpsServer.listen(config.httpsPort);
 function execS(cmd, opt) {
 	return new Promise<string>((resolve, reject) =>
 	{
-		let p = process.exec(cmd, { ...opt, maxBuffer: 50 * 1024 * 1024 }, (error, stdout, stderr) =>
+		let p = child_process.exec(cmd, { ...opt, maxBuffer: 50 * 1024 * 1024 }, (error, stdout, stderr) =>
 		{
 			if (error)
 			{
@@ -68,8 +68,9 @@ function execS(cmd, opt) {
 			console.log(stdout);
 			resolve(stdout.toString().trim());
 		});
-		p.stdout.on("data", console.log);
-		p.stderr.on("data", console.error);
+
+		p.stdout.on("data", (chunk) => process.stdout.write(chunk));
+		p.stderr.on("data", (chunk) => process.stderr.write(chunk));
 	});
 }
 
@@ -81,7 +82,7 @@ export class BuildTask
 	constructor(public project: keyof typeof config.projects, public revision: string)
 	{
 		let c = config.projects[project];
-		this.runner = () => execS(c.scripts.repo_prepare(this.revision), { cwd: c.respositoryFolder, });
+		this.runner = () => execS(c.scripts.repo_prepare(this.revision), { cwd: c.respositoryFolder });
 	}
 
 	public async start()
