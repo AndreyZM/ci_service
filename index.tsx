@@ -55,9 +55,19 @@ httpServer.listen(config.httpPort);
 httpsServer.listen(config.httpsPort);
 
 function execS(cmd, opt) {
-	return new Promise<void>((r) =>
+	return new Promise<string>((resolve, reject) =>
 	{
-		let p = process.exec(cmd, opt, (exception, output, error) => (console.log(exception, output, error), r()));
+		let p = process.exec(cmd, opt, (error, stdout, stderr) =>
+		{
+			if (error)
+			{
+				console.error(error);
+				reject(error);
+				return;
+			}
+			console.log(stdout);
+			resolve(stdout.toString().trim());
+		});
 		p.stdout.on("data", console.log);
 		p.stderr.on("data", console.error);
 	});
@@ -65,8 +75,8 @@ function execS(cmd, opt) {
 
 export class BuildTask
 {
-	private runner: () => Promise<void>;
-	private promise: Promise<void>;
+	private runner: () => Promise<any>;
+	private promise: Promise<any>;
 	private status: "pending" | "running" | "completed" | "failed" = "pending";
 	constructor(public project: keyof typeof config.projects, public revision: string)
 	{
