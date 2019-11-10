@@ -1,3 +1,5 @@
+import * as fs from "fs";
+
 export const config = {
 	httpPort: 8080,
 	httpsPort: 8081,
@@ -11,7 +13,7 @@ export const config = {
 				hg pull -r ${revision}
 				hg update -r ${revision} --clean
 				hg clean --all
-				echo {} > ./deploy/deploy.private.json
+				echo ${fs.readFileSync("../deploy.private.json", "utf8")} > ./deploy/deploy.private.json
 				mkdir ./BottleMobile/.tmp
 				echo {} > ./BottleMobile/.tmp/spritegroups.json
 				mkdir .tmp
