@@ -42,6 +42,7 @@ async function runTask(task: BuildTask)
 	let id = tasks.push(task);
 	for (let t of tasks)
 		await t.start();
+	console.log("Task queue is empty");
 }
 
 app.get("/build", (req, res) =>
