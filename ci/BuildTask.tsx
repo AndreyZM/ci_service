@@ -20,10 +20,10 @@ export class BuildTask
 	constructor(public project: keyof typeof config.projects, public revision: string)
 	{
 		let c = config.projects[project];
-		Slack.chat.postMessage({ ...config.slack, text: `Start Task #${this.id} ${this.project}/${this.revision}`}).then(console.log).catch(console.error);
 		this.runner = () => new Promise<string>((resolve, reject) =>
 		{
 			this.timings.start = new Date();
+			Slack.chat.postMessage({ ...config.slack, text: `Start Task #${this.id} ${this.project}/${this.revision}`}).then(console.log).catch(console.error);
 
 			let p = child_process.exec(c.scripts.repo_prepare(this.revision), { cwd: c.respositoryFolder, maxBuffer: 50 * 1024 * 1024 }, (error, stdout, stderr) =>
 			{
