@@ -33,3 +33,7 @@ app.use("/api", apiRouter);
 app.use(express.static("./www"));
 httpServer.listen(config.httpPort);
 httpsServer.listen(config.httpsPort);
+
+import * as Slack from "slack";
+
+Slack.chat.postMessage({ ...config.slack, text: `Start Task #${this.id} ${this.project}/${this.revision}`}).then(console.log).catch(console.error);
