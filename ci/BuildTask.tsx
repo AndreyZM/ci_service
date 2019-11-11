@@ -101,7 +101,7 @@ export class BuildTask
 		let projectConfig = config.projects[this.project];
 		let out = fs.openSync(`./www${this.logPath}`, "a");
 
-		let process = wrap(child_process.spawn(script, [],
+		let process = wrap(child_process.spawn(script,
 			{
 				cwd: projectConfig.respositoryFolder,
 				detached: false,
