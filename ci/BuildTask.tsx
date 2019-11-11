@@ -104,6 +104,7 @@ export class BuildTask
 		let p = child_process.exec(script,
 			{
 				cwd: projectConfig.respositoryFolder,
+				maxBuffer: 50 * 1024 * 1024,
 			});
 		p.stdout.on("data", (chunk) => fs.appendFileSync(out, chunk));
 		p.stderr.on("data", (chunk) => fs.appendFileSync(out, chunk));
