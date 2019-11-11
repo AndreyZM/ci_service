@@ -28,8 +28,6 @@ apiRouter.get("/tasklist", (req, res) =>
 	res.send(ciServer.tasklist(req.query));
 });
 
-
-
 app.use("/api", apiRouter);
 
 app.use(express.static("./www"));
@@ -37,11 +35,16 @@ app.use(express.static("./www"));
 app.post("/webhook/rhode", (req, res) =>
 {
 	console.log(req.query, req.body);
+	switch (req.query.event_name)
+	{
+		case "repo-push":
+			if (req.query.repo_name in config.projects && req.query.branch)
+				ciServer.build({ project: req.query.repo_name, revision: req.query.branch });
+			break;
+		default:
+			break;
+	}
 	res.send({});
 });
 httpServer.listen(config.httpPort);
 httpsServer.listen(config.httpsPort);
-
-import * as Slack from "slack";
-
-Slack.chat.postMessage({ ...config.slack, text: `CI server running`}).then(console.log).catch(console.error);
