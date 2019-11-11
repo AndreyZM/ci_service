@@ -26,7 +26,7 @@ export class ServerCI
 		let task = this.tasks.tasks[query.id];
 
 		if (!task)
-			return { result: "Task not found" };
+			return { result: `Task #${query.id} not found` };
 
 		if (task.terminator)
 			task.terminator();
