@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "prestart": "webpack",
-    "start": "ts-node server.tsx"
+    "start": "ts-node server.tsx",
+    "start_deamon": "forever server_deamon.js"
   },
   "repository": {
     "type": "git",
