@@ -8,7 +8,8 @@
     "watch": "webpack --watch",
     "prestart": "webpack",
     "start": "ts-node server.tsx",
-    "start_deamon": "forever start server_deamon.js -o output.log -e errors.log -l log.log"
+    "predeamon": "webpack",
+    "deamon": "forever start server_deamon.js"
   },
   "repository": {
     "type": "git",
