@@ -1,13 +1,15 @@
 import * as child_process from "child_process";
 import { config } from "../ci-config";
 
+export type TaskStatus = "pending" | "running" | "completed" | "failed";
+
 export class BuildTask
 {
 	private runner: () => Promise<any>;
 	private promise: Promise<any>;
 	public id?: number;
 	public output: string = "";
-	public status: "pending" | "running" | "completed" | "failed" = "pending";
+	public status: TaskStatus = "pending";
 	public timings: {
 		create: Date;
 		start?: Date;
