@@ -74,7 +74,7 @@ export class BuildTask
 
 	private async prepare()
 	{
-		return this.exec(`hg pull -r ${this.revision}
+		await this.exec(`hg pull -r ${this.revision}
 		hg update -r ${this.revision} --clean
 		hg clean --all
 		hg log -r "ancestors(.) - ancestors(release)" -M --template "{author}:{branch}:{desc}:@@@:" > commits.txt
@@ -86,7 +86,7 @@ export class BuildTask
 
 	private async build()
 	{
-		return this.exec(`cd ./BottleMobile
+		await this.exec(`cd ./BottleMobile
 		cordova platform add ios android browser
 		cordova prepare
 		npm install
