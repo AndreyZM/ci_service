@@ -4,7 +4,7 @@ export const config = {
 	httpPort: 8080,
 	httpsPort: 8081,
 	slack: {
-		token: "xoxb-189040694933-829192501632-U45MLCT8GsFoz1BN8aL8CNmz",
+		token: "xoxp-189040694933-224124077923-821271193617-5f956cae5cda4fa2330d59f1483b0019",
 		channel: "#bot-test"
 	},
 	projects: {
