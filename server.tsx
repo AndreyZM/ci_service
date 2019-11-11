@@ -30,6 +30,6 @@ apiRouter.get("/tasklist", (req, res) =>
 
 app.use("/api", apiRouter);
 
-app.use(express.static("./www", { maxAge: "1y" }));
+app.use(express.static("./www"));
 httpServer.listen(config.httpPort);
 httpsServer.listen(config.httpsPort);
