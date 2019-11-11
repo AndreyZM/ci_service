@@ -28,6 +28,10 @@ export class App extends React.Component
 
 export class TaskView extends React.Component<{task: BuildTask}, {showLogs: boolean}>
 {
+	public state = {
+		showLogs: false,
+	};
+
 	public render()
 	{
 		return <Card>
