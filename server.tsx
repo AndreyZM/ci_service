@@ -28,6 +28,12 @@ apiRouter.get("/tasklist", (req, res) =>
 	res.send(ciServer.tasklist(req.query));
 });
 
+app.get("/webhook/rhode", (req, res) =>
+{
+	console.log(req.params, req.body);
+	res.send({});
+});
+
 app.use("/api", apiRouter);
 
 app.use(express.static("./www"));
