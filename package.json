@@ -21,6 +21,7 @@
   "homepage": "https://github.com/AndreyZM/ci_service#readme",
   "dependencies": {
     "@blueprintjs/core": "3.19.1",
+    "@slack/types": "1.2.1",
     "@types/express": "4.17.2",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.4",
@@ -32,6 +33,7 @@
     "https": "1.0.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
+    "slack": "11.0.2",
     "style-loader": "1.0.0",
     "ts-node": "8.4.1",
     "typescript": "3.7.2",

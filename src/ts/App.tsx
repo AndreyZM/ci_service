@@ -17,7 +17,6 @@ export class App extends React.Component
 		return <div>
 			<Card>
 				<h2>Task list</h2>
-				<p>Status: </p>
 				<Async promise={this.api.tasklist({})}>
 					{(tasks) => <TaskListView tasks={tasks.tasks}/>}
 				</Async>

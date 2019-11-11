@@ -1,6 +1,8 @@
 import * as child_process from "child_process";
 import { config } from "../ci-config";
 
+import * as Slack from "slack";
+
 export type TaskStatus = "pending" | "running" | "completed" | "failed";
 
 export class BuildTask
@@ -59,8 +61,14 @@ export class BuildTask
 			console.error(e);
 			console.log("Task failed");
 			this.status = "failed";
+
+			Slack.chat.postMessage({ ...config.slack, text: `Build failed Task #${this.id} ${this.project}/${this.revision}`});
+			return;
 		}
+
 		this.status = "completed";
 		console.log("Task completed");
+
+		Slack.chat.postMessage({ ...config.slack, text: `Build complete Task #${this.id} ${this.project}/${this.revision}`});
 	}
 }
