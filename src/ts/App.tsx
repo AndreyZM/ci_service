@@ -1,4 +1,4 @@
-import { Button, Card, Spinner, Pre, Collapse } from "@blueprintjs/core";
+import { Button, Card, Collapse, Intent, Label, Pre, Spinner, Tag, Divider } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -29,14 +29,21 @@ export class App extends React.Component
 export class TaskView extends React.Component<{task: BuildTask}, {showLogs: boolean}>
 {
 	public state = {
-		showLogs: false,
+		showLogs: false
 	};
 
 	public render()
 	{
+		let statusIntents = {
+			pending: Intent.NONE,
+			running: Intent.PRIMARY,
+			completed: Intent.SUCCESS,
+			failed: Intent.DANGER
+		};
+
 		return <Card>
-			<h3><a href="#">{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}</a></h3>
-			<p>Status: {this.props.task.status}</p>
+			<s><a href="#">{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}</a></h3>
+			<p>Status: <Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag></p>
 			<Button onClick={() => this.setState((state) => ({showLogs: !state.showLogs}))}>
 					{this.state.showLogs ? "Hide" : "Show"} build logs
 			</Button>
@@ -45,7 +52,8 @@ export class TaskView extends React.Component<{task: BuildTask}, {showLogs: bool
 					{this.props.task.output}
 				</Pre>
 			</Collapse>
-			<Button>Submit</Button>
+			<Divider/>
+			<Button intent={Intent.DANGER}>Stop</Button>
 		</Card>;
 	}
 }
