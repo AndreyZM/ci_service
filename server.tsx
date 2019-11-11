@@ -1,4 +1,3 @@
-import * as child_process from "child_process";
 import * as cors from "cors";
 import * as express from "express";
 import * as fs from "fs";
@@ -6,7 +5,6 @@ import * as http from "http";
 import * as https from "https";
 import { config } from "./ci-config";
 
-import { BuildTask } from "./ci/BuildTask";
 import { ServerCI } from "./ServerCI";
 
 let privateKey  = fs.readFileSync("./certs/key.pem", "utf8");
@@ -33,6 +31,5 @@ apiRouter.get("/tasklist", (req, res) =>
 app.use("/api", apiRouter);
 
 app.use(express.static("./www", { maxAge: "1y" }));
-app.use(cors);
 httpServer.listen(config.httpPort);
 httpsServer.listen(config.httpsPort);
