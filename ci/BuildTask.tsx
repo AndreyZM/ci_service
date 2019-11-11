@@ -117,7 +117,7 @@ export class BuildTask
 
 function parseHGCommits(input: string)
 {
-	let rx = /([^:]+):([^\n]+)\n(.*?)\n@@@\n/gi;
+	let rx = /([^:]+?):([^:]+?):(.*?):@@@:/gi;
 
 	return rx.exec(input).map((value, index, params) => ({ author: params[0], branch: params[1], message: params[2] }));
 }
