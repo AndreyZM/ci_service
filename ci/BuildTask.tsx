@@ -125,7 +125,11 @@ function wrap(process: child_process.ChildProcess)
 	return {
 		wait: new Promise((r, reject) =>
 		{
-			process.on("exit", (code, signal) => code === 0 ? r({ code, signal }) : reject({ code, signal }));
+			process.on("exit", (code, signal) =>
+			{
+				console.log(code);
+				code === 0 ? r({ code, signal }) : reject({ code, signal })
+			});
 		}),
 		terminate: () => process.kill(),
 	};
