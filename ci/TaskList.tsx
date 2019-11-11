@@ -5,7 +5,7 @@ export class TaskList
 	public readonly tasks: BuildTask[] = [];
 	public runTask(task: BuildTask): BuildTask
 	{
-		task.id = this.tasks.push(task);
+		task.id = this.tasks.push(task) - 1;
 		this.executeTasks();
 		return task;
 	}
