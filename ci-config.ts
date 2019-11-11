@@ -1,3 +1,5 @@
+import * as fs from "fs";
+
 let atob = require('atob');
 
 export const config = {
@@ -14,32 +16,13 @@ export const config = {
 		bottle_client_mobile: {
 			repositoryUrl: "https://hg.rockstonecorp.com/bottle_client_mobile",
 			respositoryFolder: "../bottle_client_mobile",
-
-			scripts: {
-				repo_prepare: (revision: string) => `
-				hg pull -r ${revision}
-				hg update -r ${revision} --clean
-				hg clean --all
-				cat ../deploy.private.json > ./deploy/deploy.private.json
-				mkdir ./BottleMobile/.tmp
-				echo {} > ./BottleMobile/.tmp/spritegroups.json
-				mkdir .tmp
-				cd ./BottleMobile
-				cordova platform add ios android browser
-				cordova prepare
-				npm install
-				cd ../deploy
-				npm install
-				gulp make -f gulp_deploy.js
-				gulp default -f gulp_deploy.js --testname=test/${revision}
-				`,
-				collect_artifacts: (revision) =>
-				{
-					return {
-						web_build: `https://m.inspin.me/test/${revision}`,
-					}
-				}
-			}
 		}
 	}
 };
+
+function parseHGCommits(input: string)
+{
+	let rx = /([^:]+):([^\n]+)\n(.*?)\n@@@\n/gi;
+
+	return rx.exec(input).map((value, index, params) => ({ author: params[0], branch: params[1], message: params[2] }));
+}
