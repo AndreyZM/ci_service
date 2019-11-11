@@ -108,7 +108,7 @@ export class BuildTask
 				stdio: ["pipe", out, out]
 			});
 		let process = wrap(p);
-		script.split("\n").forEach((chunk) => p.stdin.end(chunk));
+		script.split("\n").forEach((chunk) => p.stdin.write(chunk));
 		this.terminator = () => process.terminate();
 		return process.wait;
 	}
