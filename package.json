@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "prestart": "webpack",
-    "start": "ts-node server.tsx",
-    "deamon": "webpack && forever stop server_deamon && forever start server_deamon.js"
+    "start": "webpack && ts-node server.tsx",
+    "deamon": "webpack && forever stop server_deamon && forever start server_deamon"
   },
   "repository": {
     "type": "git",
