@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
 	entry: {
 		index: path.resolve(__dirname, './src/ts/index.tsx'),
-		
+
 	},
 	output: {
 		filename: '[name].js',
@@ -61,8 +61,18 @@ module.exports = {
 
 	optimization: {
 		noEmitOnErrors: true,
+		namedModules: true,
+		namedChunks: true,
 		moduleIds: 'named',
+		removeAvailableModules: true,
+		removeEmptyChunks: true,
+		flagIncludedChunks: true,
+		mergeDuplicateChunks: true,
 		minimize: false,
+		runtimeChunk: false,
+		splitChunks: {
+			chunks: 'all'
+		},
 	},
 	plugins: []
 };
