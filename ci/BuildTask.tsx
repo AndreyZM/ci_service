@@ -74,10 +74,10 @@ export class BuildTask
 
 	private async prepare()
 	{
-		this.exec(`hg pull -r ${this.revision}
+		return this.exec(`hg pull -r ${this.revision}
 		hg update -r ${this.revision} --clean
 		hg clean --all
-		hg log -r "ancestors(.) - ancestors(release)" -M --template "{author}:{branch}\\n{desc}\\n@@@\\n" > commits.txt
+		hg log -r "ancestors(.) - ancestors(release)" -M --template "{author}:{branch}:{desc}:@@@:" > commits.txt
 		cat ../deploy.private.json > ./deploy/deploy.private.json
 		mkdir ./BottleMobile/.tmp
 		echo {} > ./BottleMobile/.tmp/spritegroups.json
