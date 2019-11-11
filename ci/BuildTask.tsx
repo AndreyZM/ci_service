@@ -101,14 +101,14 @@ export class BuildTask
 		let projectConfig = config.projects[this.project];
 		let out = fs.openSync(`./www${this.logPath}`, "a");
 
-		let p = child_process.spawn("bash",
+		let p = child_process.exec(script,
 			{
 				cwd: projectConfig.respositoryFolder,
-				detached: false,
-				stdio: ["pipe", out, out]
 			});
+		p.stdout.on("data", (chunk) => fs.appendFileSync(out, chunk));
+		p.stderr.on("data", (chunk) => fs.appendFileSync(out, chunk));
+
 		let process = wrap(p);
-		p.stdin.write(script.split("\n").join("&&"));
 		this.terminator = () => process.terminate();
 		return process.wait;
 	}
