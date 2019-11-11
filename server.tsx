@@ -28,15 +28,17 @@ apiRouter.get("/tasklist", (req, res) =>
 	res.send(ciServer.tasklist(req.query));
 });
 
+
+
+app.use("/api", apiRouter);
+
+app.use(express.static("./www"));
+
 app.get("/webhook/rhode", (req, res) =>
 {
 	console.log(req.params, req.body);
 	res.send({});
 });
-
-app.use("/api", apiRouter);
-
-app.use(express.static("./www"));
 httpServer.listen(config.httpPort);
 httpsServer.listen(config.httpsPort);
 
