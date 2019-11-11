@@ -23,6 +23,8 @@ export class BuildTask
 		this.runner = () => new Promise<string>((resolve, reject) =>
 		{
 			this.timings.start = new Date();
+			Slack.chat.postMessage({ ...config.slack, text: `Start Task #${this.id} ${this.project}/${this.revision}`});
+
 			let p = child_process.exec(c.scripts.repo_prepare(this.revision), { cwd: c.respositoryFolder, maxBuffer: 50 * 1024 * 1024 }, (error, stdout, stderr) =>
 			{
 				this.timings.end = new Date();
