@@ -34,7 +34,7 @@ app.use("/api", apiRouter);
 
 app.use(express.static("./www"));
 
-app.get("/webhook/rhode", (req, res) =>
+app.post("/webhook/rhode", (req, res) =>
 {
 	console.log(req.query, req.body);
 	res.send({});
