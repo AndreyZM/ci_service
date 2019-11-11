@@ -19119,8 +19119,8 @@ const core_1 = __webpack_require__("./node_modules/@blueprintjs/core/lib/esm/ind
 const React = __webpack_require__("./node_modules/react/index.js");
 __webpack_require__("./node_modules/@blueprintjs/core/lib/css/blueprint.css");
 __webpack_require__("./node_modules/normalize.css/normalize.css");
-const Async_1 = __webpack_require__("./src/ts/utils/Async.tsx");
 const Api_1 = __webpack_require__("./src/ts/api/Api.ts");
+const Async_1 = __webpack_require__("./src/ts/utils/Async.tsx");
 class App extends React.Component {
     constructor() {
         super(...arguments);
@@ -19138,12 +19138,16 @@ exports.App = App;
 class TaskView extends React.Component {
     render() {
         return React.createElement(core_1.Card, null,
-            React.createElement("h5", null,
-                React.createElement("a", { href: "#" }, `${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`)),
+            React.createElement("h3", null,
+                React.createElement("a", { href: "#" }, `Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`)),
             React.createElement("p", null,
                 "Status: ",
                 this.props.task.status),
-            React.createElement("div", null, this.props.task.output),
+            React.createElement(core_1.Button, { onClick: () => this.setState((state) => ({ showLogs: !state.showLogs })) },
+                this.state.showLogs ? "Hide" : "Show",
+                " build logs"),
+            React.createElement(core_1.Collapse, { isOpen: this.state.showLogs },
+                React.createElement(core_1.Pre, { style: { whiteSpace: "pre-line" } }, this.props.task.output)),
             React.createElement(core_1.Button, null, "Submit"));
     }
 }

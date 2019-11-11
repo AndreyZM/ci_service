@@ -1,12 +1,12 @@
-import { Button, Spinner, Card } from "@blueprintjs/core";
+import { Button, Card, Spinner, Pre, Collapse } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "normalize.css";
-import { TaskList } from "../../ci/TaskList";
+
 import { BuildTask } from "../../ci/BuildTask";
-import { Async } from "./utils/Async";
 import { Api } from "./api/Api";
+import { Async } from "./utils/Async";
 
 export class App extends React.Component
 {
@@ -26,16 +26,21 @@ export class App extends React.Component
 	}
 }
 
-export class TaskView extends React.Component<{task: BuildTask}>
+export class TaskView extends React.Component<{task: BuildTask}, {showLogs: boolean}>
 {
 	public render()
 	{
 		return <Card>
-			<h5><a href="#">{`${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}</a></h5>
+			<h3><a href="#">{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}</a></h3>
 			<p>Status: {this.props.task.status}</p>
-			<div>
-				{this.props.task.output}
-			</div>
+			<Button onClick={() => this.setState((state) => ({showLogs: !state.showLogs}))}>
+					{this.state.showLogs ? "Hide" : "Show"} build logs
+			</Button>
+			<Collapse isOpen={this.state.showLogs}>
+				<Pre style={{ whiteSpace: "pre-line" }}>
+					{this.props.task.output}
+				</Pre>
+			</Collapse>
 			<Button>Submit</Button>
 		</Card>;
 	}
