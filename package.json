@@ -42,6 +42,7 @@
     "webpack-cli": "3.3.10"
   },
   "devDependencies": {
+    "@types/atob": "2.1.2",
     "cache-loader": "4.1.0",
     "source-map-loader": "0.2.4",
     "thread-loader": "2.1.3",

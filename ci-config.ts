@@ -1,4 +1,4 @@
-import * as fs from "fs";
+let atob = require('atob');
 
 export const config = {
 	httpPort: 8080,
@@ -29,8 +29,8 @@ export const config = {
 				npm install
 				gulp make -f gulp_deploy.js
 				gulp default -f gulp_deploy.js --testname=test_${revision}
-			`,
+			`
 			}
 		}
 	}
-}
+};
