@@ -33,6 +33,9 @@ export class TaskView extends React.Component<{task: BuildTask}>
 		return <Card>
 			<h5><a href="#">{`${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}</a></h5>
 			<p>Status: {this.props.task.status}</p>
+			<div>
+				{this.props.task.output}
+			</div>
 			<Button>Submit</Button>
 		</Card>;
 	}

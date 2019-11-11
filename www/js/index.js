@@ -19143,6 +19143,7 @@ class TaskView extends React.Component {
             React.createElement("p", null,
                 "Status: ",
                 this.props.task.status),
+            React.createElement("div", null, this.props.task.output),
             React.createElement(core_1.Button, null, "Submit"));
     }
 }
