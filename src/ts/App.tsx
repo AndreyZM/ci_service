@@ -42,7 +42,7 @@ export class TaskView extends React.Component<{task: BuildTask}, {showLogs: bool
 		};
 
 		return <Card>
-			<s><a href="#">{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}</a></h3>
+			<h3><a href="#">{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}</a></h3>
 			<p>Status: <Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag></p>
 			<Button onClick={() => this.setState((state) => ({showLogs: !state.showLogs}))}>
 					{this.state.showLogs ? "Hide" : "Show"} build logs
