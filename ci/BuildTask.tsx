@@ -13,7 +13,7 @@ export class BuildTask
 	public id?: number;
 	public output: string = "";
 	public status: TaskStatus = "pending";
-	public artifacts: any;
+	public artifacts: {web_build: string};
 	public timings: {
 		create: Date;
 		start?: Date;
