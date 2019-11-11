@@ -21,6 +21,19 @@ export class ServerCI
 		return { tasks: this.tasks.tasks.filter((task) => filters.every((f) => f(task))) };
 	}
 
+	public taskkill(query: { id: number })
+	{
+		let task = this.tasks.tasks[query.id];
+
+		if (!task)
+			return { result: "Task not found" };
+
+		if (task.terminator)
+			task.terminator();
+
+		return { result: "Success" };
+	}
+
 	public build(query: { project?: string, revision?: string })
 	{
 		let project = query.project as any || "bottle_client_mobile";

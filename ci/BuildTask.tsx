@@ -8,10 +8,12 @@ export type TaskStatus = "pending" | "running" | "completed" | "failed";
 export class BuildTask
 {
 	private runner: () => Promise<any>;
+	public terminator: () => void;
 	private promise: Promise<any>;
 	public id?: number;
 	public output: string = "";
 	public status: TaskStatus = "pending";
+	public artifacts: any;
 	public timings: {
 		create: Date;
 		start?: Date;
@@ -19,13 +21,13 @@ export class BuildTask
 	} = { create: new Date() };
 	constructor(public project: keyof typeof config.projects, public revision: string)
 	{
-		let c = config.projects[project];
+		let projectConfig = config.projects[project];
 		this.runner = () => new Promise<string>((resolve, reject) =>
 		{
 			this.timings.start = new Date();
 			Slack.chat.postMessage({ ...config.slack, text: `Start Task #${this.id} ${this.project}/${this.revision}`}).then(console.log).catch(console.error);
 
-			let p = child_process.exec(c.scripts.repo_prepare(this.revision), { cwd: c.respositoryFolder, maxBuffer: 50 * 1024 * 1024 }, (error, stdout, stderr) =>
+			let p = child_process.exec(projectConfig.scripts.repo_prepare(this.revision), { cwd: projectConfig.respositoryFolder, maxBuffer: 50 * 1024 * 1024 }, (error, stdout, stderr) =>
 			{
 				this.timings.end = new Date();
 				if (error)
@@ -35,8 +37,10 @@ export class BuildTask
 					return;
 				}
 				this.output = stdout.toString();
+				this.artifacts = projectConfig.scripts.collect_artifacts(this.revision);
 				resolve(stdout.toString().trim());
 			});
+			this.terminator = () => p.kill();
 			p.stdout.on("data", (chunk) =>
 			{
 				process.stdout.write(chunk);

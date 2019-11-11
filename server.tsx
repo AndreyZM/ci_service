@@ -28,6 +28,11 @@ apiRouter.get("/tasklist", (req, res) =>
 	res.send(ciServer.tasklist(req.query));
 });
 
+apiRouter.get("/taskkill", (req, res) =>
+{
+	res.send(ciServer.taskkill(req.query));
+});
+
 app.use("/api", apiRouter);
 
 app.use(express.static("./www"));
@@ -46,5 +51,6 @@ app.post("/webhook/rhode", (req, res) =>
 	}
 	res.send({});
 });
+
 httpServer.listen(config.httpPort);
 httpsServer.listen(config.httpsPort);

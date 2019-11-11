@@ -32,7 +32,13 @@ export const config = {
 				npm install
 				gulp make -f gulp_deploy.js
 				gulp default -f gulp_deploy.js --testname=test/${revision}
-			`
+				`,
+				collect_artifacts: (revision) =>
+				{
+					return {
+						web_build: `https://m.inspin.me/test/${revision}`,
+					}
+				}
 			}
 		}
 	}

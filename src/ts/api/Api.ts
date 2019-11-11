@@ -1,9 +1,13 @@
 import { TaskStatus } from "../../../ci/BuildTask";
 import { ServerCI } from "../../../ServerCI";
-
 export class Api
 {
 	private readonly endpoint = "/api/";
+
+	public taskkill(query: { id: number })
+	{
+		return this.exec<ReturnType<ServerCI["taskkill"]>>("taskkill", query);
+	}
 
 	public tasklist(query: { ids?: number[], status?: TaskStatus })
 	{
@@ -16,8 +20,9 @@ export class Api
 		return response as any as T;
 	}
 }
+export const API = new Api();
 
-function clean(input: any):any
+function clean(input: any): any
 {
 	let result = {};
 	Object.entries(input).forEach((e) => e[1] === undefined || e[1] === "" || (result[e[0]] = e[1]));

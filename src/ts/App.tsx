@@ -5,19 +5,17 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import "normalize.css";
 
 import { BuildTask } from "../../ci/BuildTask";
-import { Api } from "./api/Api";
+import { Api, API } from "./api/Api";
 import { Async } from "./utils/Async";
 
 export class App extends React.Component
 {
-	private api = new Api();
-
 	public render()
 	{
 		return <div>
 			<Card>
 				<h2>Task list</h2>
-				<Async promise={this.api.tasklist({})}>
+				<Async promise={API.tasklist({})}>
 					{(tasks) => <TaskListView tasks={tasks.tasks}/>}
 				</Async>
 			</Card>
@@ -25,7 +23,7 @@ export class App extends React.Component
 	}
 }
 
-export class TaskView extends React.Component<{task: BuildTask}, {showLogs: boolean}>
+export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: boolean }>
 {
 	public state = {
 		showLogs: false
@@ -41,21 +39,25 @@ export class TaskView extends React.Component<{task: BuildTask}, {showLogs: bool
 		};
 
 		return <Card>
-			<h3><a href="#">{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}</a></h3>
+			<h3>{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}</h3>
 			<p>Status: <Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag></p>
-			<Button onClick={() => this.setState((state) => ({showLogs: !state.showLogs}))}>
-					{this.state.showLogs ? "Hide" : "Show"} build logs
+			<Button onClick={() => this.setState((state) => ({ showLogs: !state.showLogs }))}>
+				{this.state.showLogs ? "Hide" : "Show"} build logs
 			</Button>
-			<Collapse isOpen={this.state.showLogs}>
+			<Collapse isOpen={this.state.showLogs} >
 				<Pre style={{ whiteSpace: "pre-line" }}>
 					{this.props.task.output}
-				</Pre>
+				</Pre>;
 			</Collapse>
-			<Divider/>
-			<Button intent={Intent.DANGER}>Stop</Button>
+			<Divider />
+			{this.props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.taskkill({ id: this.props.task.id })}>Stop</Button>}
+			{this.props.task.status === "completed" && <Button intent={Intent.PRIMARY} >Run</Button>}
+			{this.props.task.status === "failed" && <Button intent={Intent.WARNING} >Restart</Button>}
+			{this.props.task.status === "pending" && <Button intent={Intent.NONE} >Remove</Button>}
 		</Card>;
 	}
 }
+
 export class TaskListView extends React.Component<{tasks: BuildTask[]}>
 {
 	public render()
