@@ -36,7 +36,7 @@ app.use(express.static("./www"));
 
 app.get("/webhook/rhode", (req, res) =>
 {
-	console.log(req.params, req.body);
+	console.log(req.query, req.body);
 	res.send({});
 });
 httpServer.listen(config.httpPort);
