@@ -47,11 +47,11 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 			<Collapse isOpen={this.state.showLogs} >
 				<Pre style={{ whiteSpace: "pre-line" }}>
 					{this.props.task.output}
-				</Pre>;
+				</Pre>
 			</Collapse>
 			<Divider />
 			{this.props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.taskkill({ id: this.props.task.id })}>Stop</Button>}
-			{this.props.task.status === "completed" && <Button intent={Intent.PRIMARY} >Run</Button>}
+			{this.props.task.status === "completed" && <Button intent={Intent.PRIMARY} onClick={() => window.open(this.props.task.artifacts.web_client, "_blank")}>Run</Button>}
 			{this.props.task.status === "failed" && <Button intent={Intent.WARNING} >Restart</Button>}
 			{this.props.task.status === "pending" && <Button intent={Intent.NONE} >Remove</Button>}
 		</Card>;
