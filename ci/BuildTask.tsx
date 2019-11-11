@@ -119,7 +119,7 @@ function parseHGCommits(input: string)
 {
 	let rx = /([^:]+?):([^:]+?):(.*?):@@@:/gi;
 
-	return rx.exec(input).map((value, index, params) => ({ author: params[0], branch: params[1], message: params[2] }));
+	return rx.exec(input).map((value, index, params) => ({ author: params[1], branch: params[2], message: params[3] }));
 }
 
 function wrap(process: child_process.ChildProcess)
