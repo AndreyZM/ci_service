@@ -41,8 +41,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			{
 				this.props.task.commits && this.props.task.commits.map((commit) =>
 					<Blockquote>
-						<Tag>{commit.branch}</Tag> : <Tag>{commit.author}</Tag>
-						{commit.issues.map((issue) => <Tag><a href={`https://rockstonedev.atlassian.net/browse/${issue}`}>{issue}</a></Tag>)}
+						<Tag>{commit.branch}</Tag> <Tag minimal={true}>{commit.author}</Tag> {commit.issues.map((issue) => <Tag intent={Intent.SUCCESS} interactive={true} onClick={() => showIssue(issue)}/>)}
 						<br />
 						<Code>{commit.message}</Code>
 					</Blockquote>
@@ -74,4 +73,9 @@ export class TaskListView extends React.Component<{tasks: BuildTask[]}>
 	{
 		return this.props.tasks.map((t) => <TaskView task={t}/>);
 	}
+}
+
+function showIssue(issue: string)
+{
+	window.open(`https://rockstonedev.atlassian.net/browse/${issue}`, "_blank");
 }
