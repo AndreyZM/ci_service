@@ -46,6 +46,7 @@ function makeRouter(target: any, router: express.Router)
 {
 	Object.entries(target).forEach((e) =>
 	{
+		console.log(e);
 		if (typeof e[1] === "function")
 		{
 			let func = e[1].bind(target);
