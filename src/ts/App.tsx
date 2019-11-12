@@ -1,4 +1,4 @@
-import { Blockquote, Button, ButtonGroup, Card, Code, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Navbar, Alignment, AnchorButton } from "@blueprintjs/core";
+import { Blockquote, Button, ButtonGroup, Card, Code, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Navbar, Alignment, AnchorButton, HTMLSelect, InputGroup } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -23,6 +23,14 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 					<Navbar.Heading>RoCI</Navbar.Heading>
 					<Navbar.Divider />
 					<AnchorButton className="bp3-minimal" icon="home" text="Home" href="/" />
+					<Navbar.Group>
+						<HTMLSelect>
+							<option disabled>project</option>
+							<option>bottle_client_mobile</option>
+						</HTMLSelect>
+						<InputGroup placeholder="Branch/Revision" />
+						<Button text="Run"></Button>
+					</Navbar.Group>
 				</Navbar.Group>
 				<Navbar.Group align={Alignment.RIGHT}>
 					<Button><Switch checked={this.state.darkMode} label="Dark" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} /></Button>
