@@ -17,23 +17,22 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 
 	public render()
 	{
-		return <>
+		return <div className={this.state.darkMode ? DARK : ""}>
 			<Navbar>
 				<Navbar.Group align={Alignment.LEFT}>
 					<Navbar.Heading>RoCI</Navbar.Heading>
 					<Navbar.Divider />
 					<Button className="bp3-minimal" icon="home" text="Home" />
 					<Button className="bp3-minimal" icon="document" text="Files" />
-					<Switch checked={this.state.darkMode} label="Dark" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))}/>
+					<Switch checked={this.state.darkMode} label="Dark" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} />
 				</Navbar.Group>
 			</Navbar>
-			<div className={this.state.darkMode ? DARK : ""}>
-				<h2>Task list</h2>
-				<Async promise={API.tasklist({})}>
-					{(tasks) => <TaskListView tasks={tasks.tasks} />}
-				</Async>
-			</div>
-		</>;
+
+			<h2>Task list</h2>
+			<Async promise={API.tasklist({})}>
+				{(tasks) => <TaskListView tasks={tasks.tasks} />}
+			</Async>
+		</div>;
 	}
 }
 export class TaskView extends React.Component<{ task: BuildTask }, { }>
