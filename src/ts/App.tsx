@@ -23,11 +23,10 @@ export class App extends React.Component
 	}
 }
 
-export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: boolean, showChanges: boolean }>
+export class TaskView extends React.Component<{ task: BuildTask }, { }>
 {
 	public state = {
-		showLogs: false,
-		showChanges: false,
+		
 	};
 
 	public render()
@@ -53,14 +52,6 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 
 		return <Card>
 			<H3>{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag></H3>
-			<ButtonGroup>
-				<Button onClick={() => this.setState((state) => ({ showLogs: !state.showLogs }))}>
-					Logs
-				</Button>
-				<Button onClick={() => this.setState((state) => ({ showChanges: !state.showChanges }))}>
-					Changes
-				</Button>
-			</ButtonGroup>
 
 			<Tabs renderActiveTabPanelOnly={true}>
 				<Tab id="commits" title="Commits" panel={commits} />
