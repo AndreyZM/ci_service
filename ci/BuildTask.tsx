@@ -122,10 +122,13 @@ export class BuildTask
 function parseHGCommits(input: string)
 {
 	let rx = /([^:]+?):([^:]+?):(.*?):@@@:/gi;
+	let issueRx = /#([A-Za-z]+-[0-9]+)/gi;
 	let result = [];
 	input.replace(rx, (value, author, branch, message) =>
 	{
-		result.push({ author, branch, message });
+		let commit = { author, branch, message, issues: [] };
+		value.replace(issueRx, (i, issue) => (commit.issues.push(issue), issue));
+		result.push(commit);
 		return value;
 	});
 	return result.reverse();
