@@ -35,7 +35,7 @@ apiRouter.get("/taskkill", (req, res) =>
 
 app.use("/api", apiRouter);
 
-app.use(express.static("./www"));
+app.use(express.static("./www", {lastModified: false}));
 
 app.post("/webhook/rhode", (req, res) =>
 {
