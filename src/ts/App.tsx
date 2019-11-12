@@ -23,10 +23,11 @@ export class App extends React.Component
 	}
 }
 
-export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: boolean }>
+export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: boolean, showChanges: boolean }>
 {
 	public state = {
-		showLogs: false
+		showLogs: false,
+		showChanges: false,
 	};
 
 	public render()
@@ -43,17 +44,22 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 			<Button onClick={() => this.setState((state) => ({ showLogs: !state.showLogs }))}>
 				{this.state.showLogs ? "Hide" : "Show"} logs
 			</Button>
+			<Button onClick={() => this.setState((state) => ({ showChanges: !state.showChanges }))}>
+				{this.state.showLogs ? "Hide" : "Show"} logs
+			</Button>
 			<Collapse isOpen={this.state.showLogs} >
 				<iframe src={this.props.task.logPath} style={{ border: "none" }}/>
 			</Collapse>
-			{this.props.task.commits.map((commit) =>
-				<Blockquote>
-					<Tag>{commit.branch}</Tag> : <Tag>{commit.author}</Tag>
-					{commit.issues.map((issue) => <Tag><a href={`https://rockstonedev.atlassian.net/browse/${issue}`}>{issue}</a></Tag>)}
-					<br />
-					<Code>{commit.message}</Code>
-				</Blockquote>
-			)}
+			<Collapse isOpen={this.state.showChanges} >
+				{this.props.task.commits.map((commit) =>
+					<Blockquote>
+						<Tag>{commit.branch}</Tag> : <Tag>{commit.author}</Tag>
+						{commit.issues.map((issue) => <Tag><a href={`https://rockstonedev.atlassian.net/browse/${issue}`}>{issue}</a></Tag>)}
+						<br />
+						<Code>{commit.message}</Code>
+					</Blockquote>
+					)}
+				</Collapse>
 			<Divider />
 
 			{this.props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.taskkill({ id: this.props.task.id })}>Stop</Button>}
