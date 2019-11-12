@@ -1,4 +1,4 @@
-import { Blockquote, Button, Card, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Tag, UL, Code, ButtonGroup } from "@blueprintjs/core";
+import { Blockquote, Button, Card, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Tag, UL, Code, ButtonGroup, Tabs, Tab } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -38,6 +38,18 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 			completed: Intent.SUCCESS,
 			failed: Intent.DANGER
 		};
+		let logs = <iframe src={this.props.task.logPath} style={{ width: "100%", borderRadius: "10px", border: "1px solid rgba(0,0,0,0.1)", background: "rgba(0,0,0,0.1)", height: "300px" }} />;
+		let commits = <>
+			{
+				this.props.task.commits && this.props.task.commits.map((commit) =>
+					<Blockquote>
+						<Tag>{commit.branch}</Tag> : <Tag>{commit.author}</Tag>
+						{commit.issues.map((issue) => <Tag><a href={`https://rockstonedev.atlassian.net/browse/${issue}`}>{issue}</a></Tag>)}
+						<br />
+						<Code>{commit.message}</Code>
+					</Blockquote>
+				)}
+		</>;
 
 		return <Card>
 			<H3>{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag></H3>
@@ -50,19 +62,12 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 				</Button>
 			</ButtonGroup>
 
-			<Collapse isOpen={this.state.showLogs} >
-				<iframe src={this.props.task.logPath} style={{width: "100%", borderRadius: "10px", border: "1px solid rgba(0,0,0,0.1)", background: "rgba(0,0,0,0.1)", height: "300px"}}/>
-			</Collapse>
-			<Collapse isOpen={this.state.showChanges} >
-				{this.props.task.commits && this.props.task.commits.map((commit) =>
-					<Blockquote>
-						<Tag>{commit.branch}</Tag> : <Tag>{commit.author}</Tag>
-						{commit.issues.map((issue) => <Tag><a href={`https://rockstonedev.atlassian.net/browse/${issue}`}>{issue}</a></Tag>)}
-						<br />
-						<Code>{commit.message}</Code>
-					</Blockquote>
-					)}
-				</Collapse>
+			<Tabs renderActiveTabPanelOnly={true}>
+				<Tab id="commits" title="Commits" panel={commits} />
+				<Tab id="logs" title="Logs" panel={logs} />
+				<Tabs.Expander />
+			</Tabs>
+
 			<Divider />
 
 			{this.props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.taskkill({ id: this.props.task.id })}>Stop</Button>}
