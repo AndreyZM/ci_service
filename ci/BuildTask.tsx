@@ -13,7 +13,7 @@ export class BuildTask
 	public logPath?: string;
 	public status: TaskStatus = "pending";
 	public runUrl: string = `https://m.inspin.me/test/${this.revision}`;
-	public commits?: { author: string, branch: string, message: string }[];
+	public commits?: { author: string, branch: string, message: string, issues: string[] }[];
 	public timings: {
 		create: Date;
 		start?: Date;
