@@ -18,20 +18,7 @@ let httpsServer = https.createServer({key: privateKey, cert: certificate}, app);
 
 const ciServer = new ServerCI();
 
-apiRouter.get("/build", (req, res) =>
-{
-	res.send(ciServer.build(req.query));
-});
-
-apiRouter.get("/tasklist", (req, res) =>
-{
-	res.send(ciServer.tasklist(req.query));
-});
-
-apiRouter.get("/taskkill", (req, res) =>
-{
-	res.send(ciServer.taskkill(req.query));
-});
+makeRouter(ciServer, apiRouter);
 
 app.use("/api", apiRouter);
 
@@ -54,3 +41,18 @@ app.post("/webhook/rhode", (req, res) =>
 
 httpServer.listen(config.httpPort);
 httpsServer.listen(config.httpsPort);
+
+function makeRouter(target: any, router: express.Router)
+{
+	Object.entries(target).forEach((e) =>
+	{
+		if (typeof e[1] === "function")
+		{
+			let func = e[1].bind(target);
+			router.get("/" + e[0], (req, res, next) =>
+			{
+				res.send(func(req.query));
+			});
+		}
+	})
+}

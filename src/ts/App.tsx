@@ -51,7 +51,7 @@ function RunTaskWidget()
 			<option disabled>project</option>
 			<option value={"bottle_client_mobile"}>bottle_client_mobile</option>
 		</HTMLSelect>
-		<InputGroup name="revision" placeholder="Branch/Revision" />
+		<InputGroup name="revision" placeholder="Branch/Revision (default)"/>
 		<Button text="Run" type="submit"/>
 	</form>;
 }
