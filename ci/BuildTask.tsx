@@ -128,7 +128,7 @@ function parseHGCommits(input: string)
 		result.push({ author, branch, message });
 		return value;
 	});
-	return result;
+	return result.reverse();
 }
 
 function wrap(process: child_process.ChildProcess)
