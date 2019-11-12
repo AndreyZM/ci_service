@@ -51,7 +51,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 			</ButtonGroup>
 
 			<Collapse isOpen={this.state.showLogs} >
-				<iframe src={this.props.task.logPath} style={{ border: "none" }}/>
+				<iframe src={this.props.task.logPath} style={{width: "100%", borderRadius: "10px", border: "1px solid rgba(0,0,0,0.1)", background: "rgba(0,0,0,0.1)", height: "300px"}}/>
 			</Collapse>
 			<Collapse isOpen={this.state.showChanges} >
 				{this.props.task.commits && this.props.task.commits.map((commit) =>
