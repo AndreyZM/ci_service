@@ -1,13 +1,12 @@
-import { Button, Card, Collapse, Intent, Label, Pre, Spinner, Tag, Divider, H3, UL, Blockquote } from "@blueprintjs/core";
+import { Blockquote, Button, Card, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Tag, UL } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "normalize.css";
 
 import { BuildTask } from "../../ci/BuildTask";
-import { Api, API } from "./api/Api";
+import { API } from "./api/Api";
 import { Async } from "./utils/Async";
-import { BLOCKQUOTE } from "@blueprintjs/core/lib/esm/common/classes";
 
 export class App extends React.Component
 {
@@ -49,11 +48,15 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 					<iframe src={this.props.task.logPath}/>
 				</Pre>
 			</Collapse>
-				<Blockquote>
 					<UL>
-					{this.props.task.commits.map((commit) => <li><Tag>{commit.branch}</Tag> : <Tag>{commit.author}</Tag><br/>{commit.message}</li>)}
+					{this.props.task.commits.map((commit) =>
+						<li><Tag>{commit.branch}</Tag> : <Tag>{commit.author}</Tag>
+							<br />
+							<Blockquote>
+								{commit.message}
+							</Blockquote>
+						</li>)}
 					</UL>
-				</Blockquote>
 			<Divider />
 
 			{this.props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.taskkill({ id: this.props.task.id })}>Stop</Button>}
