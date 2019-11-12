@@ -18,7 +18,7 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 	public render()
 	{
 		return <div className={this.state.darkMode ? DARK : ""}>
-			<Navbar>
+			<Navbar style={{ position: "sticky", top: 0}}>
 				<Navbar.Group align={Alignment.LEFT}>
 					<Navbar.Heading>RoCI</Navbar.Heading>
 					<Navbar.Divider />
