@@ -1,4 +1,4 @@
-import { Blockquote, Button, ButtonGroup, Card, Code, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Switch, Tab, Tabs, Tag, UL } from "@blueprintjs/core";
+import { Blockquote, Button, ButtonGroup, Card, Code, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Navbar, Alignment } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -9,20 +9,29 @@ import { BuildTask } from "../../ci/BuildTask";
 import { API } from "./api/Api";
 import { Async } from "./utils/Async";
 
-export class App extends React.Component<{}, {darkMode: boolean}>
+export class App extends React.Component<{}, { darkMode: boolean }>
 {
 	public render()
 	{
-		return <div className={this.state.darkMode ? DARK : ""}>
-			<Switch checked={this.state.darkMode} label="Dark" onChange={() => this.setState((state) => ({darkMode: !state.darkMode}))}/>
-			<h2>Task list</h2>
-			<Async promise={API.tasklist({})}>
-				{(tasks) => <TaskListView tasks={tasks.tasks}/>}
-			</Async>
-		</div>;
+		return <>
+			<Navbar>
+				<Navbar.Group align={Alignment.LEFT}>
+					<Navbar.Heading>RoCI</Navbar.Heading>
+					<Navbar.Divider />
+					<Button className="bp3-minimal" icon="home" text="Home" />
+					<Button className="bp3-minimal" icon="document" text="Files" />
+					<Switch checked={this.state.darkMode} label="Dark" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))}/>
+				</Navbar.Group>
+			</Navbar>
+			<div className={this.state.darkMode ? DARK : ""}>
+				<h2>Task list</h2>
+				<Async promise={API.tasklist({})}>
+					{(tasks) => <TaskListView tasks={tasks.tasks} />}
+				</Async>
+			</div>
+		</>;
 	}
 }
-
 export class TaskView extends React.Component<{ task: BuildTask }, { }>
 {
 	public state = {
