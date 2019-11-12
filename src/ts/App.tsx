@@ -24,12 +24,7 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 					<Navbar.Divider />
 					<AnchorButton className="bp3-minimal" icon="home" text="Home" href="/" />
 					<Navbar.Group>
-						<HTMLSelect>
-							<option disabled>project</option>
-							<option>bottle_client_mobile</option>
-						</HTMLSelect>
-						<InputGroup placeholder="Branch/Revision" />
-						<Button text="Run"></Button>
+						<RunTaskWidget/>
 					</Navbar.Group>
 				</Navbar.Group>
 				<Navbar.Group align={Alignment.RIGHT}>
@@ -42,6 +37,20 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 			</Async>
 		</div>;
 	}
+}
+
+function RunTaskWidget()
+{
+	let select = React.useRef<HTMLSelect>();
+	let revInput = React.useRef<InputGroup>();
+	return <>
+		<HTMLSelect ref={select}>
+			<option disabled>project</option>
+			<option value={"bottle_client_mobile"}>bottle_client_mobile</option>
+		</HTMLSelect>
+		<InputGroup ref={revInput} placeholder="Branch/Revision" />
+		<Button text="Run" onClick={() => API.build({ project: select?.current?.props.value.toString(), revision: revInput.current.props.value })}></Button>
+	</>;
 }
 export class TaskView extends React.Component<{ task: BuildTask }, { }>
 {
