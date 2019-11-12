@@ -122,8 +122,13 @@ export class BuildTask
 function parseHGCommits(input: string)
 {
 	let rx = /([^:]+?):([^:]+?):(.*?):@@@:/gi;
-
-	return rx.exec(input).map((value, index, params) => ({ author: params[1], branch: params[2], message: params[3] }));
+	let result = [];
+	input.replace(rx, (value, author, branch, message) =>
+	{
+		result.push({ author, branch, message });
+		return value;
+	});
+	return result;
 }
 
 function wrap(process: child_process.ChildProcess)
