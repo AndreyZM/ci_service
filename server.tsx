@@ -44,15 +44,14 @@ httpsServer.listen(config.httpsPort);
 
 function makeRouter(target: any, router: express.Router)
 {
-	console.log(target);
-	console.log(target.constructor);
-	console.log(target.constructor.prototype);
-	Object.entries(target.constructor.prototype).forEach((e) =>
+	let descriptors = Object.getOwnPropertyDescriptors(target.constructor.prototype);
+
+	Object.entries(descriptors).forEach((e) =>
 	{
 		console.log(e);
-		if (typeof e[1] === "function" && e[0] !== "constructor")
+		if (typeof e[1].value === "function" && e[0] !== "constructor")
 		{
-			let func = e[1].bind(target);
+			let func = e[1].value.bind(target);
 			router.get("/" + e[0], (req, res, next) =>
 			{
 				res.send(func(req.query));
