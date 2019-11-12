@@ -79,6 +79,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			background: "rgba(0,0,0,0.1)",
 			height: "300px",
 			overflowY: "auto",
+			padding: "10px";
 		};
 
 		let logs = <iframe src={this.props.task.logPath} style={infoStyle} />;
@@ -95,7 +96,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 
 		return <Card style={{margin: "10px"}}>
 			<H3>{`Task #${this.props.task.id} `}</H3>
-			<p>`${this.props.task.project}/${this.props.task.revision}`</p>
+			<p>{this.props.task.project}/{this.props.task.revision}</p>
 			<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag>
 			<Tabs renderActiveTabPanelOnly={true}>
 				<Tab id="changes" title="Changes" panel={commits} />
