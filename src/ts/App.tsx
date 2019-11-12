@@ -33,7 +33,7 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 					</Navbar.Group>
 				</Navbar.Group>
 				<Navbar.Group align={Alignment.RIGHT}>
-					<Switch checked={this.state.darkMode} label="Dark" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} large={true}/>
+					<Switch checked={this.state.darkMode} innerLabelChecked="dark" innerLabel="light" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} large={true} style={{margin: "auto"}}/>
 				</Navbar.Group>
 			</Navbar>
 
