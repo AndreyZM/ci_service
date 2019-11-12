@@ -51,7 +51,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 			</Collapse>
 				<Blockquote>
 					<UL>
-					{this.props.task.commits.map((commit) => <li><Tag>{commit.branch + ": " + commit.author}</Tag><br/>{commit.message}</li>)}
+					{this.props.task.commits.map((commit) => <li><Tag>{commit.branch}</Tag> : <Tag>{commit.author}</Tag><br/>{commit.message}</li>)}
 					</UL>
 				</Blockquote>
 			<Divider />
