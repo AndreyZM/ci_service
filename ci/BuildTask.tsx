@@ -27,6 +27,9 @@ export class BuildTask
 		this.runner = async () =>
 		{
 			console.log(`[Task #${this.id}] running`);
+			let log = `./www${this.logPath}`;
+			if (fs.existsSync(log))
+				fs.unlinkSync(log);
 
 			this.logPath = `/tasklog_${this.id}.log`;
 
