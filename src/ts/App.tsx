@@ -51,11 +51,11 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 			</Collapse>
 				<Blockquote>
 					<UL>
-					{this.props.task.commits.map((commit) => <li><Tag>{commit.branch + ":" + commit.author}</Tag><br/>{commit.message}</li>)}
+					{this.props.task.commits.map((commit) => <li><Tag>{commit.branch + ": " + commit.author}</Tag><br/>{commit.message}</li>)}
 					</UL>
 				</Blockquote>
 			<Divider />
-			
+
 			{this.props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.taskkill({ id: this.props.task.id })}>Stop</Button>}
 			{this.props.task.status === "completed" && <Button intent={Intent.PRIMARY} onClick={() => window.open(this.props.task.runUrl, "_blank")}>Run</Button>}
 			{this.props.task.status === "failed" && <Button intent={Intent.WARNING} >Restart</Button>}
