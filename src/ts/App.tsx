@@ -1,4 +1,4 @@
-import { Blockquote, Button, Card, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Tag, UL, Code } from "@blueprintjs/core";
+import { Blockquote, Button, Card, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Tag, UL, Code, ButtonGroup } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -41,12 +41,15 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 
 		return <Card>
 			<H3>{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag></H3>
-			<Button onClick={() => this.setState((state) => ({ showLogs: !state.showLogs }))}>
-				{this.state.showLogs ? "Hide" : "Show"} logs
-			</Button>
-			<Button onClick={() => this.setState((state) => ({ showChanges: !state.showChanges }))}>
-				{this.state.showLogs ? "Hide" : "Show"} logs
-			</Button>
+			<ButtonGroup>
+				<Button onClick={() => this.setState((state) => ({ showLogs: !state.showLogs }))}>
+					Logs
+				</Button>
+				<Button onClick={() => this.setState((state) => ({ showChanges: !state.showChanges }))}>
+					Changes
+				</Button>
+			</ButtonGroup>
+
 			<Collapse isOpen={this.state.showLogs} >
 				<iframe src={this.props.task.logPath} style={{ border: "none" }}/>
 			</Collapse>
