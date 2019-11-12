@@ -44,10 +44,10 @@ httpsServer.listen(config.httpsPort);
 
 function makeRouter(target: any, router: express.Router)
 {
-	Object.entries(target).forEach((e) =>
+	Object.entries(target.constructor.prototype).forEach((e) =>
 	{
 		console.log(e);
-		if (typeof e[1] === "function")
+		if (typeof e[1] === "function" && e[0] !== "constructor")
 		{
 			let func = e[1].bind(target);
 			router.get("/" + e[0], (req, res, next) =>
