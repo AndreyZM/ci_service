@@ -43,7 +43,7 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 
 function RunTaskWidget()
 {
-	return <form onSubmit={(e) =>
+	return <form style={{display:"initial"}}onSubmit={(e) =>
 		{
 			e.preventDefault();
 			let data = new FormData(e.currentTarget);
