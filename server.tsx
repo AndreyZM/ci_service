@@ -48,11 +48,15 @@ function makeRouter(target: any, router: express.Router)
 
 	Object.entries(descriptors).forEach((e) =>
 	{
-		console.log(e);
-		if (typeof e[1].value === "function" && e[0] !== "constructor")
+		let [ name, descriptor ] = e;
+		if (name === "constructor")
+			return;
+
+		if (typeof descriptor.value === "function")
 		{
-			let func = e[1].value.bind(target);
-			router.get("/" + e[0], (req, res, next) =>
+			console.log(`Bind: ${name}`);
+			let func = descriptor.value.bind(target);
+			router.get("/" + name, (req, res, next) =>
 			{
 				res.send(func(req.query));
 			});
