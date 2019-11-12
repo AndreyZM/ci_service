@@ -96,8 +96,9 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 
 		return <Card style={{margin: "10px"}}>
 			<H3>{`Task #${this.props.task.id} `}</H3>
-			<p>{this.props.task.project}/{this.props.task.revision}</p>
 			<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag>
+			<p>{this.props.task.project}/{this.props.task.revision}</p>
+
 			<Tabs renderActiveTabPanelOnly={true}>
 				<Tab id="changes" title="Changes" panel={commits} />
 				<Tab id="build_log" title="Build Log" panel={logs} />
