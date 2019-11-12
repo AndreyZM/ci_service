@@ -54,7 +54,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 				<iframe src={this.props.task.logPath} style={{ border: "none" }}/>
 			</Collapse>
 			<Collapse isOpen={this.state.showChanges} >
-				{this.props.task.commits.map((commit) =>
+				{this.props.task.commits && this.props.task.commits.map((commit) =>
 					<Blockquote>
 						<Tag>{commit.branch}</Tag> : <Tag>{commit.author}</Tag>
 						{commit.issues.map((issue) => <Tag><a href={`https://rockstonedev.atlassian.net/browse/${issue}`}>{issue}</a></Tag>)}
