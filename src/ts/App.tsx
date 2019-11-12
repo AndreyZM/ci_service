@@ -41,7 +41,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			{
 				this.props.task.commits && this.props.task.commits.map((commit) =>
 					<Blockquote>
-						<Tag>{commit.branch}</Tag> <Tag minimal={true}>{commit.author}</Tag> {commit.issues.map((issue) => <Tag intent={Intent.SUCCESS} interactive={true} onClick={() => showIssue(issue)}/>)}
+						<Tag>{commit.branch}</Tag> <Tag minimal={true}>{commit.author}</Tag> {commit.issues.map((issue) => <Tag intent={Intent.SUCCESS} interactive={true} onClick={() => showIssue(issue)}>{issue}</Tag>)}
 						<br />
 						<Code>{commit.message}</Code>
 					</Blockquote>
