@@ -57,8 +57,16 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			failed: Intent.DANGER
 		};
 
-		let logs = <iframe src={this.props.task.logPath} style={{ width: "100%", borderRadius: "10px", border: "1px solid rgba(0,0,0,0.1)", background: "rgba(0,0,0,0.1)", height: "300px" }} />;
-		let commits = <>
+		let infoStyle = {
+			width: "100%",
+			borderRadius: "10px",
+			border: "1px solid rgba(0,0,0,0.1)",
+			background: "rgba(0,0,0,0.1)",
+			height: "300px",
+		}
+
+		let logs = <iframe src={this.props.task.logPath} style={infoStyle} />;
+		let commits = <div style={infoStyle}>
 			{
 				this.props.task.commits && this.props.task.commits.map((commit) =>
 					<Blockquote>
@@ -67,11 +75,12 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 						<Code>{commit.message}</Code>
 					</Blockquote>
 				)}
-		</>;
+		</div>;
 
 		return <Card style={{margin: "10px"}}>
-			<H3>{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag></H3>
-
+			<H3>{`Task #${this.props.task.id} `}</H3>
+			<p>`${this.props.task.project}/${this.props.task.revision}`</p>
+			<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag>
 			<Tabs renderActiveTabPanelOnly={true}>
 				<Tab id="changes" title="Changes" panel={commits} />
 				<Tab id="build_log" title="Build Log" panel={logs} />
