@@ -26,7 +26,6 @@ export class App extends React.Component
 export class TaskView extends React.Component<{ task: BuildTask }, { }>
 {
 	public state = {
-		
 	};
 
 	public render()
