@@ -19,7 +19,7 @@ export class ServerCI
 		if (query.status)
 			filters.push((task) => task.status === query.status);
 
-		return { tasks: this.tasks.tasks.filter((task) => filters.every((f) => f(task))) };
+		return { tasks: Object.values(this.tasks.tasks).filter((task) => filters.every((f) => f(task))) };
 	}
 
 	public taskkill(query: { id: number })
@@ -40,12 +40,23 @@ export class ServerCI
 		let project = query.project as any || "bottle_client_mobile";
 		let revision = query.revision || "default";
 
+		if (this.tasks.taskQueue.some((t) => t.project === project && t.revision === revision && t.status === "pending"))
+		{
+			return error("Same task is pending...");
+		}
+
 		if (!(project in config.projects))
 		{
-			return { error: `Unknown project '${project}'` };
+			return error(`Unknown project '${project}'`);
 		}
 
 		let task = this.tasks.runTask(new BuildTask(project, revision));
 		return { taskId: task.id };
 	}
+}
+
+function error(message: string)
+{
+	console.warn(message);
+	return { error: message };
 }

@@ -4,12 +4,13 @@ import * as Slack from "slack";
 import { config } from "../ci-config";
 import { TaskStatus } from "./TaskStatus";
 
+let taskCounter: number = 0;
 export class BuildTask
 {
 	private runner: () => Promise<any>;
 	private promise: Promise<any>;
 	public terminator?: () => void;
-	public id?: number;
+	public id: number = taskCounter++;
 	public logPath?: string;
 	public status: TaskStatus = "pending";
 	public runUrl: string = `https://m.inspin.me/test/${this.revision}`;
