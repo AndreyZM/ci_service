@@ -1,5 +1,6 @@
 import { config } from "./ci-config";
-import { BuildTask, TaskStatus } from "./ci/BuildTask";
+import { BuildTask } from "./ci/BuildTask";
+import { TaskStatus } from "./ci/TaskStatus";
 import { TaskList } from "./ci/TaskList";
 
 export class ServerCI

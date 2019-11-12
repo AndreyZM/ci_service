@@ -1,5 +1,7 @@
-import { TaskStatus } from "../../../ci/BuildTask";
-import { ServerCI } from "../../../ServerCI";
+import { TaskStatus } from "../../../ci/TaskStatus";
+
+type ServerCI = typeof import("../../../ServerCI").ServerCI["prototype"];
+
 export class Api
 {
 	private readonly endpoint = "/api/";

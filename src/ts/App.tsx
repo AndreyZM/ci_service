@@ -5,9 +5,11 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import "normalize.css";
 
 import { DARK } from "@blueprintjs/core/lib/esm/common/classes";
-import { BuildTask } from "../../ci/BuildTask";
+
 import { API } from "./api/Api";
 import { Async } from "./utils/Async";
+
+type BuildTask = typeof import("../../ci/BuildTask").BuildTask["prototype"];
 
 export class App extends React.Component<{}, { darkMode: boolean }>
 {

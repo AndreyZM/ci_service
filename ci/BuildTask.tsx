@@ -2,8 +2,8 @@ import * as child_process from "child_process";
 import * as fs from "fs";
 import * as Slack from "slack";
 import { config } from "../ci-config";
+import { TaskStatus } from "./TaskStatus";
 
-export type TaskStatus = "pending" | "running" | "completed" | "failed";
 export class BuildTask
 {
 	private runner: () => Promise<any>;
