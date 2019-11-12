@@ -44,6 +44,9 @@ httpsServer.listen(config.httpsPort);
 
 function makeRouter(target: any, router: express.Router)
 {
+	console.log(target);
+	console.log(target.constructor);
+	console.log(target.constructor.prototype);
 	Object.entries(target.constructor.prototype).forEach((e) =>
 	{
 		console.log(e);
