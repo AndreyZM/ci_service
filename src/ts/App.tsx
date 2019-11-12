@@ -49,9 +49,10 @@ function RunTaskWidget()
 			<option value={"bottle_client_mobile"}>bottle_client_mobile</option>
 		</HTMLSelect>
 		<InputGroup ref={revInput} placeholder="Branch/Revision" />
-		<Button text="Run" onClick={() => API.build({ project: select?.current?.props.value.toString(), revision: revInput.current.props.value })}></Button>
+		<Button text="Run" onClick={() => API.build({ project: select?.current?.props.value.toString(), revision: revInput.current.props.value })}/>
 	</>;
 }
+
 export class TaskView extends React.Component<{ task: BuildTask }, { }>
 {
 	public state = {
@@ -73,7 +74,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			background: "rgba(0,0,0,0.1)",
 			height: "300px",
 			overflowY: "auto",
-		}
+		};
 
 		let logs = <iframe src={this.props.task.logPath} style={infoStyle} />;
 		let commits = <div style={infoStyle}>

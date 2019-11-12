@@ -114,8 +114,28 @@
         "signature": "0c9ea8c2028047f39a3f66752682604f543c08be8806258c3d95c93e75a43255"
       },
       "../ci-config.ts": {
-        "version": "a474f0b8cb11ec9f9ecba65ace6b7facfb49fafff2f26328e43591f321d75387",
-        "signature": "f574cc83834ccf0a06e4937cc06715cf3fe4c0474dacc44ad68e31a07cb272db"
+        "version": "924c33a2f43d3e1fb3d704e0838513f0cc065a93be8ec2ae3d17ec4419ba9ecd",
+        "signature": "f0186ca7920ae27abd55b546874cc63664cecd0b5d2d833c97745db0968f4e6d"
+      },
+      "../node_modules/slack/slack.d.ts": {
+        "version": "7a421e9a7324dc6298d9dcca46d15673b351b93cfdea5f531e5e74aa1dfab018",
+        "signature": "7a421e9a7324dc6298d9dcca46d15673b351b93cfdea5f531e5e74aa1dfab018"
+      },
+      "../ci/buildtask.tsx": {
+        "version": "1fcdb40f1445f316ba726361213d147a0a2747d6fb0e751f690c0868a9c07a13",
+        "signature": "55eb5057d64f711779dc4bffeca661acc711f4ec438f67cf087c5e5dcdf9f41c"
+      },
+      "../ci/tasklist.tsx": {
+        "version": "b5741339994940cce0f208dad2a98689ebd0a150d12173b47559ec0067be835e",
+        "signature": "aed0d49533278970164de976d4d9e1c98a674c64a1542a306bde68dbd9b3efaf"
+      },
+      "../serverci.tsx": {
+        "version": "3d4ff19cb4bee2a84ee45966df6f057efee8bb3603fc167a4046286d15ea02ba",
+        "signature": "4ef2d64558e272c55d6a2d94ea6c2ed91ba66e9703e326d7a9543a0d530f897f"
+      },
+      "../src/ts/api/api.ts": {
+        "version": "3108f802201e2204a03533db44dbaac2d42673b9909af2d89970e6d755d4e1e7",
+        "signature": "1e4dc0be788972f684d67c0f81ffc42caa8ea1e703a9a0a66daa6171ce87179f"
       },
       "../node_modules/@types/node/globals.d.ts": {
         "version": "6cf62fbc792aa81fa62f99dab5cc692c5315ecd5da09dd35f1ccc82778c4d5bc",
@@ -325,6 +345,18 @@
         "version": "6e1c6fe784daeba017901db7766e6b872f535defe33b0e0196d2a12c26f50517",
         "signature": "6e1c6fe784daeba017901db7766e6b872f535defe33b0e0196d2a12c26f50517"
       },
+      "../server.tsx": {
+        "version": "73c0c56a9f6bf5c7ab3f16107360db69fe0c0913e1bc2390ee3b357a69b7f628",
+        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/accessibility/focusstylemanager.d.ts": {
+        "version": "45764e880cd0158b4a1692c38670441b7d60ddfe6f8835641ca9bfceb5f78b9e",
+        "signature": "45764e880cd0158b4a1692c38670441b7d60ddfe6f8835641ca9bfceb5f78b9e"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/accessibility/index.d.ts": {
+        "version": "30b5e83c2c380e084df3b84fcf910e70f43abfe11448875356cd38e7a3bbf7cd",
+        "signature": "30b5e83c2c380e084df3b84fcf910e70f43abfe11448875356cd38e7a3bbf7cd"
+      },
       "../node_modules/@types/react/global.d.ts": {
         "version": "d90b8dc8412ca005c4992e2b5c94d836a8234d32a6ec05d78ec725bbb634c5fb",
         "signature": "d90b8dc8412ca005c4992e2b5c94d836a8234d32a6ec05d78ec725bbb634c5fb"
@@ -341,39 +373,395 @@
         "version": "2893daa576cf34d3375368ecdc8ff844d85e3634904ff4ded6d3c9f210e9b00b",
         "signature": "2893daa576cf34d3375368ecdc8ff844d85e3634904ff4ded6d3c9f210e9b00b"
       },
-      "../node_modules/@types/react-dom/server/index.d.ts": {
-        "version": "53cea979e3bea1c13b6c88496a6dcfd130f5cbcd36c697dabfc71d5033508164",
-        "signature": "53cea979e3bea1c13b6c88496a6dcfd130f5cbcd36c697dabfc71d5033508164"
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent.d.ts": {
+        "version": "71dee7372e749bf96df66de3d2231e4efb6c3965c01f1452326f41211d704b6b",
+        "signature": "71dee7372e749bf96df66de3d2231e4efb6c3965c01f1452326f41211d704b6b"
       },
-      "../ci/buildtask.tsx": {
-        "version": "606ce6f5d20d3b12419bdb77f9482a1dadca8678cf435441b285892e20c93066",
-        "signature": "61ce77928de785ce773131d1f5511818afeb0c11fbbc786c4162b4b820815ec1"
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent2.d.ts": {
+        "version": "bd1bb89e16763711c3afdb4fc689e2fa9277a1a31e7fb01d813d2db7ca43636d",
+        "signature": "bd1bb89e16763711c3afdb4fc689e2fa9277a1a31e7fb01d813d2db7ca43636d"
       },
-      "../ci/tasklist.tsx": {
-        "version": "60691550ac70e2412ae58954abd4d9cd579a92fcf738187c2beaa210b7d2df92",
-        "signature": "aed0d49533278970164de976d4d9e1c98a674c64a1542a306bde68dbd9b3efaf"
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent.d.ts": {
+        "version": "f76c24e0612f9cafc3ef5b2d091a2afc8ee8fe0b12d1785fa0c920a77e435244",
+        "signature": "f76c24e0612f9cafc3ef5b2d091a2afc8ee8fe0b12d1785fa0c920a77e435244"
       },
-      "../index.tsx": {
-        "version": "4744bec199026ab256ffd37027141bb09c929047b32df9cfb22bcae548000108",
-        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent2.d.ts": {
+        "version": "88de9a9c98584364f427af57e91b6ecb9c1a375b15a19120997754e6c7d33919",
+        "signature": "88de9a9c98584364f427af57e91b6ecb9c1a375b15a19120997754e6c7d33919"
       },
-      "../src/app.tsx": {
-        "version": "5861e266aed894da43c83da33615ba0acdfae1a1aa72c718e1d209e0f4531d8a",
-        "signature": "b3cc1a5049fd7c24c6ebc5f2b0da55f19050eac7dafd148f339345f083782041"
+      "../node_modules/@blueprintjs/core/lib/esm/common/alignment.d.ts": {
+        "version": "bd2ab07f4d3e1f9f541383e8ef2c61658344348181d3020f6c663ee042375c88",
+        "signature": "bd2ab07f4d3e1f9f541383e8ef2c61658344348181d3020f6c663ee042375c88"
       },
-      "../src/html.tsx": {
+      "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts": {
+        "version": "f1e1e68cbe048ee1112f2929c7d68d53d4ad86dacd6e45bafaa5c5801047b7c6",
+        "signature": "f1e1e68cbe048ee1112f2929c7d68d53d4ad86dacd6e45bafaa5c5801047b7c6"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/colors.d.ts": {
+        "version": "10e0b60f4e14b244bd145f694f0690d8b9f26c8c7a755743afabdd992935fc64",
+        "signature": "10e0b60f4e14b244bd145f694f0690d8b9f26c8c7a755743afabdd992935fc64"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts": {
+        "version": "38f6d7ae2987c48a851807f22a32b1aedc8038badd0d2037f5d54ab0e39d950a",
+        "signature": "38f6d7ae2987c48a851807f22a32b1aedc8038badd0d2037f5d54ab0e39d950a"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/elevation.d.ts": {
+        "version": "5873abbf948918e64a1d648d7b60cdfd2eb9e9902d6d1c580876218824ff689b",
+        "signature": "5873abbf948918e64a1d648d7b60cdfd2eb9e9902d6d1c580876218824ff689b"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts": {
+        "version": "843fbd11bfa2082344b49c439a938f6f0cb3a185eb68acfde43f672b093b8558",
+        "signature": "843fbd11bfa2082344b49c439a938f6f0cb3a185eb68acfde43f672b093b8558"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts": {
+        "version": "3ceb238111cbea7ba1b9b25a4833c5a0432637610f3245c6b1cf5804acfcfbb8",
+        "signature": "3ceb238111cbea7ba1b9b25a4833c5a0432637610f3245c6b1cf5804acfcfbb8"
+      },
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconcontents.d.ts": {
+        "version": "7881df3a87d4aea712d39b7be3074d59fae00348c7974fc583da5eaf3de212c1",
+        "signature": "7881df3a87d4aea712d39b7be3074d59fae00348c7974fc583da5eaf3de212c1"
+      },
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconnames.d.ts": {
+        "version": "c78b0d7311b2b7faf866ffce89e4e1748c3ef70fc62e66032f2c06167c3de104",
+        "signature": "c78b0d7311b2b7faf866ffce89e4e1748c3ef70fc62e66032f2c06167c3de104"
+      },
+      "../node_modules/@blueprintjs/icons/lib/esm/iconname.d.ts": {
+        "version": "5dec0386bae270dd5258f1b57a0963b0315c8fe9ccaa90f696c4e6e9d2b5bcda",
+        "signature": "5dec0386bae270dd5258f1b57a0963b0315c8fe9ccaa90f696c4e6e9d2b5bcda"
+      },
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconsvgpaths.d.ts": {
+        "version": "f634926161579868440ca5372c890f0e20200b1323af31802a7075c4efdabe04",
+        "signature": "f634926161579868440ca5372c890f0e20200b1323af31802a7075c4efdabe04"
+      },
+      "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts": {
+        "version": "9954e278f4c8a55b3c70710fc601addf02cf0a3eeccfb1b569917f10e3899a20",
+        "signature": "9954e278f4c8a55b3c70710fc601addf02cf0a3eeccfb1b569917f10e3899a20"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts": {
+        "version": "41a41c84f64bad49c04250cc5b695676dcbf08f07c5fa6c4f56546e15f539931",
+        "signature": "41a41c84f64bad49c04250cc5b695676dcbf08f07c5fa6c4f56546e15f539931"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/classes.d.ts": {
+        "version": "55269aeaf8de94a10f1c5d3d45252c3e3e63cd44a178d6698cc0088acfe98aec",
+        "signature": "55269aeaf8de94a10f1c5d3d45252c3e3e63cd44a178d6698cc0088acfe98aec"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/keys.d.ts": {
+        "version": "75eaa6171bc3ce74f87a9fea83c35e5d2bfda3518eec74466cf3551fadded8fe",
+        "signature": "75eaa6171bc3ce74f87a9fea83c35e5d2bfda3518eec74466cf3551fadded8fe"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils/compareutils.d.ts": {
+        "version": "b61a734683c2d6a2230fe1d4ed490f7a41f59f6b47e8466755737dd3d93bf64c",
+        "signature": "b61a734683c2d6a2230fe1d4ed490f7a41f59f6b47e8466755737dd3d93bf64c"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils/safeinvokemember.d.ts": {
+        "version": "2923fa12587452666fef06ed5f8ab0a90b9ecc3e543cc0291e3c20fca8a6a2dc",
+        "signature": "2923fa12587452666fef06ed5f8ab0a90b9ecc3e543cc0291e3c20fca8a6a2dc"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils.d.ts": {
+        "version": "76b03410b7bd770a961caebb02e07a751699752ac9e24e90a23aaf2f6c66f8e3",
+        "signature": "76b03410b7bd770a961caebb02e07a751699752ac9e24e90a23aaf2f6c66f8e3"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts": {
+        "version": "192372bb3852c57b429f4242f9a54ed56c14fb5d7cda20879f58d327c0ca399d",
+        "signature": "192372bb3852c57b429f4242f9a54ed56c14fb5d7cda20879f58d327c0ca399d"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenu.d.ts": {
+        "version": "9e3c4f9cbf53096fcdc9c514a3e6a5e406cd35344a7d08322a3df65a1815aa57",
+        "signature": "9e3c4f9cbf53096fcdc9c514a3e6a5e406cd35344a7d08322a3df65a1815aa57"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts": {
+        "version": "429822bd8a63486752d8ec7afc66b2c5818710e1fd4c96ed2febf738d0b90973",
+        "signature": "429822bd8a63486752d8ec7afc66b2c5818710e1fd4c96ed2febf738d0b90973"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts": {
+        "version": "733cb18b5ab937b85d346cf35c53881aed027bedc6c6449a75ec813803293da2",
+        "signature": "733cb18b5ab937b85d346cf35c53881aed027bedc6c6449a75ec813803293da2"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/alert/alert.d.ts": {
+        "version": "54332fcd337fceb17c022e6f94ff58cc1bdce301c6371375560dadf15fb7b1d4",
+        "signature": "54332fcd337fceb17c022e6f94ff58cc1bdce301c6371375560dadf15fb7b1d4"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumb.d.ts": {
+        "version": "8e40c7bd1f387e1cb6ab053b113924440bf2346d91972110538b5ce5c13bac90",
+        "signature": "8e40c7bd1f387e1cb6ab053b113924440bf2346d91972110538b5ce5c13bac90"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/overflow-list/overflowlist.d.ts": {
+        "version": "ebe3fc7c1865ed962737b3e8a869ca280891f037209a434d085eac45e1bd2c7b",
+        "signature": "ebe3fc7c1865ed962737b3e8a869ca280891f037209a434d085eac45e1bd2c7b"
+      },
+      "../node_modules/popper.js/index.d.ts": {
+        "version": "1873db8f2261ba4f248bde3e5bb4c79b1fdc990315054e9604fce8f41ddd1587",
+        "signature": "1873db8f2261ba4f248bde3e5bb4c79b1fdc990315054e9604fce8f41ddd1587"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts": {
+        "version": "efa97ee243bb772410490ae8cd6128c78019a532137628a207970265dc06a189",
+        "signature": "efa97ee243bb772410490ae8cd6128c78019a532137628a207970265dc06a189"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts": {
+        "version": "96b02188879a6fcb5558179c9205e79955c0daf15989bf126d1b00aa850f90dc",
+        "signature": "96b02188879a6fcb5558179c9205e79955c0daf15989bf126d1b00aa850f90dc"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumbs.d.ts": {
+        "version": "eb3caeeabe7f2cbd53daa0bcd006198ca5b1fb302125198bdf6118c55d80a03c",
+        "signature": "eb3caeeabe7f2cbd53daa0bcd006198ca5b1fb302125198bdf6118c55d80a03c"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/abstractbutton.d.ts": {
+        "version": "ec1a9ddd399f07d4bd024b1d9d275b20a8b72990213d08657787a463aa5e7fac",
+        "signature": "ec1a9ddd399f07d4bd024b1d9d275b20a8b72990213d08657787a463aa5e7fac"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/buttons.d.ts": {
+        "version": "5c34d41d22a8cb64e00209e0cd08d5975c936ef6bee32ecf8697948da1d6718d",
+        "signature": "5c34d41d22a8cb64e00209e0cd08d5975c936ef6bee32ecf8697948da1d6718d"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/buttongroup.d.ts": {
+        "version": "868d9028f5f0f6a488259783eb06766479562c98998d36b6c88311ea67808a24",
+        "signature": "868d9028f5f0f6a488259783eb06766479562c98998d36b6c88311ea67808a24"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/callout/callout.d.ts": {
+        "version": "79067e3fa65a5203a02a81da55a2edc029f0e253d7762c2883c5e48de5c8b4c3",
+        "signature": "79067e3fa65a5203a02a81da55a2edc029f0e253d7762c2883c5e48de5c8b4c3"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/card/card.d.ts": {
+        "version": "2b15091f8db5f4b4ba0b0d3686a53da364abf539937e7cf23537b1171674e23d",
+        "signature": "2b15091f8db5f4b4ba0b0d3686a53da364abf539937e7cf23537b1171674e23d"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/collapse/collapse.d.ts": {
+        "version": "7d7a0f8253843c2e281708762b7f55ea92752bdb2447d05817bf2123eceed63b",
+        "signature": "7d7a0f8253843c2e281708762b7f55ea92752bdb2447d05817bf2123eceed63b"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts": {
+        "version": "42cf878734174b11746b17c5a2e8e173281896c4d82e90c6fc7d52dbbde6ba5b",
+        "signature": "42cf878734174b11746b17c5a2e8e173281896c4d82e90c6fc7d52dbbde6ba5b"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/collapsible-list/collapsiblelist.d.ts": {
+        "version": "fa9396f0df506ffffd136042d77b25579dd7922421f573df4d69bf25aeacfc78",
+        "signature": "fa9396f0df506ffffd136042d77b25579dd7922421f573df4d69bf25aeacfc78"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenutarget.d.ts": {
+        "version": "da17ad1cd4340b9b4b463049d0a5ed959278f384c744f6db7c2532c96fcedece",
+        "signature": "da17ad1cd4340b9b4b463049d0a5ed959278f384c744f6db7c2532c96fcedece"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/dialog/dialog.d.ts": {
+        "version": "654dc6e416bfb3400f616c95e7f1daec7aca5b7f4c8d616b4bcd7217c9fb0a1d",
+        "signature": "654dc6e416bfb3400f616c95e7f1daec7aca5b7f4c8d616b4bcd7217c9fb0a1d"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/divider/divider.d.ts": {
+        "version": "88bf66e663a0424aa906faa8899ae185c6322d953fee51e01c97887f3c82f649",
+        "signature": "88bf66e663a0424aa906faa8899ae185c6322d953fee51e01c97887f3c82f649"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/drawer/drawer.d.ts": {
+        "version": "386433265a2660e4a2721f4b4d2a0a9297ac2f12525819decd33af35e7363eaf",
+        "signature": "386433265a2660e4a2721f4b4d2a0a9297ac2f12525819decd33af35e7363eaf"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/editable-text/editabletext.d.ts": {
+        "version": "3a624d5af6053f9ba29a84ddbeb5ae404f4466bf151075a39ae38154ecb18b2c",
+        "signature": "3a624d5af6053f9ba29a84ddbeb5ae404f4466bf151075a39ae38154ecb18b2c"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/controlgroup.d.ts": {
+        "version": "01cef08ea6cae63baa78cc15c1175021fd9c66744b12c38035c0607eafffb95a",
+        "signature": "01cef08ea6cae63baa78cc15c1175021fd9c66744b12c38035c0607eafffb95a"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/controls.d.ts": {
+        "version": "c24ff81057b670a75f97093dc6519aa9500cf13cfea90fbd39b39ce64638116a",
+        "signature": "c24ff81057b670a75f97093dc6519aa9500cf13cfea90fbd39b39ce64638116a"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/fileinput.d.ts": {
+        "version": "0573d01491eef0f241f265213ed5054a6a3444078080cd5e7054c64ff41fbf1d",
+        "signature": "0573d01491eef0f241f265213ed5054a6a3444078080cd5e7054c64ff41fbf1d"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/formgroup.d.ts": {
+        "version": "6e5dafaddd27d291e56284a156c3c3748f4db8834c3c6dbe08ff1f001d46e628",
+        "signature": "6e5dafaddd27d291e56284a156c3c3748f4db8834c3c6dbe08ff1f001d46e628"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/inputgroup.d.ts": {
+        "version": "b0803e38da8c983c201d3f659ba81b94d7769533e219553cef75b2115cf8bf2f",
+        "signature": "b0803e38da8c983c201d3f659ba81b94d7769533e219553cef75b2115cf8bf2f"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/numericinput.d.ts": {
+        "version": "408006ca08f432abb697692c06706a8567039c0df35a9973fba7869d87c77028",
+        "signature": "408006ca08f432abb697692c06706a8567039c0df35a9973fba7869d87c77028"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/radiogroup.d.ts": {
+        "version": "05070e67388f203a05033918b4d2565b0e83e1d67a933f54e8a6f77d36298258",
+        "signature": "05070e67388f203a05033918b4d2565b0e83e1d67a933f54e8a6f77d36298258"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/textarea.d.ts": {
+        "version": "588696e12c3341c49d906c539b80426a3af885928524aff540a95cd5b7e865d6",
+        "signature": "588696e12c3341c49d906c539b80426a3af885928524aff540a95cd5b7e865d6"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts": {
+        "version": "8865e8a495b7543e0a0d919df6808a2fa5da1dcae9dcc682593c745c49e1ba87",
+        "signature": "8865e8a495b7543e0a0d919df6808a2fa5da1dcae9dcc682593c745c49e1ba87"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/html-select/htmlselect.d.ts": {
+        "version": "c9c2e5f7c4726703a6772eab6fff9da12e3f5a8d7440e4865a599c3e6599ecfd",
+        "signature": "c9c2e5f7c4726703a6772eab6fff9da12e3f5a8d7440e4865a599c3e6599ecfd"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/html-table/htmltable.d.ts": {
+        "version": "d9f22bbc6af8625368d13a82a7486fb011fee7d28bb74a882c87f0973c7768fb",
+        "signature": "d9f22bbc6af8625368d13a82a7486fb011fee7d28bb74a882c87f0973c7768fb"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts": {
+        "version": "1786e08d19dd72634568e889aa1e86e9b1a55f18c9bb86d94146ce6ae1cc3984",
+        "signature": "1786e08d19dd72634568e889aa1e86e9b1a55f18c9bb86d94146ce6ae1cc3984"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/keycombo.d.ts": {
+        "version": "8de06d65241be60c572eaad1a8f5c841b3b025e7a08d7bda090296d5e117b248",
+        "signature": "8de06d65241be60c572eaad1a8f5c841b3b025e7a08d7bda090296d5e117b248"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeyparser.d.ts": {
+        "version": "935c448cb9a6538b1590fa3802d15528186c0a2dc8644ebc0b9260ce4c6ec87f",
+        "signature": "935c448cb9a6538b1590fa3802d15528186c0a2dc8644ebc0b9260ce4c6ec87f"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysevents.d.ts": {
+        "version": "12e96ac9545b8c419ef75de5e64d817a69319b415da2e1345e061f68992d2257",
+        "signature": "12e96ac9545b8c419ef75de5e64d817a69319b415da2e1345e061f68992d2257"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeystarget.d.ts": {
+        "version": "55e5b29ec0f546a4a5bcbae0c9791b66365beccac30e7c0c33176d8191389760",
+        "signature": "55e5b29ec0f546a4a5bcbae0c9791b66365beccac30e7c0c33176d8191389760"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysdialog.d.ts": {
+        "version": "12c2e8adc7de9f8ea260c55fedcacd26bb6dda520d4294b6550dab5a962f0f39",
+        "signature": "12c2e8adc7de9f8ea260c55fedcacd26bb6dda520d4294b6550dab5a962f0f39"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts": {
+        "version": "88681775841fc0fca33f66fc2ef737123e25eaf01c30c5914e197e86390d0296",
+        "signature": "88681775841fc0fca33f66fc2ef737123e25eaf01c30c5914e197e86390d0296"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menudivider.d.ts": {
+        "version": "dada6f01e36886a6f99beaacad26279e97e78f908f5c27772ed8a38d33e9a88b",
+        "signature": "dada6f01e36886a6f99beaacad26279e97e78f908f5c27772ed8a38d33e9a88b"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menu.d.ts": {
+        "version": "4043acb1d6c7c79a41a619cc7c4946a4d45fd16218bb39c1340a0b85468e8fb2",
+        "signature": "4043acb1d6c7c79a41a619cc7c4946a4d45fd16218bb39c1340a0b85468e8fb2"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbardivider.d.ts": {
+        "version": "ecd9e06e4467d6841a350054ded35e45ae12416653840db323cd72e8e93c97ca",
+        "signature": "ecd9e06e4467d6841a350054ded35e45ae12416653840db323cd72e8e93c97ca"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbargroup.d.ts": {
+        "version": "1f5afe41967a5224d8d8ad7970e758c6abf2e18f5dfa74d51758385dacdc4203",
+        "signature": "1f5afe41967a5224d8d8ad7970e758c6abf2e18f5dfa74d51758385dacdc4203"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbarheading.d.ts": {
+        "version": "f80d57cd8c782d4f509913b9985b2c8ddbd4c5d970181f275bf5981ae47c9321",
+        "signature": "f80d57cd8c782d4f509913b9985b2c8ddbd4c5d970181f275bf5981ae47c9321"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbar.d.ts": {
+        "version": "4cd0d1582435e246cf3bfd9d210cab2eaf1d06d44e5306704d0134b9ecaed7c5",
+        "signature": "4cd0d1582435e246cf3bfd9d210cab2eaf1d06d44e5306704d0134b9ecaed7c5"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/non-ideal-state/nonidealstate.d.ts": {
+        "version": "a723054311b7c32a373e3d483f0e5032cf3ac77f35c6179898d85c73fae82c5a",
+        "signature": "a723054311b7c32a373e3d483f0e5032cf3ac77f35c6179898d85c73fae82c5a"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/text/text.d.ts": {
+        "version": "caa5b9db26d68fa95511947e7881aa8ecc3961ebcfdde38c448566bb1cd978f2",
+        "signature": "caa5b9db26d68fa95511947e7881aa8ecc3961ebcfdde38c448566bb1cd978f2"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelprops.d.ts": {
+        "version": "55221b6a6bc9569799f40ee544bb130087a8e3e38b78b3929708a20c84c5c0de",
+        "signature": "55221b6a6bc9569799f40ee544bb130087a8e3e38b78b3929708a20c84c5c0de"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelstack.d.ts": {
+        "version": "9d7a4ff40b3abd223bc6494c5fb65f4109594f893155793971fb3ab821311e28",
+        "signature": "9d7a4ff40b3abd223bc6494c5fb65f4109594f893155793971fb3ab821311e28"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/portal/portal.d.ts": {
+        "version": "13b80fa7b0d4438b8577b2fe09789eb18896d692fbc65da70ed531e907062029",
+        "signature": "13b80fa7b0d4438b8577b2fe09789eb18896d692fbc65da70ed531e907062029"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/progress-bar/progressbar.d.ts": {
+        "version": "db870d66b94e3b7b81536643a50c512d120dd65ac10aa3b3f9853f78e5910846",
+        "signature": "db870d66b94e3b7b81536643a50c512d120dd65ac10aa3b3f9853f78e5910846"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/resize-sensor/resizesensor.d.ts": {
+        "version": "7444d0c9d788661d6978312a8b9c6579c4f5a6e86c01374c35465f09baca49ac",
+        "signature": "7444d0c9d788661d6978312a8b9c6579c4f5a6e86c01374c35465f09baca49ac"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/handleprops.d.ts": {
+        "version": "d640deb17abed23a7d209311c63bcd9664460f2a9dcd9dd8aa1cb51b58ddfb6d",
+        "signature": "d640deb17abed23a7d209311c63bcd9664460f2a9dcd9dd8aa1cb51b58ddfb6d"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts": {
+        "version": "30412d5072d502cb6761719e009ebce2fa1c0244333f44387a66ed30cc61fe44",
+        "signature": "30412d5072d502cb6761719e009ebce2fa1c0244333f44387a66ed30cc61fe44"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/rangeslider.d.ts": {
+        "version": "ceb6ac9923d8e6f7e4b61eb0aceaddfcb94d8feabacddcff876d489b6d3b31dd",
+        "signature": "ceb6ac9923d8e6f7e4b61eb0aceaddfcb94d8feabacddcff876d489b6d3b31dd"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/slider.d.ts": {
+        "version": "0ed9fad677f6b4a0f14f44087d6abf64f8eb2bb66fa14da595af74dd285ddfc9",
+        "signature": "0ed9fad677f6b4a0f14f44087d6abf64f8eb2bb66fa14da595af74dd285ddfc9"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/spinner/spinner.d.ts": {
+        "version": "b6ddfd85b5960254eee5cbfc1bc0e2e88bb5b87c235d41002d09b981bf7a50b7",
+        "signature": "b6ddfd85b5960254eee5cbfc1bc0e2e88bb5b87c235d41002d09b981bf7a50b7"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tab.d.ts": {
+        "version": "3c935d04ceb2a5d6f44b11a147bec4d0dc535483bdf6ebeae202026e0d809c71",
+        "signature": "3c935d04ceb2a5d6f44b11a147bec4d0dc535483bdf6ebeae202026e0d809c71"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tabs.d.ts": {
+        "version": "18847f5678e6cdf7125b63190fe1122a45d6c55e0494e9f1418d30de512a8a43",
+        "signature": "18847f5678e6cdf7125b63190fe1122a45d6c55e0494e9f1418d30de512a8a43"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/tag/tag.d.ts": {
+        "version": "464971671bbae9d4fd1eb331d51ffc74b43cb5b309e721567ce17b09d041d59a",
+        "signature": "464971671bbae9d4fd1eb331d51ffc74b43cb5b309e721567ce17b09d041d59a"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/tag-input/taginput.d.ts": {
+        "version": "b89a148ed96b0d2d697bf669f9338e91636afbeaaf3e68e3c9cc14ab5495d1e8",
+        "signature": "b89a148ed96b0d2d697bf669f9338e91636afbeaaf3e68e3c9cc14ab5495d1e8"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/toast/toast.d.ts": {
+        "version": "57db080feeffc86f921290287ae930d9ac047701e0efa6d3e301c89e34b0e796",
+        "signature": "57db080feeffc86f921290287ae930d9ac047701e0efa6d3e301c89e34b0e796"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/toast/toaster.d.ts": {
+        "version": "adef7805d8d06aab1d11bac5d5362bc43475d0146cb44bb60927309497a6dc75",
+        "signature": "adef7805d8d06aab1d11bac5d5362bc43475d0146cb44bb60927309497a6dc75"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/tooltip/tooltip.d.ts": {
+        "version": "9ea3c66d7dcd35f0622c2d829d8973d2bc838abae18322c9537384d2fafc63de",
+        "signature": "9ea3c66d7dcd35f0622c2d829d8973d2bc838abae18322c9537384d2fafc63de"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/tree/treenode.d.ts": {
+        "version": "3262a60e115189f72f51ab77e424ef9723cc9b1504755e6216663822b9486120",
+        "signature": "3262a60e115189f72f51ab77e424ef9723cc9b1504755e6216663822b9486120"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/tree/tree.d.ts": {
+        "version": "a26379f5e02051f5e05f46bf6b37622a19a4643b9ad43511d492165683d77ded",
+        "signature": "a26379f5e02051f5e05f46bf6b37622a19a4643b9ad43511d492165683d77ded"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/components/index.d.ts": {
+        "version": "1ac602d4165a1b5801cf27a68f28bbb773e462b3c0aeb66535c2568f7e9d2df5",
+        "signature": "1ac602d4165a1b5801cf27a68f28bbb773e462b3c0aeb66535c2568f7e9d2df5"
+      },
+      "../node_modules/@blueprintjs/core/lib/esm/index.d.ts": {
+        "version": "fe8d41d1313b6153acd604ff261250a50f15056f6f574f414a0e38f443abcc3c",
+        "signature": "fe8d41d1313b6153acd604ff261250a50f15056f6f574f414a0e38f443abcc3c"
+      },
+      "../src/ts/utils/async.tsx": {
+        "version": "e4afaa063772b7208ed78a0c2cd87591168b85a38b4bc8113a3eefe35131d563",
+        "signature": "532ddc4c6f489ff6bae955f294d1f677c146bff396cc8e9c7797d730c3210fd7"
+      },
+      "../src/ts/app.tsx": {
+        "version": "3a73075dec0b38afab20215a3e9d98037d774b6d481729c101c602767ad3c957",
+        "signature": "ddab2aa8a5c65e0f68293d9ea93c31aadf95bc3ed5a199b746ee3d1a98304f94"
+      },
+      "../src/ts/html.tsx": {
         "version": "a008b42402cc8f930c7b35e75d52321b272508f87f4a15653c5d20737b447f78",
         "signature": "686ca38084ff2897564c1eccd1abef2ec9388a2fdc9c12631483680a41bf8d72"
-      },
-      "../src/rootpage.tsx": {
-        "version": "50567e233601faf68daa6f4adbda6ae28dd667a6a74cd49230d17a6b7f36c70a",
-        "signature": "d821245cf197086bac3573eb5ac04a5f1476fb4555a75985f149038803debb16"
       },
       "../node_modules/@types/react-dom/index.d.ts": {
         "version": "1923cbe22fe3f5005de4192f014b558a88e0fdec16726bb4f94ac76dd1a82c92",
         "signature": "1923cbe22fe3f5005de4192f014b558a88e0fdec16726bb4f94ac76dd1a82c92"
       },
-      "../src/index.tsx": {
+      "../src/ts/index.tsx": {
         "version": "ae3e08bd75ee8b41d894a6e63b2ccea8adc70b90fc417ca00d6247fac8f4967f",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       }
@@ -402,7 +790,7 @@
       "moduleResolution": 2,
       "allowJs": true,
       "module": 1,
-      "target": 99,
+      "target": 2,
       "jsx": 2,
       "outDir": "../www/scripts",
       "types": [
@@ -412,7 +800,6 @@
         "lib.es2017.d.ts",
         "lib.dom.d.ts"
       ],
-      "project": "../tsconfig.json",
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
@@ -590,6 +977,45 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/slack/slack.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../ci/buildtask.tsx": [
+        "../node_modules/@types/node/child_process.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/slack/slack.d.ts",
+        "../ci-config.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../ci/tasklist.tsx": [
+        "../ci/buildtask.tsx",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../serverci.tsx": [
+        "../ci-config.ts",
+        "../ci/buildtask.tsx",
+        "../ci/tasklist.tsx",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/ts/api/api.ts": [
+        "../ci/buildtask.tsx",
+        "../serverci.tsx",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@types/node/globals.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -1003,6 +1429,30 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../server.tsx": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/https.d.ts",
+        "../ci-config.ts",
+        "../serverci.tsx",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/accessibility/focusstylemanager.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/accessibility/index.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/accessibility/focusstylemanager.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@types/react/global.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -1030,58 +1480,900 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/react-dom/server/index.d.ts": [
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../ci/buildtask.tsx": [
-        "../node_modules/@types/node/child_process.d.ts",
-        "../ci-config.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent2.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../ci/tasklist.tsx": [
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent2.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/alignment.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/colors.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/elevation.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconcontents.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconnames.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/iconname.d.ts": [
+        "../node_modules/@blueprintjs/icons/lib/esm/generated/iconnames.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconsvgpaths.d.ts": [
+        "../node_modules/@blueprintjs/icons/lib/esm/iconname.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts": [
+        "../node_modules/@blueprintjs/icons/lib/esm/generated/iconcontents.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/generated/iconnames.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/generated/iconsvgpaths.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/iconname.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/classes.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/alignment.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/elevation.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/keys.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils/compareutils.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils/safeinvokemember.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/utils/compareutils.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/utils/safeinvokemember.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent2.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent2.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/alignment.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/colors.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/elevation.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/classes.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/keys.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/utils.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenu.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/alert/alert.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumb.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/overflow-list/overflowlist.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/popper.js/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts": [
+        "../node_modules/popper.js/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumbs.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overflow-list/overflowlist.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumb.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/abstractbutton.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/buttons.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/button/abstractbutton.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/buttongroup.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/callout/callout.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/card/card.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/collapse/collapse.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/collapsible-list/collapsiblelist.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenutarget.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/dialog/dialog.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/divider/divider.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/drawer/drawer.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/editable-text/editabletext.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/controlgroup.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/controls.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/fileinput.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/formgroup.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/inputgroup.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/numericinput.d.ts": [
+        "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/radiogroup.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/textarea.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/html-select/htmlselect.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/html-table/htmltable.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/keycombo.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeyparser.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysevents.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeyparser.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeystarget.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysevents.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysdialog.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/components/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/keycombo.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeystarget.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeyparser.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysdialog.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menudivider.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menu.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menudivider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbardivider.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbargroup.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbarheading.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbar.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbardivider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbargroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbarheading.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/non-ideal-state/nonidealstate.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/text/text.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelprops.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelstack.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelprops.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/portal/portal.d.ts": [
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/progress-bar/progressbar.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/resize-sensor/resizesensor.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/handleprops.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/handleprops.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/rangeslider.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/slider.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/spinner/spinner.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tab.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tabs.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tab.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tag/tag.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tag-input/taginput.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tag/tag.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/toast/toast.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/toast/toaster.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/toast/toast.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tooltip/tooltip.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tree/treenode.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tree/tree.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tree/treenode.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/index.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenu.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/alert/alert.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumb.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumbs.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/button/buttons.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/button/buttongroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/callout/callout.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/card/card.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/collapse/collapse.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/collapsible-list/collapsiblelist.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenutarget.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/dialog/dialog.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/divider/divider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/drawer/drawer.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/editable-text/editabletext.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/controlgroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/controls.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/fileinput.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/formgroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/inputgroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/numericinput.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/radiogroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/textarea.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html-select/htmlselect.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html-table/htmltable.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menu.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menudivider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbar.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbardivider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbargroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbarheading.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/non-ideal-state/nonidealstate.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overflow-list/overflowlist.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/text/text.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelprops.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelstack.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/portal/portal.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/progress-bar/progressbar.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/resize-sensor/resizesensor.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/handleprops.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/rangeslider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/slider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/spinner/spinner.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tab.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tabs.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tag/tag.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tag-input/taginput.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/toast/toast.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/toast/toaster.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tooltip/tooltip.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tree/tree.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tree/treenode.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/index.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/accessibility/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/ts/utils/async.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/ts/app.tsx": [
+        "../node_modules/@blueprintjs/core/lib/esm/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/classes.d.ts",
         "../ci/buildtask.tsx",
+        "../src/ts/api/api.ts",
+        "../src/ts/utils/async.tsx",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../index.tsx": [
-        "../node_modules/@types/node/child_process.d.ts",
-        "../node_modules/@types/express/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/http.d.ts",
-        "../node_modules/@types/node/https.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/@types/react-dom/server/index.d.ts",
-        "../ci-config.ts",
-        "../ci/buildtask.tsx",
-        "../ci/tasklist.tsx",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/app.tsx": [
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/html.tsx": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/rootpage.tsx": [
-        "../node_modules/@types/react/index.d.ts",
+      "../src/ts/html.tsx": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -1094,10 +2386,10 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/index.tsx": [
+      "../src/ts/index.tsx": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/@types/react-dom/index.d.ts",
-        "../src/app.tsx",
+        "../src/ts/app.tsx",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -1273,6 +2565,24 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/slack/slack.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../ci/buildtask.tsx": [
+        "../ci-config.ts"
+      ],
+      "../ci/tasklist.tsx": [
+        "../ci/buildtask.tsx"
+      ],
+      "../serverci.tsx": [
+        "../ci/buildtask.tsx"
+      ],
+      "../src/ts/api/api.ts": [
+        "../ci/buildtask.tsx"
+      ],
       "../node_modules/@types/node/globals.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -1686,6 +2996,19 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/@blueprintjs/core/lib/esm/accessibility/focusstylemanager.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/accessibility/index.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/accessibility/focusstylemanager.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../node_modules/@types/react/global.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -1713,24 +3036,886 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/@types/react-dom/server/index.d.ts": [
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../ci/buildtask.tsx": [
-        "../ci-config.ts"
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent2.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../ci/tasklist.tsx": [
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent2.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/alignment.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/colors.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/elevation.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconcontents.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconnames.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/iconname.d.ts": [
+        "../node_modules/@blueprintjs/icons/lib/esm/generated/iconnames.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconsvgpaths.d.ts": [
+        "../node_modules/@blueprintjs/icons/lib/esm/iconname.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts": [
+        "../node_modules/@blueprintjs/icons/lib/esm/generated/iconcontents.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/generated/iconnames.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/generated/iconsvgpaths.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/iconname.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/classes.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/alignment.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/elevation.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/keys.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils/compareutils.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils/safeinvokemember.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/utils/compareutils.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/utils/safeinvokemember.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent2.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent2.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/alignment.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/colors.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/elevation.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/classes.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/keys.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/utils.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenu.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/alert/alert.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumb.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/overflow-list/overflowlist.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/popper.js/index.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts": [
+        "../node_modules/popper.js/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumbs.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overflow-list/overflowlist.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumb.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/abstractbutton.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/buttons.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/button/abstractbutton.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/buttongroup.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/callout/callout.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/card/card.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/collapse/collapse.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/collapsible-list/collapsiblelist.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenutarget.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/dialog/dialog.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/divider/divider.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/drawer/drawer.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/editable-text/editabletext.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/controlgroup.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/controls.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/fileinput.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/formgroup.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/inputgroup.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/numericinput.d.ts": [
+        "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/radiogroup.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/textarea.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/html-select/htmlselect.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/html-table/htmltable.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/keycombo.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeyparser.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysevents.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeyparser.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeystarget.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysevents.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysdialog.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/components/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/keycombo.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeystarget.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeyparser.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysdialog.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menudivider.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menu.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menudivider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbardivider.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbargroup.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbarheading.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbar.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbardivider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbargroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbarheading.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/non-ideal-state/nonidealstate.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/text/text.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelprops.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelstack.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelprops.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/portal/portal.d.ts": [
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/progress-bar/progressbar.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/resize-sensor/resizesensor.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/handleprops.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/handleprops.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/rangeslider.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/slider.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/spinner/spinner.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tab.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tabs.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tab.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tag/tag.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tag-input/taginput.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tag/tag.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/toast/toast.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/toast/toaster.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/toast/toast.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tooltip/tooltip.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tree/treenode.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/tree/tree.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tree/treenode.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/components/index.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenu.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/alert/alert.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumb.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumbs.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/button/buttons.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/button/buttongroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/callout/callout.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/card/card.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/collapse/collapse.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/collapsible-list/collapsiblelist.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenutarget.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/dialog/dialog.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/divider/divider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/drawer/drawer.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/editable-text/editabletext.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/controlgroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/controls.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/fileinput.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/formgroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/inputgroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/numericinput.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/radiogroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/forms/textarea.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html-select/htmlselect.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/html-table/htmltable.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menu.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menudivider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbar.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbardivider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbargroup.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbarheading.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/non-ideal-state/nonidealstate.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overflow-list/overflowlist.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/text/text.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelprops.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelstack.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/portal/portal.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/progress-bar/progressbar.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/resize-sensor/resizesensor.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/handleprops.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/rangeslider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/slider/slider.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/spinner/spinner.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tab.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tabs.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tag/tag.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tag-input/taginput.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/toast/toast.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/toast/toaster.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tooltip/tooltip.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tree/tree.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/tree/treenode.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@blueprintjs/core/lib/esm/index.d.ts": [
+        "../node_modules/@blueprintjs/core/lib/esm/accessibility/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+        "../node_modules/@blueprintjs/core/lib/esm/components/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/ts/utils/async.tsx": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../src/ts/app.tsx": [
+        "../node_modules/@types/react/index.d.ts",
         "../ci/buildtask.tsx"
-      ],
-      "../src/rootpage.tsx": [
-        "../node_modules/@types/react/index.d.ts"
-      ],
-      "../src/app.tsx": [
-        "../node_modules/@types/react/index.d.ts"
       ],
       "../node_modules/@types/react-dom/index.d.ts": [
         "../node_modules/@types/react/index.d.ts",
@@ -1770,6 +3955,11 @@
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../node_modules/typescript/lib/lib.esnext.bigint.d.ts",
       "../ci-config.ts",
+      "../node_modules/slack/slack.d.ts",
+      "../ci/buildtask.tsx",
+      "../ci/tasklist.tsx",
+      "../serverci.tsx",
+      "../src/ts/api/api.ts",
       "../node_modules/@types/node/globals.d.ts",
       "../node_modules/@types/node/assert.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
@@ -1822,19 +4012,111 @@
       "../node_modules/@types/connect/index.d.ts",
       "../node_modules/@types/body-parser/index.d.ts",
       "../node_modules/@types/express/index.d.ts",
+      "../server.tsx",
+      "../node_modules/@blueprintjs/core/lib/esm/accessibility/focusstylemanager.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/accessibility/index.d.ts",
       "../node_modules/@types/react/global.d.ts",
       "../node_modules/csstype/index.d.ts",
       "../node_modules/@types/prop-types/index.d.ts",
       "../node_modules/@types/react/index.d.ts",
-      "../node_modules/@types/react-dom/server/index.d.ts",
-      "../ci/buildtask.tsx",
-      "../ci/tasklist.tsx",
-      "../index.tsx",
-      "../src/html.tsx",
-      "../src/rootpage.tsx",
-      "../src/app.tsx",
-      "../src/index.tsx",
-      "../node_modules/@types/react-dom/index.d.ts"
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractcomponent2.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/abstractpurecomponent2.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/alignment.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/boundary.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/colors.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/constructor.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/elevation.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/intent.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/position.d.ts",
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconcontents.d.ts",
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconnames.d.ts",
+      "../node_modules/@blueprintjs/icons/lib/esm/iconname.d.ts",
+      "../node_modules/@blueprintjs/icons/lib/esm/generated/iconsvgpaths.d.ts",
+      "../node_modules/@blueprintjs/icons/lib/esm/index.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/props.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/classes.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/keys.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils/compareutils.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils/safeinvokemember.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/utils.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/common/index.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenu.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/icon/icon.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/overlay/overlay.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/alert/alert.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumb.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/overflow-list/overflowlist.d.ts",
+      "../node_modules/popper.js/index.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/popover/popoversharedprops.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/popover/popover.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/breadcrumbs/breadcrumbs.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/abstractbutton.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/buttons.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/button/buttongroup.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/callout/callout.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/card/card.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/collapse/collapse.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menuitem.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/collapsible-list/collapsiblelist.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/context-menu/contextmenutarget.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/dialog/dialog.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/divider/divider.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/drawer/drawer.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/editable-text/editabletext.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/controlgroup.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/controls.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/fileinput.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/formgroup.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/inputgroup.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/numericinput.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/radiogroup.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/forms/textarea.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/html/html.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/html-select/htmlselect.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/html-table/htmltable.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkey.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/keycombo.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeyparser.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysevents.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeystarget.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeysdialog.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/hotkeys/hotkeys.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menudivider.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/menu/menu.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbardivider.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbargroup.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbarheading.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/navbar/navbar.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/non-ideal-state/nonidealstate.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/text/text.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelprops.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/panel-stack/panelstack.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/portal/portal.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/progress-bar/progressbar.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/resize-sensor/resizesensor.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/handleprops.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/multislider.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/rangeslider.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/slider/slider.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/spinner/spinner.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tab.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/tabs/tabs.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/tag/tag.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/tag-input/taginput.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/toast/toast.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/toast/toaster.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/tooltip/tooltip.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/tree/treenode.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/tree/tree.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/components/index.d.ts",
+      "../node_modules/@blueprintjs/core/lib/esm/index.d.ts",
+      "../src/ts/utils/async.tsx",
+      "../src/ts/app.tsx",
+      "../src/ts/html.tsx",
+      "../node_modules/@types/react-dom/index.d.ts",
+      "../src/ts/index.tsx"
     ]
   },
   "version": "3.7.2"
