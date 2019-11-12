@@ -9,6 +9,10 @@ export class Api
 		return this.exec<ReturnType<ServerCI["taskkill"]>>("taskkill", query);
 	}
 
+	public build(query: { project?: string, revision?: string })
+	{
+		return this.exec<ReturnType<ServerCI["build"]>>("build", query);
+	}
 	public tasklist(query: { ids?: number[], status?: TaskStatus })
 	{
 		return this.exec<ReturnType<ServerCI["tasklist"]>>("tasklist", { ids: query.ids && query.ids.join(","), status });

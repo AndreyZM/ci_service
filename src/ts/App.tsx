@@ -67,7 +67,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { showLogs: b
 
 			{this.props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.taskkill({ id: this.props.task.id })}>Stop</Button>}
 			{this.props.task.status === "completed" && <Button intent={Intent.PRIMARY} onClick={() => window.open(this.props.task.runUrl, "_blank")}>Run</Button>}
-			{this.props.task.status === "failed" && <Button intent={Intent.WARNING} >Restart</Button>}
+			{this.props.task.status === "failed" && <Button intent={Intent.WARNING} onClick={() => API.build({project: this.props.task.project, revision: this.props.task.revision})}>Restart</Button>}
 			{this.props.task.status === "pending" && <Button intent={Intent.NONE} >Remove</Button>}
 		</Card>;
 	}
