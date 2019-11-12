@@ -27,11 +27,12 @@ export class BuildTask
 		this.runner = async () =>
 		{
 			console.log(`[Task #${this.id}] running`);
+
+			this.logPath = `/tasklog_${this.id}.log`;
+
 			let log = `./www${this.logPath}`;
 			if (fs.existsSync(log))
 				fs.unlinkSync(log);
-
-			this.logPath = `/tasklog_${this.id}.log`;
 
 			this.timings.start = new Date();
 			Slack.chat.postMessage({ ...config.slack, text: `Start Task #${this.id} ${this.project}/${this.revision} <${this.logPath}|Log>` }).then(console.log).catch(console.error);
