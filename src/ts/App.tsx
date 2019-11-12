@@ -11,6 +11,10 @@ import { Async } from "./utils/Async";
 
 export class App extends React.Component<{}, { darkMode: boolean }>
 {
+	public state = {
+		darkMode: false,
+	}
+
 	public render()
 	{
 		return <>
