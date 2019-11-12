@@ -41,16 +41,19 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 
 function RunTaskWidget()
 {
-	let select = React.useRef<HTMLSelectElement>();
-	let revInput = React.useRef<HTMLInputElement>();
-	return <>
-		<HTMLSelect ref={select as any}>
+	return <form onSubmit={(e) =>
+		{
+			e.preventDefault();
+			let data = new FormData(e.currentTarget);
+			API.build({ project: data.get("project").toString(), revision: data.get("revision").toString() });
+		}}>
+		<HTMLSelect name="project">
 			<option disabled>project</option>
 			<option value={"bottle_client_mobile"}>bottle_client_mobile</option>
 		</HTMLSelect>
-		<InputGroup ref={revInput as any} placeholder="Branch/Revision" />
-		<Button text="Run" onClick={() => API.build({ project: select?.current?.value.toString(), revision: revInput.current.value })}/>
-	</>;
+		<InputGroup name="revision" placeholder="Branch/Revision" />
+		<Button text="Run" type="submit"/>
+	</form>;
 }
 
 export class TaskView extends React.Component<{ task: BuildTask }, { }>
