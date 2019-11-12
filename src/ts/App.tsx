@@ -94,7 +94,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 				)}
 		</div>;
 
-		return <Card style={{margin: "10px"}}>
+		return <Card style={{margin: "10px"}} elevation={3}>
 			<H3>{`Task #${this.props.task.id} `}</H3>
 			<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag>
 			<p>{this.props.task.project}/{this.props.task.revision}</p>
