@@ -1,24 +1,24 @@
-import { Blockquote, Button, Card, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Tag, UL, Code, ButtonGroup, Tabs, Tab } from "@blueprintjs/core";
+import { Blockquote, Button, ButtonGroup, Card, Code, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Switch, Tab, Tabs, Tag, UL } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "normalize.css";
 
+import { DARK } from "@blueprintjs/core/lib/esm/common/classes";
 import { BuildTask } from "../../ci/BuildTask";
 import { API } from "./api/Api";
 import { Async } from "./utils/Async";
 
-export class App extends React.Component
+export class App extends React.Component<{}, {darkMode: boolean}>
 {
 	public render()
 	{
-		return <div>
-			<Card>
-				<h2>Task list</h2>
-				<Async promise={API.tasklist({})}>
-					{(tasks) => <TaskListView tasks={tasks.tasks}/>}
-				</Async>
-			</Card>
+		return <div className={this.state.darkMode ? DARK : ""}>
+			<Switch checked={this.state.darkMode} label="Dark" onChange={() => this.setState((state) => ({darkMode: !state.darkMode}))}/>
+			<h2>Task list</h2>
+			<Async promise={API.tasklist({})}>
+				{(tasks) => <TaskListView tasks={tasks.tasks}/>}
+			</Async>
 		</div>;
 	}
 }
@@ -36,6 +36,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			completed: Intent.SUCCESS,
 			failed: Intent.DANGER
 		};
+
 		let logs = <iframe src={this.props.task.logPath} style={{ width: "100%", borderRadius: "10px", border: "1px solid rgba(0,0,0,0.1)", background: "rgba(0,0,0,0.1)", height: "300px" }} />;
 		let commits = <>
 			{
@@ -48,7 +49,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 				)}
 		</>;
 
-		return <Card>
+		return <Card style={{margin: "10px"}}>
 			<H3>{`Task #${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`}<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag></H3>
 
 			<Tabs renderActiveTabPanelOnly={true}>
