@@ -57,12 +57,13 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			failed: Intent.DANGER
 		};
 
-		let infoStyle = {
+		let infoStyle: React.CSSProperties = {
 			width: "100%",
 			borderRadius: "10px",
 			border: "1px solid rgba(0,0,0,0.1)",
 			background: "rgba(0,0,0,0.1)",
 			height: "300px",
+			overflowY: "auto",
 		}
 
 		let logs = <iframe src={this.props.task.logPath} style={infoStyle} />;
