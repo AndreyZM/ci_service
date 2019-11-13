@@ -129,7 +129,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			{this.props.task.status === "completed" &&
 				<>
 					<Button intent={Intent.PRIMARY} onClick={() => window.open(this.props.task.runUrl, "_blank")}>Run</Button>
-					<Button intent={Intent.PRIMARY} onClick={() => window.open(this.props.task.runUrl + "?config=config_test", "_blank")}>Run</Button>
+					<Button intent={Intent.PRIMARY} onClick={() => window.open(this.props.task.runUrl + "?config=config_test", "_blank")}>Run(Test Config)</Button>
 				</>}
 			{this.props.task.status === "failed" && <Button intent={Intent.WARNING} onClick={() => API.build({project: this.props.task.project, revision: this.props.task.revision})}>Restart</Button>}
 			{this.props.task.status === "pending" && <Button intent={Intent.NONE} >Remove</Button>}
