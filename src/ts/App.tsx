@@ -1,4 +1,4 @@
-import { Blockquote, Button, ButtonGroup, Card, Code, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Navbar, Alignment, AnchorButton, HTMLSelect, InputGroup } from "@blueprintjs/core";
+import { Blockquote, Button, ButtonGroup, Card, Code, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Navbar, Alignment, AnchorButton, HTMLSelect, InputGroup, Callout } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -33,10 +33,11 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 					<Switch checked={this.state.darkMode} innerLabelChecked="Dark" innerLabel="Light" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} large={true} style={{margin: "auto"}}/>
 				</Navbar.Group>
 			</Navbar>
-
-			<Async promise={API.tasklist({})}>
-				{(tasks) => <TaskListView tasks={tasks.tasks} />}
-			</Async>
+			<Callout>
+				<Async promise={API.tasklist({})}>
+					{(tasks) => <TaskListView tasks={tasks.tasks} />}
+				</Async>
+			</Callout>
 		</div>;
 	}
 }
@@ -96,7 +97,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 		let times = this.props.task.timings;
 		return <Card style={{margin: "10px"}} elevation={3}>
 			<H3>{`Task #${this.props.task.id} `}</H3>
-			<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag>
+			<Tag large={true} intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag>
 			<p>{this.props.task.project}/{this.props.task.revision}</p>
 			<p>
 				{
