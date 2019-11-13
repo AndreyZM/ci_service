@@ -79,7 +79,7 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			background: "rgba(0,0,0,0.1)",
 			height: "300px",
 			overflowY: "auto",
-			padding: "10px";
+			padding: "10px",
 		};
 
 		let logs = <iframe src={this.props.task.logPath} style={infoStyle} />;
@@ -93,11 +93,18 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 					</Blockquote>
 				)}
 		</div>;
-
+		let times = this.props.task.timings;
 		return <Card style={{margin: "10px"}} elevation={3}>
 			<H3>{`Task #${this.props.task.id} `}</H3>
 			<Tag intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag>
 			<p>{this.props.task.project}/{this.props.task.revision}</p>
+			<p>
+				{
+					times.end && <>Completed: {times.end.toLocaleString()} {(times.end.getTime() - times.start.getTime()) / 1000}s</>
+					|| times.start && <>Start: {times.create.toLocaleString()}</>
+					|| <>Created: {times.create.toLocaleString()}</>
+				}
+			</p>
 
 			<Tabs renderActiveTabPanelOnly={true}>
 				<Tab id="changes" title="Changes" panel={commits} />
