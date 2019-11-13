@@ -20,7 +20,12 @@ export class Api
 		return this.exec<ReturnType<ServerCI["tasklist"]>>("tasklist", { ids: query.ids && query.ids.join(","), status });
 	}
 
-	private async exec<T>(path: string, params: any)
+	public async projects()
+	{
+		return await this.exec<ReturnType<ServerCI["projects"]>>("projects");
+	}
+
+	private async exec<T>(path: string, params?: any)
 	{
 		let response = await fetch(makeUrl(this.endpoint + "/" + path, params)).then((r) => r.json());
 		return response as any as T;
@@ -35,7 +40,11 @@ function clean(input: any): any
 	return result;
 }
 
-function makeUrl(url: string, params: string)
+function makeUrl(url: string, params: any)
 {
+	if (!params)
+	{
+		params = {};
+	}
 	return url + "?" + Object.entries(clean(params)).map((e) => `${e[0]}=${encodeURIComponent(e[1] as string)}`).join("&");
 }

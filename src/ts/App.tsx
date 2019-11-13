@@ -44,18 +44,30 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 
 function RunTaskWidget()
 {
-	return <form style={{display: "inline-flex"}}onSubmit={(e) =>
-		{
-			e.preventDefault();
-			let data = new FormData(e.currentTarget);
-			API.build({ project: data.get("project").toString(), revision: data.get("revision").toString() });
-		}}>
-		<HTMLSelect name="project">
-			<option disabled>project</option>
-			<option value={"bottle_client_mobile"}>bottle_client_mobile</option>
+	return <Async promise={API.projects()}>
+		{(projects) => <RevisionPicker projects={projects.result} />}
+	</Async>;
+}
+
+function RevisionPicker(props: { projects: { name: string, branches: string[] }[] })
+{
+	let projects = props.projects;
+	let [projectName, setProjectName] = React.useState(projects[0].name);
+	let project = projects.find((p) => p.name == projectName);
+	return <form style={{ display: "inline-flex" }} onSubmit={(e) =>
+	{
+		e.preventDefault();
+		let data = new FormData(e.currentTarget);
+		API.build({ project: data.get("project").toString(), revision: data.get("revision").toString() });
+	}}>
+		<HTMLSelect name="project" onChange={(e) => setProjectName(e.target.value)} defaultValue={projectName}>
+			{projects.map((p) => <option value={p.name}>{p.name}</option>)}
 		</HTMLSelect>
-		<InputGroup name="revision" placeholder="Branch/Revision (default)"/>
-		<Button text="Run" type="submit"/>
+		<HTMLSelect name="revision" defaultValue="default">
+			{project.branches.map((branchName) => <option value={branchName}>{branchName}</option>)}
+		</HTMLSelect>
+
+		<Button text="Run" type="submit" />
 	</form>;
 }
 

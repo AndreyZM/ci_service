@@ -11,6 +11,8 @@ export const config = {
 	},
 	rhode: {
 		webhook_key: "AJSfgh2hfHhuaA79",
+		host: "https://hg.rockstonecorp.com/_admin/api",
+		key: "715b1a453c06558bab34646fee068ecf9aad3aa0",
 	},
 	projects: {
 		bottle_client_mobile: {

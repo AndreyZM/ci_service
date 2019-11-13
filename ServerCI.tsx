@@ -2,7 +2,9 @@ import { config } from "./ci-config";
 import { BuildTask } from "./ci/BuildTask";
 import { TaskStatus } from "./ci/TaskStatus";
 import { TaskList } from "./ci/TaskList";
+import { RhodeApi } from "./ci/RhodeApi";
 
+let Rhode = new RhodeApi(config.rhode.host, config.rhode.key);
 export class ServerCI
 {
 	private readonly tasks = new TaskList();
@@ -20,6 +22,17 @@ export class ServerCI
 			filters.push((task) => task.status === query.status);
 
 		return { tasks: Object.values(this.tasks.tasks).filter((task) => filters.every((f) => f(task))) };
+	}
+
+	public async projects()
+	{
+		return {
+			result: await Promise.all(Object.entries(config.projects).map(async ([projectName, value]) =>
+			{
+				let refs = await Rhode.callMethod("get_repo_refs", { repoid: projectName });
+				return { name: projectName, ...value, branches: Object.keys(refs.result.branches) };
+			}))
+		};
 	}
 
 	public taskkill(query: { id: number })
