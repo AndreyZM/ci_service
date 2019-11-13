@@ -100,9 +100,9 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 			<p>{this.props.task.project}/{this.props.task.revision}</p>
 			<p>
 				{
-					times.end && <>Completed: {times.end.toLocaleString()} {(times.end.getTime() - times.start.getTime()) / 1000}s</>
-					|| times.start && <>Start: {times.create.toLocaleString()}</>
-					|| <>Created: {times.create.toLocaleString()}</>
+					times.end && <>Completed: {new Date(times.end).toLocaleString()} {(new Date(times.end).getTime() - new Date(times.start).getTime()) / 1000}s</>
+					|| times.start && <>Start: {new Date(times.create).toLocaleString()}</>
+					|| <>Created: {new Date(times.create).toLocaleString()}</>
 				}
 			</p>
 
