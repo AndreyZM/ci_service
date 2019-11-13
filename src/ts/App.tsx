@@ -96,14 +96,14 @@ export class TaskView extends React.Component<{ task: BuildTask }, { }>
 		</div>;
 		let times = this.props.task.timings;
 		return <Card style={{margin: "10px"}} elevation={3}>
-			<H3>{`Task #${this.props.task.id} `}</H3>
-			<Tag large={true} intent={statusIntents[this.props.task.status]}>{this.props.task.status}</Tag>
+			<H3>{`Task #${this.props.task.id} `} <Tag large={true} intent={statusIntents[this.props.task.status]} style={{ float: "right" }}>{this.props.task.status}</Tag></H3>
+			<Divider/>
 			<p>{this.props.task.project}/{this.props.task.revision}</p>
 			<p>
 				{
-					times.end && <>Completed: {new Date(times.end).toLocaleString()} {(new Date(times.end).getTime() - new Date(times.start).getTime()) / 1000}s</>
-					|| times.start && <>Start: {new Date(times.create).toLocaleString()}</>
-					|| <>Created: {new Date(times.create).toLocaleString()}</>
+					times.end && <><b>Completed:</b> {new Date(times.end).toLocaleString()} {(new Date(times.end).getTime() - new Date(times.start).getTime()) / 1000}s</>
+					|| times.start && <><b>Start:</b> {new Date(times.create).toLocaleString()}</>
+					|| <><b>Created:</b> {new Date(times.create).toLocaleString()}</>
 				}
 			</p>
 
