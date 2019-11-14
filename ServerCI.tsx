@@ -1,14 +1,14 @@
 import { config } from "./ci-config";
 import { BuildTask } from "./ci/BuildTask";
-import { TaskStatus } from "./ci/TaskStatus";
-import { TaskList } from "./ci/TaskList";
 import { RhodeApi } from "./ci/RhodeApi";
+import { TaskList } from "./ci/TaskList";
+import { TaskStatus } from "./ci/TaskStatus";
 
 let Rhode = new RhodeApi(config.rhode.host, config.rhode.key);
 export class ServerCI
 {
 	private readonly tasks = new TaskList();
-	public tasklist(query: { ids?: string, status?: TaskStatus })
+	public tasklist(query: { ids?: string, status?: TaskStatus, projects?: string, revisoins?: string})
 	{
 		let filters: ((t: BuildTask) => boolean)[] = [];
 
@@ -16,6 +16,18 @@ export class ServerCI
 		{
 			let ids = query.ids.split(",").map((id) => id as any | 0);
 			filters.push((task) => ids.some((id) => id === task.id));
+		}
+
+		if (query.projects)
+		{
+			let projects = query.projects.split(",");
+			filters.push((task) => projects.some((project) => project === task.project));
+		}
+
+		if (query.revisoins)
+		{
+			let revisoins = query.revisoins.split(",");
+			filters.push((task) => revisoins.some((revisoin) => revisoin === task.revision));
 		}
 
 		if (query.status)
@@ -30,7 +42,16 @@ export class ServerCI
 			result: await Promise.all(Object.entries(config.projects).map(async ([projectName, value]) =>
 			{
 				let refs = await Rhode.callMethod("get_repo_refs", { repoid: projectName });
-				return { name: projectName, ...value, branches: Object.keys(refs.result.branches) };
+				return {
+					name: projectName, ...value,
+					branches: Object.keys(refs.result.branches).map(
+						(key) =>
+						({
+							name: key,
+								tasks: Object.values(this.tasks.tasks)
+								.filter((t) => t.project === projectName && t.revision === key)
+						}))
+				};
 			}))
 		};
 	}
@@ -72,4 +93,10 @@ function error(message: string)
 {
 	console.warn(message);
 	return { error: message };
+}
+
+function objectMap<T, V>(array: T[], s: (v: T, target) => void, target: V )
+{
+	array.forEach((item) => s(item, target));
+	return target;
 }

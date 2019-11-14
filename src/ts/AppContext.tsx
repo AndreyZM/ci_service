@@ -8,10 +8,12 @@ export class AppState
 
 	public projects: ReturnTypeDP<IServerCI["projects"]>["result"] = [];
 
-	constructor(private update: () => void)
+	public constructor(update: () => void)
 	{
 		this.updateTasks();
 		this.updateProjects();
+		update();
+		this.update = update;
 	}
 
 	public async updateTasks()
@@ -23,7 +25,9 @@ export class AppState
 	public async updateProjects()
 	{
 		this.projects = (await API.get("projects")).result;
+		this.update();
 	}
+	private update = () => { };
 }
 
 export const AppContext = React.createContext<AppState>(undefined);

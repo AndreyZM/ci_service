@@ -1,4 +1,4 @@
-import { Alignment, AnchorButton, Blockquote, Button, ButtonGroup, Callout, Card, Code, Collapse, Divider, H3, HTMLSelect, InputGroup, Intent, Label, Navbar, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Tree, ITreeNode } from "@blueprintjs/core";
+import { Alignment, AnchorButton, Blockquote, Button, ButtonGroup, Callout, Card, Code, Collapse, Divider, H3, HTMLSelect, InputGroup, Intent, Label, Navbar, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Tree, ITreeNode, Icon } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -41,6 +41,7 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 					<Callout>
 						<ProjectTree />
 					</Callout>
+					<Divider/>
 					<Callout>
 						<AppContext.Consumer>
 							{(state) => <TaskListView tasks={state.filteredTasks} />}
@@ -54,16 +55,15 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 
 function RunTaskWidget()
 {
-	return <Async promise={API.get("projects").then((r) => r)}>
-		{(projects) => <RevisionPicker projects={projects.result} />}
-	</Async>;
-}
-
-function RevisionPicker(props: { projects: { name: string, branches: string[] }[] })
-{
-	let projects = props.projects;
-	let [projectName, setProjectName] = React.useState(projects[0].name);
 	let appContext = React.useContext(AppContext);
+	let projects = appContext.projects;
+	let [projectName, setProjectName] = React.useState(projects[0]?.name);
+
+	if (!projectName && projects.length > 0)
+	{
+		setProjectName(projects[0]?.name);
+	}
+
 	let project = projects.find((p) => p.name === projectName);
 
 	return <form style={{ display: "inline-flex" }} onSubmit={async (e) =>
@@ -74,10 +74,10 @@ function RevisionPicker(props: { projects: { name: string, branches: string[] }[
 		appContext.updateTasks();
 	}}>
 		<HTMLSelect name="project" onChange={(e) => setProjectName(e.target.value)} defaultValue={projectName}>
-			{projects.map((p) => <option value={p.name}>{p.name}</option>)}
+			{projects?.map((p) => <option value={p.name}>{p.name}</option>)}
 		</HTMLSelect>
 		<HTMLSelect name="revision" defaultValue="default">
-			{project.branches.map((branchName) => <option value={branchName}>{branchName}</option>)}
+			{project?.branches.map((branch) => <option value={branch.name}>{branch.name}</option>)}
 		</HTMLSelect>
 
 		<Button text="Run" type="submit" />
@@ -159,14 +159,20 @@ export function ProjectTree()
 	let tree: ITreeNode[] = appState.projects.map((p) =>
 		({
 			id: p.name,
-			icon: "folder-close",
+			icon: "folder-open",
 			isExpanded: true,
 			label: p.name,
 			childNodes: p.branches.map((branch) =>
 				({
-					id: branch,
+					id: branch.name,
 					icon: "tag",
-					label: branch,
+					label: branch.name,
+					secondaryLabel: <Icon icon="play" intent={Intent.SUCCESS} />,
+					childNodes: branch.tasks.map((task) => ({
+						id: task.id,
+						label: `Task ${task.id}`,
+						icon: "play",
+					}))
 				}))
 		}));
 	return < Tree contents={tree} />;
