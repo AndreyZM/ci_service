@@ -14,7 +14,7 @@ export class AppState
 		this.updateProjects();
 		update();
 		this.update = update;
-		setInterval(() => this.updateAll());
+		setInterval(() => this.updateAll(), 60 * 1000);
 	}
 
 	public async updateTasks()
