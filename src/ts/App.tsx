@@ -162,7 +162,7 @@ export function ProjectTree()
 			icon: "folder-open",
 			isExpanded: true,
 			label: p.name,
-			childNodes: p.branches.map((branch) =>
+			childNodes: p.branches.sort((a,b) => b.tasks.length - a.tasks.length).map((branch) =>
 				({
 					id: branch.name,
 					icon: "tag",
