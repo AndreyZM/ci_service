@@ -14,18 +14,25 @@ export class AppState
 		this.updateProjects();
 		update();
 		this.update = update;
+		setInterval(() => this.updateAll());
 	}
 
 	public async updateTasks()
 	{
 		this.filteredTasks = (await API.get("tasklist", this.taskFilter)).tasks;
-		this.update();
+		this.updateProjects();
 	}
 
 	public async updateProjects()
 	{
 		this.projects = (await API.get("projects")).result;
 		this.update();
+	}
+
+	public updateAll()
+	{
+		this.updateTasks();
+		this.updateProjects();
 	}
 	private update = () => { };
 }

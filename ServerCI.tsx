@@ -49,7 +49,7 @@ export class ServerCI
 							({
 								name: key,
 								tasks: Object.values(this.tasks.tasks)
-									.filter((t) => t.project === projectName && t.revision === key)
+									.filter((t) => t.project === projectName && t.revision === key).reverse()
 							}))
 				};
 			}))
