@@ -168,6 +168,7 @@ export function ProjectTree()
 					icon: "tag",
 					label: branch.name,
 					secondaryLabel: <Icon icon="play" intent={Intent.SUCCESS} />,
+					isExpanded: true,
 					childNodes: branch.tasks.map((task) => ({
 						id: task.id,
 						label: `Task ${task.id}`,

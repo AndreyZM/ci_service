@@ -46,11 +46,11 @@ export class ServerCI
 					name: projectName, ...value,
 					branches: Object.keys(refs.result.branches).map(
 						(key) =>
-						({
-							name: key,
+							({
+								name: key,
 								tasks: Object.values(this.tasks.tasks)
-								.filter((t) => t.project === projectName && t.revision === key)
-						}))
+									.filter((t) => t.project === projectName && t.revision === key)
+							}))
 				};
 			}))
 		};
