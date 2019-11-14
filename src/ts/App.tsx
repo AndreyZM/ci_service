@@ -162,7 +162,7 @@ export function ProjectTree()
 			icon: "folder-open",
 			isExpanded: true,
 			label: p.name,
-			childNodes: p.branches.sort((a, b) => (b.tasks[0] && new Date(b.tasks[0].timings.create).getTime() || 0) - (b.tasks[0] && new Date(a.tasks[0].timings.create).getTime() || 0)).map((branch) =>
+			childNodes: p.branches.sort((a, b) => (b.tasks[0] && new Date(b.tasks[0].timings.create).getTime() || 0) - (a.tasks[0] && new Date(a.tasks[0].timings.create).getTime() || 0)).map((branch) =>
 				({
 					id: branch.name,
 					icon: "tag",
