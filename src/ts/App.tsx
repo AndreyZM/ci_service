@@ -86,13 +86,6 @@ function RunTaskWidget()
 
 export function TaskView(props: { task: BuildTask })
 {
-	let statusIntents = {
-		pending: Intent.NONE,
-		running: Intent.PRIMARY,
-		completed: Intent.SUCCESS,
-		failed: Intent.DANGER
-	};
-
 	let infoStyle: React.CSSProperties = {
 		width: "100%",
 		borderRadius: "10px",
@@ -119,7 +112,7 @@ export function TaskView(props: { task: BuildTask })
 	</div>;
 	let times = props.task.timings;
 	return <Card style={{ margin: "10px" }} elevation={3}>
-		<H3>{`#${props.task.id} ${props.task.project}/${props.task.revision}`} <Tag large={true} intent={statusIntents[props.task.status]} style={{ float: "right" }}>{props.task.status}</Tag></H3>
+		<H3>{`#${props.task.id} ${props.task.project}/${props.task.revision}`} <TaskStatusTag large={true} style={{ float: "right" }} status={props.task.status}/></H3>
 		<p>
 			{
 				times.end && <><b>Completed:</b> {new Date(times.end).toLocaleString()} {(new Date(times.end).getTime() - new Date(times.start).getTime()) / 1000}s</>
@@ -145,6 +138,18 @@ export function TaskView(props: { task: BuildTask })
 		{props.task.status === "failed" && <Button intent={Intent.WARNING} onClick={() => API.get("build", { project: props.task.project, revision: props.task.revision }).then(appContext.updateTasks)}>Restart</Button>}
 		{props.task.status === "pending" && <Button intent={Intent.NONE} >Remove</Button>}
 	</Card>;
+}
+
+export function TaskStatusTag(props: { status: string, style?: React.CSSProperties, large?: boolean })
+{
+	let statusIntents = {
+		pending: Intent.NONE,
+		running: Intent.PRIMARY,
+		completed: Intent.SUCCESS,
+		failed: Intent.DANGER
+	};
+
+	return <Tag intent={statusIntents[props.status]} {...props}>{props.status}</Tag>;
 }
 
 export function TaskListView(props: {tasks: BuildTask[]})
@@ -173,6 +178,7 @@ export function ProjectTree()
 						id: task.id,
 						label: `Task ${task.id}`,
 						icon: "play",
+						secondaryLabel: <TaskStatusTag status={task.status}/>
 					}))
 				}))
 		}));
