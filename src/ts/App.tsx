@@ -1,4 +1,4 @@
-import { Blockquote, Button, ButtonGroup, Card, Code, Collapse, Divider, H3, Intent, Label, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Navbar, Alignment, AnchorButton, HTMLSelect, InputGroup, Callout } from "@blueprintjs/core";
+import { Alignment, AnchorButton, Blockquote, Button, ButtonGroup, Callout, Card, Code, Collapse, Divider, H3, HTMLSelect, InputGroup, Intent, Label, Navbar, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Tree, ITreeNode } from "@blueprintjs/core";
 import React = require("react");
 
 import "@blueprintjs/core/lib/css/blueprint.css";
@@ -9,42 +9,52 @@ import { DARK } from "@blueprintjs/core/lib/esm/common/classes";
 import { API } from "./api/Api";
 import { Async } from "./utils/Async";
 
+import { AppContext, AppState } from "./AppContext";
+
 type BuildTask = typeof import("../../ci/BuildTask").BuildTask["prototype"];
 
 export class App extends React.Component<{}, { darkMode: boolean }>
 {
-	public state = {
-		darkMode: false,
-	}
+	private appState = new AppState(() => this.forceUpdate());
 
+	public state = {
+		darkMode: false
+	};
 	public render()
 	{
-		return <div className={this.state.darkMode ? DARK : ""}>
-			<Navbar style={{ position: "sticky", top: 0}}>
-				<Navbar.Group align={Alignment.LEFT}>
-					<Navbar.Heading>RoCI</Navbar.Heading>
-					<Navbar.Divider />
-					<AnchorButton className="bp3-minimal" icon="home" text="Home" href="/" />
-					<Navbar.Group>
-						<RunTaskWidget/>
+		return <AppContext.Provider value={this.appState}>
+			<div className={this.state.darkMode ? DARK : ""}>
+				<Navbar style={{ position: "sticky", top: 0 }}>
+					<Navbar.Group align={Alignment.LEFT}>
+						<Navbar.Heading>RoCI</Navbar.Heading>
+						<Navbar.Divider />
+						<AnchorButton className="bp3-minimal" icon="home" text="Home" href="/" />
+						<Navbar.Group>
+							<RunTaskWidget />
+						</Navbar.Group>
 					</Navbar.Group>
-				</Navbar.Group>
-				<Navbar.Group align={Alignment.RIGHT}>
-					<Switch checked={this.state.darkMode} innerLabelChecked="Dark" innerLabel="Light" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} large={true} style={{margin: "auto"}}/>
-				</Navbar.Group>
-			</Navbar>
-			<Callout>
-				<Async promise={API.tasklist({})}>
-					{(tasks) => <TaskListView tasks={tasks.tasks} />}
-				</Async>
-			</Callout>
-		</div>;
+					<Navbar.Group align={Alignment.RIGHT}>
+						<Switch checked={this.state.darkMode} innerLabelChecked="Dark" innerLabel="Light" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} large={true} style={{ margin: "auto" }} />
+					</Navbar.Group>
+				</Navbar>
+				<div style={{ display: "flex" }}>
+					<Callout>
+						<ProjectTree />
+					</Callout>
+					<Callout>
+						<AppContext.Consumer>
+							{(state) => <TaskListView tasks={state.filteredTasks} />}
+						</AppContext.Consumer>
+					</Callout>
+				</div>
+			</div>
+		</AppContext.Provider>;
 	}
 }
 
 function RunTaskWidget()
 {
-	return <Async promise={API.projects()}>
+	return <Async promise={API.get("projects").then((r) => r)}>
 		{(projects) => <RevisionPicker projects={projects.result} />}
 	</Async>;
 }
@@ -53,12 +63,15 @@ function RevisionPicker(props: { projects: { name: string, branches: string[] }[
 {
 	let projects = props.projects;
 	let [projectName, setProjectName] = React.useState(projects[0].name);
-	let project = projects.find((p) => p.name == projectName);
-	return <form style={{ display: "inline-flex" }} onSubmit={(e) =>
+	let appContext = React.useContext(AppContext);
+	let project = projects.find((p) => p.name === projectName);
+
+	return <form style={{ display: "inline-flex" }} onSubmit={async (e) =>
 	{
 		e.preventDefault();
 		let data = new FormData(e.currentTarget);
-		API.build({ project: data.get("project").toString(), revision: data.get("revision").toString() });
+		await API.get("build", { project: data.get("project").toString(), revision: data.get("revision").toString() });
+		appContext.updateTasks();
 	}}>
 		<HTMLSelect name="project" onChange={(e) => setProjectName(e.target.value)} defaultValue={projectName}>
 			{projects.map((p) => <option value={p.name}>{p.name}</option>)}
@@ -71,78 +84,92 @@ function RevisionPicker(props: { projects: { name: string, branches: string[] }[
 	</form>;
 }
 
-export class TaskView extends React.Component<{ task: BuildTask }, { }>
+export function TaskView(props: { task: BuildTask })
 {
-	public state = {
+	let statusIntents = {
+		pending: Intent.NONE,
+		running: Intent.PRIMARY,
+		completed: Intent.SUCCESS,
+		failed: Intent.DANGER
 	};
 
-	public render()
-	{
-		let statusIntents = {
-			pending: Intent.NONE,
-			running: Intent.PRIMARY,
-			completed: Intent.SUCCESS,
-			failed: Intent.DANGER
-		};
+	let infoStyle: React.CSSProperties = {
+		width: "100%",
+		borderRadius: "10px",
+		border: "1px solid rgba(0,0,0,0.1)",
+		background: "rgba(0,0,0,0.1)",
+		height: "300px",
+		overflowY: "auto",
+		padding: "10px"
+	};
 
-		let infoStyle: React.CSSProperties = {
-			width: "100%",
-			borderRadius: "10px",
-			border: "1px solid rgba(0,0,0,0.1)",
-			background: "rgba(0,0,0,0.1)",
-			height: "300px",
-			overflowY: "auto",
-			padding: "10px",
-		};
+	let appContext = React.useContext(AppContext);
 
-		let logs = <iframe src={this.props.task.logPath} style={infoStyle} />;
-		let commits = <div style={infoStyle}>
+	let logs = <iframe src={props.task.logPath} style={infoStyle} />;
+
+	let commits = <div style={infoStyle}>
+		{
+			props.task.commits && props.task.commits.map((commit) =>
+				<Blockquote>
+					<Tag>{commit.branch}</Tag> <Tag minimal={true}>{commit.author}</Tag> {commit.issues.map((issue) => <Tag intent={Intent.SUCCESS} interactive={true} onClick={() => showIssue(issue)}>{issue}</Tag>)}
+					<br />
+					<Code>{commit.message}</Code>
+				</Blockquote>
+			)}
+	</div>;
+	let times = props.task.timings;
+	return <Card style={{ margin: "10px" }} elevation={3}>
+		<H3>{`#${props.task.id} ${props.task.project}/${props.task.revision}`} <Tag large={true} intent={statusIntents[props.task.status]} style={{ float: "right" }}>{props.task.status}</Tag></H3>
+		<p>
 			{
-				this.props.task.commits && this.props.task.commits.map((commit) =>
-					<Blockquote>
-						<Tag>{commit.branch}</Tag> <Tag minimal={true}>{commit.author}</Tag> {commit.issues.map((issue) => <Tag intent={Intent.SUCCESS} interactive={true} onClick={() => showIssue(issue)}>{issue}</Tag>)}
-						<br />
-						<Code>{commit.message}</Code>
-					</Blockquote>
-				)}
-		</div>;
-		let times = this.props.task.timings;
-		return <Card style={{margin: "10px"}} elevation={3}>
-			<H3>{`#${this.props.task.id} ${this.props.task.project}/${this.props.task.revision}`} <Tag large={true} intent={statusIntents[this.props.task.status]} style={{ float: "right" }}>{this.props.task.status}</Tag></H3>
-			<p>
-				{
-					times.end && <><b>Completed:</b> {new Date(times.end).toLocaleString()} {(new Date(times.end).getTime() - new Date(times.start).getTime()) / 1000}s</>
-					|| times.start && <><b>Start:</b> {new Date(times.create).toLocaleString()}</>
-					|| <><b>Created:</b> {new Date(times.create).toLocaleString()}</>
-				}
-			</p>
+				times.end && <><b>Completed:</b> {new Date(times.end).toLocaleString()} {(new Date(times.end).getTime() - new Date(times.start).getTime()) / 1000}s</>
+				|| times.start && <><b>Start:</b> {new Date(times.create).toLocaleString()}</>
+				|| <><b>Created:</b> {new Date(times.create).toLocaleString()}</>
+			}
+		</p>
 
-			<Tabs renderActiveTabPanelOnly={true}>
-				<Tab id="changes" title="Changes" panel={commits} />
-				<Tab id="build_log" title="Build Log" panel={logs} />
-				<Tabs.Expander />
-			</Tabs>
+		<Tabs renderActiveTabPanelOnly={true}>
+			<Tab id="changes" title="Changes" panel={commits} />
+			<Tab id="build_log" title="Build Log" panel={logs} />
+			<Tabs.Expander />
+		</Tabs>
 
-			<Divider />
+		<Divider />
 
-			{this.props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.taskkill({ id: this.props.task.id })}>Stop</Button>}
-			{this.props.task.status === "completed" &&
-				<>
-					<Button intent={Intent.PRIMARY} onClick={() => window.open(this.props.task.runUrl, "_blank")}>Run</Button>
-					<Button intent={Intent.PRIMARY} onClick={() => window.open(this.props.task.runUrl + "?config=config_test", "_blank")}>Run(Test Config)</Button>
-				</>}
-			{this.props.task.status === "failed" && <Button intent={Intent.WARNING} onClick={() => API.build({project: this.props.task.project, revision: this.props.task.revision})}>Restart</Button>}
-			{this.props.task.status === "pending" && <Button intent={Intent.NONE} >Remove</Button>}
-		</Card>;
-	}
+		{props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.get("taskkill", { id: props.task.id }).then(appContext.updateTasks)}>Stop</Button>}
+		{props.task.status === "completed" &&
+			<>
+				<Button intent={Intent.PRIMARY} onClick={() => window.open(props.task.runUrl, "_blank")}>Run</Button>
+				<Button intent={Intent.PRIMARY} onClick={() => window.open(props.task.runUrl + "?config=config_test", "_blank")}>Run(Test Config)</Button>
+			</>}
+		{props.task.status === "failed" && <Button intent={Intent.WARNING} onClick={() => API.get("build", { project: props.task.project, revision: props.task.revision }).then(appContext.updateTasks)}>Restart</Button>}
+		{props.task.status === "pending" && <Button intent={Intent.NONE} >Remove</Button>}
+	</Card>;
 }
 
-export class TaskListView extends React.Component<{tasks: BuildTask[]}>
+export function TaskListView(props: {tasks: BuildTask[]})
 {
-	public render()
-	{
-		return this.props.tasks.map((t) => <TaskView task={t}/>);
-	}
+	return <>{props.tasks.map((t) => <TaskView task={t} />)}</>;
+}
+
+export function ProjectTree()
+{
+	let appState = React.useContext(AppContext);
+
+	let tree: ITreeNode[] = appState.projects.map((p) =>
+		({
+			id: p.name,
+			icon: "folder-close",
+			isExpanded: true,
+			label: p.name,
+			childNodes: p.branches.map((branch) =>
+				({
+					id: branch,
+					icon: "tag",
+					label: branch,
+				}))
+		}));
+	return < Tree contents={tree} />;
 }
 
 function showIssue(issue: string)
