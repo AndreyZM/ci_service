@@ -172,17 +172,59 @@ export function ProjectTree()
 					id: branch.name,
 					icon: "tag",
 					label: branch.name,
-					secondaryLabel: <Icon icon="play" intent={Intent.SUCCESS} />,
+					secondaryLabel: <Icon icon="menu" />,
 					isExpanded: true,
 					childNodes: branch.tasks.map((task) => ({
 						id: task.id,
 						label: `Task ${task.id}`,
-						icon: "play",
-						secondaryLabel: <TaskStatusTag status={task.status}/>
+						icon: "build",
+						secondaryLabel: <TaskStatusTag status={task.status} />
 					}))
 				}))
 		}));
-	return < Tree contents={tree} />;
+	let [state, setState] = React.useState({ tree });
+
+	let handlers = {
+		handleNodeClick: (nodeData: ITreeNode, _nodePath: number[], e: React.MouseEvent<HTMLElement>) =>
+		{
+			const originallySelected = nodeData.isSelected;
+			if (!e.shiftKey)
+			{
+				forEachNode(state.tree, (n) => (n.isSelected = false));
+			}
+			nodeData.isSelected = originallySelected == null ? true : !originallySelected;
+			setState(state);
+		},
+
+		handleNodeCollapse: (nodeData: ITreeNode) =>
+		{
+			nodeData.isExpanded = false;
+			setState(state);
+		},
+
+		handleNodeExpand: (nodeData: ITreeNode) =>
+		{
+			nodeData.isExpanded = true;
+			setState(state);
+		}
+
+	};
+
+	let forEachNode = (nodes: ITreeNode[], callback: (node: ITreeNode) => void) =>
+	{
+		if (nodes == null)
+		{
+			return;
+		}
+
+		for (const node of nodes)
+		{
+			callback(node);
+			forEachNode(node.childNodes, callback);
+		}
+	}
+
+	return < Tree contents={state.tree} {...handlers}/>;
 }
 
 function showIssue(issue: string)
