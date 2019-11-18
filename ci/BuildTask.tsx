@@ -53,11 +53,11 @@ export class BuildTask
 					actions: {
 						type: `button`,
 						text: `Log`,
-						url: this.logpath;
+						url: this.logpath,
 					}
 				]
 			}).then(console.log).catch(console.error);
-			
+
 			await this.build();
 
 			this.timings.end = new Date();
