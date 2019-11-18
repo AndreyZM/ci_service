@@ -160,54 +160,52 @@ export function TaskListView(props: {tasks: BuildTask[]})
 export function ProjectTree()
 {
 	let appState = React.useContext(AppContext);
+	let [state, setState] = React.useState({ selected: null as string | number, closed: {} });
 
 	let tree: ITreeNode[] = appState.projects.map((p) =>
 		({
 			id: p.name,
 			icon: "folder-open",
-			isExpanded: true,
 			label: p.name,
+			get isExpanded() { return !state.closed[this.id]; },
+			get isSelected() { return state.selected == this.id; },
 			childNodes: p.branches.sort((a, b) => (b.tasks[0] && new Date(b.tasks[0].timings.create).getTime() || 0) - (a.tasks[0] && new Date(a.tasks[0].timings.create).getTime() || 0)).map((branch) =>
 				({
-					id: branch.name,
+					id: `${p.name}/${branch.name}`,
 					icon: "tag",
 					label: branch.name,
 					secondaryLabel: <Icon icon="menu" />,
-					isExpanded: true,
-					childNodes: branch.tasks.map((task) => ({
-						id: task.id,
+					get isExpanded() { return !state.closed[this.id]; },
+					get isSelected() { return state.selected == this.id; },
+					childNodes: branch.tasks.length == 0 ? undefined : branch.tasks.map((task) => ({
+						id: `${p.name}/${branch.name}/${task.id}`,
 						label: `Task ${task.id}`,
 						icon: "build",
+						get isExpanded() { return !state.closed[this.id]; },
+						get isSelected() { return state.selected == this.id; },
 						secondaryLabel: <TaskStatusTag status={task.status} />
 					}))
 				}))
 		}));
-	let [state, setState] = React.useState({ tree });
 
 	let handlers = {
-		handleNodeClick: (nodeData: ITreeNode, _nodePath: number[], e: React.MouseEvent<HTMLElement>) =>
+		onNodeClick: (nodeData: ITreeNode, _nodePath: number[], e: React.MouseEvent<HTMLElement>) =>
 		{
-			const originallySelected = nodeData.isSelected;
-			if (!e.shiftKey)
-			{
-				forEachNode(state.tree, (n) => (n.isSelected = false));
-			}
-			nodeData.isSelected = originallySelected == null ? true : !originallySelected;
-			setState(state);
+			state.selected = nodeData.id;
+			setState({...state});
 		},
 
-		handleNodeCollapse: (nodeData: ITreeNode) =>
+		onNodeCollapse: (nodeData: ITreeNode) =>
 		{
-			nodeData.isExpanded = false;
-			setState(state);
+			state.closed[nodeData.id] = true;
+			setState({...state});
 		},
 
-		handleNodeExpand: (nodeData: ITreeNode) =>
+		onNodeExpand: (nodeData: ITreeNode) =>
 		{
-			nodeData.isExpanded = true;
-			setState(state);
+			state.closed[nodeData.id] = false;
+			setState({...state});
 		}
-
 	};
 
 	let forEachNode = (nodes: ITreeNode[], callback: (node: ITreeNode) => void) =>
@@ -224,7 +222,7 @@ export function ProjectTree()
 		}
 	}
 
-	return < Tree contents={state.tree} {...handlers}/>;
+	return < Tree contents={tree} {...handlers}/>;
 }
 
 function showIssue(issue: string)
