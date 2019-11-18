@@ -45,15 +45,17 @@ export class BuildTask
 				markdown: "true",
 				text: `Build task \`#${this.id}\``,
 				attachments: [
-					title: `Build task #${this.id}`,
-					text: ``,
-					color: "#3AA3E3",
+					{
+						title: `Build task #${this.id}`,
+						text: ``,
+						color: "#3AA3E3",
 
-					footer: `Target:${this.project}/${this.revision}`,
-					actions: {
-						type: `button`,
-						text: `Log`,
-						url: this.logpath,
+						footer: `Target:${this.project}/${this.revision}`,
+						actions: {
+							type: `button`,
+							text: `Log`,
+							url: this.logpath,
+						}
 					}
 				]
 			}).then(console.log).catch(console.error);
