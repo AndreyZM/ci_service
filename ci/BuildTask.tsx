@@ -47,10 +47,9 @@ export class BuildTask
 				text: `Build task \`#${this.id}\``,
 				attachments: this.commits.map((c) =>
 					({
-						title: `*${c.branch}*`,
-						author: formatSlackUser(c.author),
 						color: "#3AA3E3",
 						markdown: "true",
+						footer: `${c.branch} ${formatSlackUser(c.author)}`,
 						text: `${replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)}`,
 					})),
 			}).then(console.log).catch(console.error);
