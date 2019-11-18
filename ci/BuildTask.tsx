@@ -50,7 +50,6 @@ export class BuildTask
 						text: this.commits.map((c) => replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)).join("\n"),
 						color: "#3AA3E3",
 						markdown: "true",
-
 						footer: `Target:${this.project}/${this.revision}`,
 						actions: {
 							type: `button`,
