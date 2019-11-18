@@ -3,6 +3,7 @@ import * as fs from "fs";
 import * as Slack from "slack";
 import { config } from "../ci-config";
 import { TaskStatus } from "./TaskStatus";
+import { formatSlackUser } from "./utils/formatSlackUser";
 
 let taskCounter: number = 0;
 export class BuildTask
@@ -46,16 +47,17 @@ export class BuildTask
 				text: `Build task \`#${this.id}\``,
 				attachments: [
 					{
-						title: `Build task #${this.id}`,
-						text: this.commits.map((c) => replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)).join("\n"),
+						title: `Changes`,
+						text: this.commits.map((c) =>
+							`*${c.branch}* ${formatSlackUser(c.author)} ${"\n"} ${replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)}`).join("\n"),
 						color: "#3AA3E3",
 						markdown: "true",
 						footer: `Target:${this.project}/${this.revision}`,
-						actions: {
+						actions: [{
 							type: `button`,
 							text: `Log`,
 							url: this.logPath,
-						}
+						}]
 					}
 				]
 			}).then(console.log).catch(console.error);
