@@ -47,8 +47,9 @@ export class BuildTask
 				attachments: [
 					{
 						title: `Build task #${this.id}`,
-						text: this.commits.map((c) => c.message).join("\n"),
+						text: this.commits.map((c) => replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)).join("\n"),
 						color: "#3AA3E3",
+						markdown: "true",
 
 						footer: `Target:${this.project}/${this.revision}`,
 						actions: {
@@ -143,16 +144,21 @@ export class BuildTask
 function parseHGCommits(input: string)
 {
 	let rx = /([^:]+?):([^:]+?):(.*?):@@@:/gi;
-	let issueRx = /#([A-Za-z]+-[0-9]+)/gi;
 	let result = [];
 	input.replace(rx, (value, author, branch, message) =>
 	{
 		let commit = { author, branch, message, issues: [] };
-		value.replace(issueRx, (i, issue) => (commit.issues.push(issue), issue));
+		replaceIssue(value, (issue) => (commit.issues.push(issue), issue));
 		result.push(commit);
 		return value;
 	});
 	return result.reverse();
+}
+
+function replaceIssue(message: string, replacer: (issue: string) => string)
+{
+	let issueRx = /#([A-Za-z]+-[0-9]+)/gi;
+	return message.replace(issueRx, (v, issue) => replacer(issue));
 }
 
 function wrap(process: child_process.ChildProcess)
@@ -168,4 +174,9 @@ function wrap(process: child_process.ChildProcess)
 		}),
 		terminate: () => process.kill(),
 	};
+}
+
+function getIssueUrl(issue: string)
+{
+	return `https://rockstonedev.atlassian.net/browse/${issue}`;
 }
