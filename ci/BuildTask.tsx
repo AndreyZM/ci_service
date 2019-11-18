@@ -47,7 +47,7 @@ export class BuildTask
 				attachments: [
 					{
 						title: `Build task #${this.id}`,
-						text: ``,
+						text: this.commits.map((c) => c.message).join("\n"),
 						color: "#3AA3E3",
 
 						footer: `Target:${this.project}/${this.revision}`,
