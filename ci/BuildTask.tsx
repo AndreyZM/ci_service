@@ -54,7 +54,7 @@ export class BuildTask
 						actions: {
 							type: `button`,
 							text: `Log`,
-							url: this.logpath,
+							url: this.logPath,
 						}
 					}
 				]
