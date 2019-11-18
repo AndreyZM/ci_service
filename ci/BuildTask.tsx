@@ -45,21 +45,14 @@ export class BuildTask
 				...config.slack,
 				markdown: "true",
 				text: `Build task \`#${this.id}\``,
-				attachments: [
-					{
-						title: `Changes`,
-						text: this.commits.map((c) =>
-							`*${c.branch}* ${formatSlackUser(c.author)} ${"\n"} ${replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)}`).join("\n\n"),
+				attachments: this.commits.map((c) =>
+					({
+						title: `*${c.branch}*`,
+						author: formatSlackUser(c.author),
 						color: "#3AA3E3",
 						markdown: "true",
-						footer: `Target:${this.project}/${this.revision}`,
-						actions: [{
-							type: `button`,
-							text: `Log`,
-							url: this.logPath,
-						}]
-					}
-				]
+						text: `${replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)}`,
+					})),
 			}).then(console.log).catch(console.error);
 
 			await this.build();
