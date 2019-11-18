@@ -36,10 +36,28 @@ export class BuildTask
 				fs.unlinkSync(log);
 
 			this.timings.start = new Date();
-			Slack.chat.postMessage({ ...config.slack, text: `Start Task #${this.id} ${this.project}/${this.revision} <${this.logPath}|Log>` }).then(console.log).catch(console.error);
 
 			await this.prepare();
 			this.commits = parseHGCommits(fs.readFileSync(`${projectConfig.respositoryFolder}/commits.txt`, "utf8"));
+
+			Slack.chat.postMessage({
+				...config.slack,
+				markdown: "true",
+				text: `Build task \`#${this.id}\``,
+				attachments: [
+					title: `Build task #${this.id}`,
+					text: ``,
+					color: "#3AA3E3",
+
+					footer: `Target:${this.project}/${this.revision}`,
+					actions: {
+						type: `button`,
+						text: `Log`,
+						url: this.logpath;
+					}
+				]
+			}).then(console.log).catch(console.error);
+			
 			await this.build();
 
 			this.timings.end = new Date();
