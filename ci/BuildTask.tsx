@@ -49,7 +49,7 @@ export class BuildTask
 					{
 						title: `Changes`,
 						text: this.commits.map((c) =>
-							`*${c.branch}* ${formatSlackUser(c.author)} ${"\n"} ${replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)}`).join("\n"),
+							`*${c.branch}* ${formatSlackUser(c.author)} ${"\n"} ${replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)}`).join("\n\n"),
 						color: "#3AA3E3",
 						markdown: "true",
 						footer: `Target:${this.project}/${this.revision}`,
