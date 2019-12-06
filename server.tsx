@@ -1,5 +1,6 @@
 import * as cors from "cors";
 import * as express from "express";
+import * as compression from "compression";
 import * as fs from "fs";
 import * as http from "http";
 import * as https from "https";
@@ -11,7 +12,7 @@ let privateKey  = fs.readFileSync("./certs/key.pem", "utf8");
 let certificate = fs.readFileSync("./certs/cert.pem", "utf8");
 
 let app = express();
-
+app.use(compression());
 let apiRouter = express.Router();
 let httpServer = http.createServer(app);
 let httpsServer = https.createServer({key: privateKey, cert: certificate}, app);
