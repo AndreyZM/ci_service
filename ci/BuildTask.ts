@@ -68,7 +68,7 @@ export abstract class BuildTask
 
 	private async updateRepo()
 	{
-		await this.exec(`hg pull -r ${this.revision}
+		await this.exec(`hg pull
 		hg update -r ${this.revision} --clean
 		hg clean --all
 		hg log -r "ancestors(.) - ancestors(release)" -M --template "{author}:{branch}:{desc}:@@@:" > commits.txt`);
