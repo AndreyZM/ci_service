@@ -1,4 +1,6 @@
 import * as fs from "fs";
+import { BuildTaskClient } from "./ci/BuildTaskClient";
+import { BuildTaskServer } from "./ci/BuildTaskServer";
 
 let atob = require("atob");
 
@@ -17,7 +19,13 @@ export const config = {
 	projects: {
 		bottle_client_mobile: {
 			repositoryUrl: "https://hg.rockstonecorp.com/bottle_client_mobile",
-			respositoryFolder: "../bottle_client_mobile"
+			respositoryFolder: "../bottle_client_mobile",
+			createTask: (project, revision: string) => new BuildTaskClient(project, revision),
+		},
+		bottle_server: {
+			repositoryUrl: "https://hg.rockstonecorp.com/bottle_server",
+			respositoryFolder: "../bottle_server",
+			createTask: (project, revision: string) => new BuildTaskServer(project, revision),
 		}
 	},
 	users: {

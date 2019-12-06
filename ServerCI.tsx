@@ -84,7 +84,7 @@ export class ServerCI
 			return error(`Unknown project '${project}'`);
 		}
 
-		let task = this.tasks.runTask(new BuildTask(project, revision));
+		let task = this.tasks.runTask(config.projects[project].createTask(project, revision));
 		return { taskId: task.id };
 	}
 }

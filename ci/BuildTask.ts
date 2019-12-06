@@ -6,10 +6,12 @@ import { TaskStatus } from "./TaskStatus";
 import { formatSlackUser } from "./utils/formatSlackUser";
 
 let taskCounter: number = 0;
-export class BuildTask
+export abstract class BuildTask
 {
-	private runner: () => Promise<any>;
 	private promise: Promise<any>;
+	protected runner: () => Promise<any>;
+
+
 	public terminator?: () => void;
 	public id: number = taskCounter++;
 	public logPath?: string;
@@ -37,6 +39,7 @@ export class BuildTask
 				fs.unlinkSync(log);
 
 			this.timings.start = new Date();
+			await this.updateRepo();
 
 			await this.prepare();
 			this.commits = parseHGCommits(fs.readFileSync(`${projectConfig.respositoryFolder}/commits.txt`, "utf8"));
@@ -60,6 +63,16 @@ export class BuildTask
 		};
 	}
 
+	protected abstract prepare();
+	protected abstract build();
+
+	private updateRepo()
+	{
+		this.exec(`hg pull -r ${this.revision}
+		hg update -r ${this.revision} --clean
+		hg clean --all
+		hg log -r "ancestors(.) - ancestors(release)" -M --template "{author}:{branch}:{desc}:@@@:" > commits.txt`);
+	}
 	public stop()
 	{
 		if (this.terminator)
@@ -91,31 +104,7 @@ export class BuildTask
 		Slack.chat.postMessage({ ...config.slack, text: `Build complete Task #${this.id} ${this.project}/${this.revision}`});
 	}
 
-	private async prepare()
-	{
-		await this.exec(`hg pull -r ${this.revision}
-		hg update -r ${this.revision} --clean
-		hg clean --all
-		hg log -r "ancestors(.) - ancestors(release)" -M --template "{author}:{branch}:{desc}:@@@:" > commits.txt
-		cat ../deploy.private.json > ./deploy/deploy.private.json
-		mkdir ./BottleMobile/.tmp
-		echo {} > ./BottleMobile/.tmp/spritegroups.json
-		mkdir .tmp`);
-	}
-
-	private async build()
-	{
-		await this.exec(`cd ./BottleMobile
-		cordova platform add ios android browser
-		cordova prepare
-		npm install
-		cd ../deploy
-		npm install
-		gulp make -f gulp_deploy.js
-		gulp default -f gulp_deploy.js --testname=test/${this.revision}`);
-	}
-
-	private exec(script: string)
+	protected exec(script: string)
 	{
 		let projectConfig = config.projects[this.project];
 		let out = fs.openSync(`./www${this.logPath}`, "a");
@@ -134,7 +123,7 @@ export class BuildTask
 	}
 }
 
-function parseHGCommits(input: string)
+export function parseHGCommits(input: string)
 {
 	let rx = /([^:]+?):([^:]+?):(.*?):@@@:/gi;
 	let result = [];
@@ -148,7 +137,7 @@ function parseHGCommits(input: string)
 	return result.reverse();
 }
 
-function replaceIssue(message: string, replacer: (issue: string) => string)
+export function replaceIssue(message: string, replacer: (issue: string) => string)
 {
 	let issueRx = /#([A-Za-z]+-[0-9]+)/gi;
 	return message.replace(issueRx, (v, issue) => replacer(issue));
@@ -169,7 +158,7 @@ function wrap(process: child_process.ChildProcess)
 	};
 }
 
-function getIssueUrl(issue: string)
+export function getIssueUrl(issue: string)
 {
 	return `https://rockstonedev.atlassian.net/browse/${issue}`;
 }
