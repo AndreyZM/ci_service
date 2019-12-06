@@ -45,6 +45,8 @@
   },
   "devDependencies": {
     "@types/atob": "2.1.2",
+    "@types/compression": "1.0.1",
+    "@types/cors": "2.8.6",
     "@types/node-fetch": "2.5.3",
     "cache-loader": "4.1.0",
     "source-map-loader": "0.2.4",
