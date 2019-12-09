@@ -24,7 +24,7 @@ export class BuildTaskServer extends BuildTask
 		cp ./dist/Debug/GNU-Linux/* ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
 		cp ./config_debug.json ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
 		`);
-		this.runTask = new RunTask(`bottle -d`, `~/ci_artifacts/${this.project}/${this.revision}/${this.id}`, `/logs/run_${this.id}`);
+		this.runTask = new RunTask(`bottle -d`, `~/ci_artifacts/${this.project}/${this.revision}/${this.id}`, `/run_${this.id}.log`);
 	}
 }
 
