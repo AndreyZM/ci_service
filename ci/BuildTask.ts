@@ -152,7 +152,7 @@ export function wrap(process: child_process.ChildProcess)
 		{
 			process.on("exit", (code, signal) =>
 			{
-				console.log(code);
+				console.log("Process Exit:", code);
 				code === 0 ? r({ code, signal }) : reject({ code, signal })
 			});
 		}),
