@@ -130,11 +130,18 @@ export function TaskView(props: { task: BuildTask })
 		<Divider />
 
 		{props.task.status === "running" && <Button intent={Intent.DANGER} onClick={() => API.get("taskkill", { id: props.task.id }).then(appContext.updateTasks)}>Stop</Button>}
-		{props.task.status === "completed" &&
+		{props.task.status === "completed" && props.task.runUrl &&
 			<>
 				<Button intent={Intent.PRIMARY} onClick={() => window.open(props.task.runUrl, "_blank")}>Run</Button>
 				<Button intent={Intent.PRIMARY} onClick={() => window.open(props.task.runUrl + "?config=config_test", "_blank")}>Run(Test Config)</Button>
 			</>}
+		{props.task.status === "completed" && props.task.runTask &&
+			<>
+			{props.task.runTask.status != "running"
+				? <Button intent={Intent.PRIMARY} onClick={() => API.get("runtask", { id: props.task.id })}>Run</Button>
+				: <Button intent={Intent.PRIMARY} onClick={() => API.get("stoptask", { id: props.task.id })}>Run</Button>
+			}
+		</>}
 		{props.task.status === "failed" && <Button intent={Intent.WARNING} onClick={() => API.get("build", { project: props.task.project, revision: props.task.revision }).then(appContext.updateTasks)}>Restart</Button>}
 		{props.task.status === "pending" && <Button intent={Intent.NONE} >Remove</Button>}
 	</Card>;

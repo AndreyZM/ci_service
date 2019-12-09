@@ -5,7 +5,6 @@ let taskCounter: number = 0;
 export class BuildTaskClient extends BuildTask
 {
 	public runUrl: string = `https://m.inspin.me/test/${this.revision}`;
-
 	constructor(project: keyof typeof config.projects, revision: string)
 	{
 		super(project, revision);

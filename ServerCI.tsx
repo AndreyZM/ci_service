@@ -1,13 +1,13 @@
 import { config } from "./ci-config";
 import { BuildTask } from "./ci/BuildTask";
 import { RhodeApi } from "./ci/RhodeApi";
-import { TaskList } from "./ci/TaskList";
+import { BuildTaskList } from "./ci/TaskList";
 import { TaskStatus } from "./ci/TaskStatus";
 
 let Rhode = new RhodeApi(config.rhode.host, config.rhode.key);
 export class ServerCI
 {
-	private readonly tasks = new TaskList();
+	private readonly tasks = new BuildTaskList();
 	public tasklist(query: { ids?: string, status?: TaskStatus, projects?: string, revisoins?: string})
 	{
 		let filters: ((t: BuildTask) => boolean)[] = [];
@@ -67,6 +67,16 @@ export class ServerCI
 			task.terminator();
 
 		return { result: "Success" };
+	}
+
+	public runtask(query: { id: number })
+	{
+		this.tasks.tasks[query.id].runTask.start();
+	}
+
+	public stoptask(query: { id: number })
+	{
+		this.tasks.tasks[query.id].runTask.stop();
 	}
 
 	public build(query: { project?: string, revision?: string })

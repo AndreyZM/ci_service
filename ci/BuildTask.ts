@@ -4,6 +4,7 @@ import * as Slack from "slack";
 import { config } from "../ci-config";
 import { TaskStatus } from "./TaskStatus";
 import { formatSlackUser } from "./utils/formatSlackUser";
+import { RunTask } from "./BuildTaskServer";
 
 let taskCounter: number = 0;
 export abstract class BuildTask
@@ -11,12 +12,12 @@ export abstract class BuildTask
 	private promise: Promise<any>;
 	protected runner: () => Promise<any>;
 
-
 	public terminator?: () => void;
 	public id: number = taskCounter++;
 	public logPath?: string;
 	public status: TaskStatus = "pending";
-	public runUrl: string = `https://m.inspin.me/test/${this.revision}`;
+	public runUrl?: string;
+	public runTask?: RunTask;
 	public commits?: { author: string, branch: string, message: string, issues: string[] }[];
 	public timings: {
 		create: Date;
@@ -73,6 +74,7 @@ export abstract class BuildTask
 		hg clean --all
 		hg log -r "ancestors(.) - ancestors(release)" -M --template "{author}:{branch}:{desc}:@@@:" > commits.txt`);
 	}
+
 	public stop()
 	{
 		if (this.terminator)
@@ -143,7 +145,7 @@ export function replaceIssue(message: string, replacer: (issue: string) => strin
 	return message.replace(issueRx, (v, issue) => replacer(issue));
 }
 
-function wrap(process: child_process.ChildProcess)
+export function wrap(process: child_process.ChildProcess)
 {
 	return {
 		wait: new Promise((r, reject) =>

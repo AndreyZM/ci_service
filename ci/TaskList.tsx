@@ -1,5 +1,5 @@
 import { BuildTask } from "./BuildTask";
-export class TaskList
+export class BuildTaskList
 {
 	private executing: boolean = false;
 	public taskQueue: BuildTask[] = [];
@@ -31,4 +31,9 @@ export class TaskList
 		this.taskQueue.length = 0;
 		this.executing = false;
 	}
+}
+
+export class RunTaskList{
+	public readonly tasks: { [key: number]: BuildTask } = {};
+	
 }

@@ -1,10 +1,12 @@
 import { config } from "../ci-config";
-import { BuildTask } from "./BuildTask";
+import { BuildTask, wrap } from "./BuildTask";
+import * as child_process from "child_process";
+import * as fs from "fs";
 
 let taskCounter: number = 0;
 export class BuildTaskServer extends BuildTask
 {
-	public runUrl: string = `https://m.inspin.me/test/${this.revision}`;
+	public runTask: RunTask;
 
 	constructor(project: keyof typeof config.projects, revision: string)
 	{
@@ -17,6 +19,65 @@ export class BuildTaskServer extends BuildTask
 
 	protected async build()
 	{
-		await this.exec(`make -j16 -f Makefile CONF=Debug`);
+		await this.exec(`make -j16 -f Makefile CONF=Debug
+		mkdir ~/ci_artifacts || mkdir ~/ci_artifacts/${this.project} || mkdir ~/ci_artifacts/${this.project}/${this.revision} || echo 1
+		cp ./dist/Debug/GNU-Linux/* ~/ci_artifacts/${this.project}/${this.revision}
+		cp ./config_debug.json ~/ci_artifacts/${this.project}/${this.revision}
+		`);
+		this.runTask = new RunTask(`bottle -d`, `~/ci_artifacts/${this.project}/${this.revision}`, `/logs/run_${this.id}`);
+	}
+}
+
+export class RunTask
+{
+	public status: "ready" | "running" | "failed" | "stoped"= "ready";
+	terminator: () => void;
+	constructor(private command: string, private cwd: string, private logPath: string)
+	{
+		
+	}
+
+	public async start()
+	{
+		if (this.status == "running")
+			return;
+
+		this.status = "running";
+
+		try
+		{
+			await this.exec(this.command);
+			this.status = "ready";
+		}
+		catch (e)
+		{
+			this.status = "failed";
+		}
+		this.terminator = null;
+	}
+
+	public stop()
+	{
+		if (this.terminator)
+			this.terminator();
+
+		this.status = "stoped";
+	}
+
+	protected exec(script: string)
+	{
+		let out = fs.openSync(`./www${this.logPath}`, "a");
+
+		let p = child_process.exec(script,
+			{
+				cwd: this.cwd,
+				maxBuffer: 50 * 1024 * 1024,
+			});
+		p.stdout.on("data", (chunk) => fs.appendFileSync(out, chunk));
+		p.stderr.on("data", (chunk) => fs.appendFileSync(out, chunk));
+
+		let process = wrap(p);
+		this.terminator = () => process.terminate();
+		return process.wait;
 	}
 }
