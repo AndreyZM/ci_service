@@ -20,11 +20,11 @@ export class BuildTaskServer extends BuildTask
 	protected async build()
 	{
 		await this.exec(`make -j16 -f Makefile CONF=Debug
-		mkdir ~/ci_artifacts || mkdir ~/ci_artifacts/${this.project} || mkdir ~/ci_artifacts/${this.project}/${this.revision} || echo 1
-		cp ./dist/Debug/GNU-Linux/* ~/ci_artifacts/${this.project}/${this.revision}
-		cp ./config_debug.json ~/ci_artifacts/${this.project}/${this.revision}
+		mkdir mkdir -p ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
+		cp ./dist/Debug/GNU-Linux/* ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
+		cp ./config_debug.json ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
 		`);
-		this.runTask = new RunTask(`bottle -d`, `~/ci_artifacts/${this.project}/${this.revision}`, `/logs/run_${this.id}`);
+		this.runTask = new RunTask(`bottle -d`, `~/ci_artifacts/${this.project}/${this.revision}/${this.id}`, `/logs/run_${this.id}`);
 	}
 }
 
