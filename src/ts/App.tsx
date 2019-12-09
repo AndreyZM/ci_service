@@ -138,8 +138,8 @@ export function TaskView(props: { task: BuildTask })
 		{props.task.status === "completed" && props.task.runTask &&
 			<>
 			{props.task.runTask.status != "running"
-				? <Button intent={Intent.PRIMARY} onClick={() => API.get("runtask", { id: props.task.id })}>Run</Button>
-				: <Button intent={Intent.PRIMARY} onClick={() => API.get("stoptask", { id: props.task.id })}>Run</Button>
+				? <Button intent={Intent.PRIMARY} onClick={() => API.get("runtask", { id: props.task.id })}>Run Instance</Button>
+				: <Button intent={Intent.PRIMARY} onClick={() => API.get("stoptask", { id: props.task.id })}>Stop Instance</Button>
 			}
 		</>}
 		{props.task.status === "failed" && <Button intent={Intent.WARNING} onClick={() => API.get("build", { project: props.task.project, revision: props.task.revision }).then(appContext.updateTasks)}>Restart</Button>}
