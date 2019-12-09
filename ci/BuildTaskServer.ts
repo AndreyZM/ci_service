@@ -51,6 +51,7 @@ export class RunTask
 		}
 		catch (e)
 		{
+			console.log(e);
 			this.status = "failed";
 		}
 		this.terminator = null;
