@@ -24,7 +24,9 @@ export class BuildTaskServer extends BuildTask
 		cp ./dist/Debug/GNU-Linux/* ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
 		cp ./config_debug.json ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
 		`);
-		this.runTask = new RunTask(`~/ci_artifacts/${this.project}/${this.revision}/${this.id}/bottle`, `~/ci_artifacts/${this.project}/${this.revision}/${this.id}`, `/run_${this.id}.log`);
+		this.runTask = new RunTask(`
+		cd ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
+		~/ci_artifacts/${this.project}/${this.revision}/${this.id}/bottle`, `/run_${this.id}.log`);
 	}
 }
 
@@ -32,7 +34,7 @@ export class RunTask
 {
 	public status: "ready" | "running" | "failed" | "stoped"= "ready";
 	terminator: () => void;
-	constructor(private command: string, private cwd: string, private logPath: string)
+	constructor(private command: string, private logPath: string)
 	{
 		
 	}
@@ -71,7 +73,6 @@ export class RunTask
 
 		let p = child_process.exec(script,
 			{
-				cwd: this.cwd,
 				maxBuffer: 50 * 1024 * 1024,
 			});
 		p.stdout.on("data", (chunk) => fs.appendFileSync(out, chunk));

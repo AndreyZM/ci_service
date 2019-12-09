@@ -150,6 +150,8 @@ export function wrap(process: child_process.ChildProcess)
 	return {
 		wait: new Promise((r, reject) =>
 		{
+			if (process.killed)
+				reject();
 			process.on("exit", (code, signal) =>
 			{
 				console.log("Process Exit:", code);
