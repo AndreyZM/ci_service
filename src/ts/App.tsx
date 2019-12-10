@@ -171,12 +171,12 @@ export function ProjectTree()
 {
 	let appState = React.useContext(AppContext);
 	let [state, setState] = React.useState({ selected: null as string | number, closed: {} });
-
 	let tree: ITreeNode[] = appState.projects.map((p) =>
 		({
 			id: p.name,
 			icon: "folder-open",
 			label: p.name,
+			filter: {projects: p.name},
 			get isExpanded() { return !state.closed[this.id]; },
 			get isSelected() { return state.selected == this.id; },
 			childNodes: p.branches.sort((a, b) => (b.tasks[0] && new Date(b.tasks[0].timings.create).getTime() || 0) - (a.tasks[0] && new Date(a.tasks[0].timings.create).getTime() || 0)).map((branch) =>
@@ -185,12 +185,14 @@ export function ProjectTree()
 					icon: "tag",
 					label: branch.name,
 					secondaryLabel: <Icon icon="menu" />,
+					filter: {revision: branch.name},
 					get isExpanded() { return !state.closed[this.id]; },
 					get isSelected() { return state.selected == this.id; },
 					childNodes: branch.tasks.length == 0 ? undefined : branch.tasks.map((task) => ({
 						id: `${p.name}/${branch.name}/${task.id}`,
 						label: `Task ${task.id}`,
 						icon: "build",
+						filter: {ids: task.id},
 						get isExpanded() { return !state.closed[this.id]; },
 						get isSelected() { return state.selected == this.id; },
 						secondaryLabel: <div style={{display: "flex"}}><TaskStatusTag status={task.status} />{task.runTask && task.runTask.status == "running" && <Spinner size={15} />}</div>
@@ -202,6 +204,8 @@ export function ProjectTree()
 		onNodeClick: (nodeData: ITreeNode, _nodePath: number[], e: React.MouseEvent<HTMLElement>) =>
 		{
 			state.selected = nodeData.id;
+			appState.taskFilter = nodeData["filter"];
+			appState.updateTasks();
 			setState({...state});
 		},
 
