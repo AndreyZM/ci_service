@@ -32,11 +32,11 @@ export class BuildTaskServer extends BuildTask
 
 export class RunTask
 {
-	public status: "ready" | "running" | "failed" | "stoped"= "ready";
+	public status: "ready" | "running" | "failed" | "stoped" = "ready";
 	terminator: () => void;
 	constructor(private command: string, public logPath: string)
 	{
-		
+
 	}
 
 	public async start()
@@ -69,12 +69,16 @@ export class RunTask
 
 	protected spawn(script: string)
 	{
-		let out = fs.openSync(`./www${this.logPath}`, "a");
+		let log = `./www${this.logPath}`;
+		if (fs.existsSync(log))
+			fs.unlinkSync(log);
+		let out = fs.openSync(log, "a");
 
-		let p = child_process.spawn(script,
+		let p = child_process.exec(script,
 			{
-				//maxBuffer: 50 * 1024 * 1024,
-			});
+				maxBuffer: 300 * 1024 * 1024,
+			}
+		);
 		
 		p.stdout.on("data", (chunk) => fs.appendFileSync(out, chunk));
 		p.stderr.on("data", (chunk) => fs.appendFileSync(out, chunk));
