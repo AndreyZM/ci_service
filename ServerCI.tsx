@@ -84,7 +84,7 @@ export class ServerCI
 		let project = query.project as any || "bottle_client_mobile";
 		let revision = query.revision || "default";
 
-		if (this.tasks.taskQueue.some((t) => t.project === project && t.revision === revision && t.status === "pending"))
+		if (Object.values(this.tasks.tasks).some((t) => t.project === project && t.revision === revision && t.status === "pending"))
 		{
 			return error("Same task is pending...");
 		}

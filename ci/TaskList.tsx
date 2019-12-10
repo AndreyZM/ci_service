@@ -1,21 +1,14 @@
 import { BuildTask } from "./BuildTask";
-export class BuildTaskList
-{
-	private executing: boolean = false;
-	public taskQueue: BuildTask[] = [];
-	public readonly tasks: { [key: number]: BuildTask } = {};
 
+export class TaskQueue
+{
+	private taskQueue: BuildTask[] = [];
+	private executing: boolean = false;
+	
 	public addTask(task: BuildTask)
 	{
-		this.tasks[task.id] = task;
-	}
-
-	public runTask(task: BuildTask): BuildTask
-	{
-		this.addTask(task);
 		this.taskQueue.push(task);
 		this.executeTasks();
-		return task;
 	}
 
 	private async executeTasks()
@@ -33,7 +26,22 @@ export class BuildTaskList
 	}
 }
 
-export class RunTaskList{
+export class BuildTaskList
+{
+	private queues: { [key: string]: TaskQueue } = {};
 	public readonly tasks: { [key: number]: BuildTask } = {};
-	
+
+	public addTask(task: BuildTask)
+	{
+		this.tasks[task.id] = task;
+	}
+
+	public runTask(task: BuildTask): BuildTask
+	{
+		this.addTask(task);
+
+		let queue = this.queues[task.project] || (this.queues[task.project] = new TaskQueue());
+		queue.addTask(task);
+		return task;
+	}
 }
