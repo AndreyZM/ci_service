@@ -1,8 +1,9 @@
 import { Alignment, AnchorButton, Blockquote, Button, ButtonGroup, Callout, Card, Code, Collapse, Divider, H3, HTMLSelect, InputGroup, Intent, Label, Navbar, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Tree, ITreeNode, Icon } from "@blueprintjs/core";
 import React = require("react");
 
-import "@blueprintjs/core/lib/css/blueprint.css";
 import "normalize.css";
+import "@blueprintjs/core/lib/css/blueprint.css";
+import "App.css";
 
 import { DARK } from "@blueprintjs/core/lib/esm/common/classes";
 
