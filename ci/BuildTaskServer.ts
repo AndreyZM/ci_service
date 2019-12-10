@@ -34,7 +34,7 @@ export class RunTask
 {
 	public status: "ready" | "running" | "failed" | "stoped"= "ready";
 	terminator: () => void;
-	constructor(private command: string, private logPath: string)
+	constructor(private command: string, public logPath: string)
 	{
 		
 	}
@@ -48,7 +48,7 @@ export class RunTask
 
 		try
 		{
-			await this.exec(this.command);
+			await this.spawn(this.command);
 			this.status = "ready";
 		}
 		catch (e)
@@ -67,14 +67,15 @@ export class RunTask
 		this.status = "stoped";
 	}
 
-	protected exec(script: string)
+	protected spawn(script: string)
 	{
 		let out = fs.openSync(`./www${this.logPath}`, "a");
 
-		let p = child_process.exec(script,
+		let p = child_process.spawn(script,
 			{
-				maxBuffer: 50 * 1024 * 1024,
+				//maxBuffer: 50 * 1024 * 1024,
 			});
+		
 		p.stdout.on("data", (chunk) => fs.appendFileSync(out, chunk));
 		p.stderr.on("data", (chunk) => fs.appendFileSync(out, chunk));
 

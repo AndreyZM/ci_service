@@ -124,6 +124,8 @@ export function TaskView(props: { task: BuildTask })
 		<Tabs renderActiveTabPanelOnly={true}>
 			<Tab id="changes" title="Changes" panel={commits} />
 			<Tab id="build_log" title="Build Log" panel={logs} />
+			{props.task.status === "completed" && props.task.runTask &&
+				<Tab id="run_log" title="Run Log" panel={<iframe src={props.task.runTask.logPath} style={infoStyle} />} />}
 			<Tabs.Expander />
 		</Tabs>
 
