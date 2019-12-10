@@ -185,7 +185,7 @@ export function ProjectTree()
 					icon: "tag",
 					label: branch.name,
 					secondaryLabel: <Icon icon="menu" />,
-					filter: {revision: branch.name},
+					filter: {revisions: branch.name},
 					get isExpanded() { return !state.closed[this.id]; },
 					get isSelected() { return state.selected == this.id; },
 					childNodes: branch.tasks.length == 0 ? undefined : branch.tasks.map((task) => ({
