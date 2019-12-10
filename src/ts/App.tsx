@@ -192,7 +192,7 @@ export function ProjectTree()
 						icon: "build",
 						get isExpanded() { return !state.closed[this.id]; },
 						get isSelected() { return state.selected == this.id; },
-						secondaryLabel: <TaskStatusTag status={task.status} />
+						secondaryLabel: <><TaskStatusTag status={task.status} />{task.runTask && task.runTask.status == "running" && <Spinner size={15}/>}</>
 					}))
 				}))
 		}));
