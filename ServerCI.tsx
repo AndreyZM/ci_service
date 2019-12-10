@@ -15,7 +15,7 @@ export class ServerCI
 		if (query.ids)
 		{
 			let ids = query.ids.split(",").map((id) => id as any | 0);
-			filters.push((task) => ids.some((id) => id === task.id));
+			filters.push((task) => ids.some((id) => id == task.id));
 		}
 
 		if (query.projects)
