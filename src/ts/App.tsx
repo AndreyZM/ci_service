@@ -3,7 +3,7 @@ import React = require("react");
 
 import "normalize.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
-import "App.css";
+import "./App.css";
 
 import { DARK } from "@blueprintjs/core/lib/esm/common/classes";
 
