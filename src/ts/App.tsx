@@ -24,7 +24,7 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 	public render()
 	{
 		return <AppContext.Provider value={this.appState}>
-			<div className={this.state.darkMode ? DARK : ""}>
+			<div className={(this.state.darkMode ? DARK : "") + " bp3-bg"}>
 				<Navbar style={{ position: "sticky", top: 0 }}>
 					<Navbar.Group align={Alignment.LEFT}>
 						<Navbar.Heading>RoCI</Navbar.Heading>
