@@ -8,7 +8,7 @@ let Rhode = new RhodeApi(config.rhode.host, config.rhode.key);
 export class ServerCI
 {
 	private readonly tasks = new BuildTaskList();
-	public tasklist(query: { ids?: string, status?: TaskStatus, projects?: string, revisoins?: string})
+	public tasklist(query: { ids?: string, status?: TaskStatus, projects?: string, revisions?: string})
 	{
 		let filters: ((t: BuildTask) => boolean)[] = [];
 
@@ -24,10 +24,10 @@ export class ServerCI
 			filters.push((task) => projects.some((project) => project === task.project));
 		}
 
-		if (query.revisoins)
+		if (query.revisions)
 		{
-			let revisoins = query.revisoins.split(",");
-			filters.push((task) => revisoins.some((revisoin) => revisoin === task.revision));
+			let revisions = query.revisions.split(",");
+			filters.push((task) => revisions.some((revision) => revision === task.revision));
 		}
 
 		if (query.status)
