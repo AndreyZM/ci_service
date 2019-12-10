@@ -10,8 +10,7 @@ export class AppState
 
 	public constructor(update: () => void)
 	{
-		this.updateTasks();
-		this.updateProjects();
+		this.updateAll();
 		update();
 		this.update = update;
 		setInterval(() => this.updateAll(), 60 * 1000);
@@ -20,7 +19,7 @@ export class AppState
 	public async updateTasks()
 	{
 		this.filteredTasks = (await API.get("tasklist", this.taskFilter)).tasks;
-		this.updateProjects();
+		this.update();
 	}
 
 	public async updateProjects()
