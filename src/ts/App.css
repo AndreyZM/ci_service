@@ -8,12 +8,12 @@ html, body, .app{
 
 .flex-v{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
 
 .flex-h{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 }
 
 .h100{
