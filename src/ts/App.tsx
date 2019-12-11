@@ -30,6 +30,7 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 						<Navbar.Heading>RoCI</Navbar.Heading>
 						<Navbar.Divider />
 					</Navbar.Group>
+					<Divider/>
 					<Navbar.Group align={Alignment.RIGHT}>
 						<Switch checked={this.state.darkMode} innerLabelChecked="Dark" innerLabel="Light" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} large={true} style={{ margin: "auto" }} />
 					</Navbar.Group>
