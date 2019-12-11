@@ -19,3 +19,7 @@ html, body, .app{
 .h100{
 	height: 100%;
 }
+
+.scroll-v {
+	overflow-y: auto;
+}
