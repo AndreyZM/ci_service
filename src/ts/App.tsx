@@ -159,7 +159,7 @@ export function ProjectTree()
 								}}/>
 							</Menu>
 						}>
-							<Icon icon="menu" />	
+							<Button><Icon icon="menu" /></Button>
 						</Popover>,
 					filter: {revisions: branch.name, projects: p.name},
 					get isExpanded() { return !state.closed[this.id]; },
