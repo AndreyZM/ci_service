@@ -24,7 +24,7 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 	public render()
 	{
 		return <AppContext.Provider value={this.appState}>
-			<div className={(this.state.darkMode ? DARK : "") + " bp3-bg"}>
+			<div className={(this.state.darkMode ? DARK : "") + " bp3-bg flex-v"}>
 				<Navbar style={{ position: "sticky", top: 0 }}>
 					<Navbar.Group align={Alignment.LEFT}>
 						<Navbar.Heading>RoCI</Navbar.Heading>
@@ -34,12 +34,11 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 						<Switch checked={this.state.darkMode} innerLabelChecked="Dark" innerLabel="Light" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} large={true} style={{ margin: "auto" }} />
 					</Navbar.Group>
 				</Navbar>
-				<div style={{ display: "flex" }}>
-					<Callout>
+				<div className="flex-h">
+					<Callout className="h100">
 						<ProjectTree />
 					</Callout>
-					<Divider/>
-					<Callout>
+					<Callout className="h100">
 						<AppContext.Consumer>
 							{(state) => <TaskListView tasks={state.filteredTasks} />}
 						</AppContext.Consumer>

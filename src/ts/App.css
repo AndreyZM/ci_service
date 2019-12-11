@@ -5,3 +5,17 @@ html, body, .app{
 .bp3-dark .bp3-bg, .bp3-dark.bp3-bg{
 	background: #293742;
 }
+
+.flex-v{
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-h{
+	display: flex;
+	flex-direction: column;
+}
+
+.h100{
+	height: 100%;
+}
