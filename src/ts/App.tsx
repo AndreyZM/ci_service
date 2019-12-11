@@ -29,10 +29,6 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 					<Navbar.Group align={Alignment.LEFT}>
 						<Navbar.Heading>RoCI</Navbar.Heading>
 						<Navbar.Divider />
-						<AnchorButton className="bp3-minimal" icon="home" text="Home" href="/" />
-						<Navbar.Group>
-							<RunTaskWidget />
-						</Navbar.Group>
 					</Navbar.Group>
 					<Navbar.Group align={Alignment.RIGHT}>
 						<Switch checked={this.state.darkMode} innerLabelChecked="Dark" innerLabel="Light" onChange={() => this.setState((state) => ({ darkMode: !state.darkMode }))} large={true} style={{ margin: "auto" }} />
@@ -52,37 +48,6 @@ export class App extends React.Component<{}, { darkMode: boolean }>
 			</div>
 		</AppContext.Provider>;
 	}
-}
-
-function RunTaskWidget()
-{
-	let appContext = React.useContext(AppContext);
-	let projects = appContext.projects;
-	let [projectName, setProjectName] = React.useState(projects[0]?.name);
-
-	if (!projectName && projects.length > 0)
-	{
-		setProjectName(projects[0]?.name);
-	}
-
-	let project = projects.find((p) => p.name === projectName);
-
-	return <form style={{ display: "inline-flex" }} onSubmit={async (e) =>
-	{
-		e.preventDefault();
-		let data = new FormData(e.currentTarget);
-		await API.get("build", { project: data.get("project").toString(), revision: data.get("revision").toString() });
-		appContext.updateTasks();
-	}}>
-		<HTMLSelect name="project" onChange={(e) => setProjectName(e.target.value)} defaultValue={projectName}>
-			{projects?.map((p) => <option value={p.name}>{p.name}</option>)}
-		</HTMLSelect>
-		<HTMLSelect name="revision" defaultValue="default">
-			{project?.branches.map((branch) => <option value={branch.name}>{branch.name}</option>)}
-		</HTMLSelect>
-
-		<Button text="Run" type="submit" />
-	</form>;
 }
 
 export function TaskView(props: { task: BuildTask })
