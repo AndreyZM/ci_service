@@ -1,4 +1,4 @@
-import { Alignment, AnchorButton, Blockquote, Button, ButtonGroup, Callout, Card, Code, Collapse, Divider, H3, HTMLSelect, InputGroup, Intent, Label, Navbar, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Tree, ITreeNode, Icon } from "@blueprintjs/core";
+import { Alignment, AnchorButton, Blockquote, Button, ButtonGroup, Callout, Card, Code, Collapse, Divider, H3, HTMLSelect, InputGroup, Intent, Label, Navbar, Pre, Spinner, Switch, Tab, Tabs, Tag, UL, Tree, ITreeNode, Icon, Popover, MenuItem, Menu } from "@blueprintjs/core";
 import React = require("react");
 
 import "normalize.css";
@@ -184,7 +184,18 @@ export function ProjectTree()
 					id: `${p.name}/${branch.name}`,
 					icon: "tag",
 					label: branch.name,
-					secondaryLabel: <Icon icon="menu" />,
+					secondaryLabel:
+						<Popover content={
+							<Menu>
+								<MenuItem text="Build" onClick={async () => 
+								{
+									await API.get("build", { project: p.name, revision: branch.name });
+									appState.updateTasks();
+								}}/>
+							</Menu>
+						}>
+							<Icon icon="menu" />	
+						</Popover>,
 					filter: {revisions: branch.name, projects: p.name},
 					get isExpanded() { return !state.closed[this.id]; },
 					get isSelected() { return state.selected == this.id; },
