@@ -171,7 +171,7 @@ export function ProjectTree()
 						filter: {ids: task.id},
 						get isExpanded() { return !state.closed[this.id]; },
 						get isSelected() { return state.selected == this.id; },
-						secondaryLabel: <div style={{display: "flex"}}><TaskStatusTag status={task.status} />{task.runTask && task.runTask.status == "running" && <Spinner size={15} />}</div>
+						secondaryLabel: <div style={{display: "flex"}}>{task.runTask && task.runTask.status == "running" && <Spinner size={15} />}<TaskStatusTag status={task.status} /></div>
 					}))
 				}))
 		}));
