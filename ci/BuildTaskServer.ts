@@ -82,9 +82,9 @@ export class RunTask
 		
 		p.stdout.on("data", (chunk) => fs.appendFileSync(out, chunk));
 		p.stderr.on("data", (chunk) => fs.appendFileSync(out, chunk));
-
-		process.on("exit", () => !p.killed && p.kill());
 		let pr = wrap(p);
+		process.on("exit", () => pr.terminate());
+		
 		this.terminator = () => pr.terminate();
 		return pr.wait;
 	}

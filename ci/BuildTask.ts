@@ -5,6 +5,7 @@ import { config } from "../ci-config";
 import { TaskStatus } from "./TaskStatus";
 import { formatSlackUser } from "./utils/formatSlackUser";
 import { RunTask } from "./BuildTaskServer";
+import { killTree } from "./utils/kill";
 
 let taskCounter: number = 0;
 export abstract class BuildTask
@@ -147,6 +148,7 @@ export function replaceIssue(message: string, replacer: (issue: string) => strin
 
 export function wrap(process: child_process.ChildProcess)
 {
+	process.kill
 	return {
 		wait: new Promise((r, reject) =>
 		{
@@ -158,7 +160,7 @@ export function wrap(process: child_process.ChildProcess)
 				code === 0 ? r({ code, signal }) : reject({ code, signal })
 			});
 		}),
-		terminate: () => process.kill(),
+		terminate: () => killTree(process.pid),
 	};
 }
 
