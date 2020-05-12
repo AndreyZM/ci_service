@@ -19,9 +19,9 @@ export class BuildTaskServer extends BuildTask
 
 	protected async build()
 	{
-		await this.exec(`make -j16 -f Makefile CONF=Debug
-		mkdir mkdir -p ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
-		cp ./dist/Debug/GNU-Linux/* ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
+		await this.exec(`cmake -S . -B ./build && cmake --build ./build --config Debug --target all -v -- -j 10
+		mkdir -p ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
+		cp ./build/bottle ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
 		cp ./config_debug.json ~/ci_artifacts/${this.project}/${this.revision}/${this.id}
 		`);
 		this.runTask = new RunTask(`

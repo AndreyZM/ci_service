@@ -26,7 +26,23 @@ export class BuildTaskClient extends BuildTask
 		npm install
 		cd ../deploy
 		npm install
-		gulp make -f gulp_deploy.js
-		gulp default -f gulp_deploy.js --testname=test/${this.revision}`);
+		cd ../BottleMobile
+		npm run deploy@test`);
+	}
+
+	protected getActions()
+	{
+		return [
+			{
+				type: "button",
+				text: "Run",
+				url: this.runUrl,
+			},
+			{
+				type: "button",
+				text: "Run Test",
+				url: this.runUrl + "?config=config_test",
+			},
+		]
 	}
 }

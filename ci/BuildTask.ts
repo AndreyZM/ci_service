@@ -46,19 +46,6 @@ export abstract class BuildTask
 			await this.prepare();
 			this.commits = parseHGCommits(fs.readFileSync(`${projectConfig.respositoryFolder}/commits.txt`, "utf8"));
 
-			Slack.chat.postMessage({
-				...config.slack,
-				markdown: "true",
-				text: `Build task \`#${this.id}\``,
-				attachments: this.commits.map((c) =>
-					({
-						color: "#3AA3E3",
-						markdown: "true",
-						footer: `${c.branch} ${formatSlackUser(c.author)}`,
-						text: `${replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)}`,
-					})),
-			}).then(console.log).catch(console.error);
-
 			await this.build();
 
 			this.timings.end = new Date();
@@ -73,7 +60,7 @@ export abstract class BuildTask
 		await this.exec(`hg pull
 		hg update -r ${this.revision} --clean
 		hg clean --all
-		hg log -r "ancestors(.) - ancestors(release)" -M --template "{author}:{branch}:{desc}:@@@:" > commits.txt`);
+		hg log -r "ancestors(.) - ancestors(branch(release))" -M --template "{author}:{branch}:{desc}:@@@:" > commits.txt || echo "" > commits.txt`);
 	}
 
 	public stop()
@@ -97,14 +84,34 @@ export abstract class BuildTask
 			console.log(`[Task #${this.id}] failed`);
 			this.status = "failed";
 
-			Slack.chat.postMessage({ ...config.slack, text: `Build failed Task #${this.id} ${this.project}/${this.revision}`});
+			Slack.chat.postMessage({
+				...config.slack,
+				text: `Build FAILED ${this.project}/${this.revision} Task #${this.id}`
+			});
 			return;
 		}
 
 		this.status = "completed";
 		console.log(`[Task #${this.id}] completed`);
+		let actions = this.getActions();
+		Slack.chat.postMessage({
+			...config.slack,
+			text: `Build complete \`${this.project}/${this.revision}\` Task #${this.id}`,
+			attachments: this.commits.map((c) =>
+					({
+						color: "#3AA3E3",
+						markdown: "true",
+						footer: `${c.branch} ${formatSlackUser(c.author)}`,
+						text: `${replaceIssue(c.message, (issue) => `<${getIssueUrl(issue)}|${issue}>`)}`,
+				})).concat(actions ? [{
+					actions: actions
+					} as any] : []),
+		});
+	}
 
-		Slack.chat.postMessage({ ...config.slack, text: `Build complete Task #${this.id} ${this.project}/${this.revision}`});
+	protected getActions(): any[]
+	{
+		return null;
 	}
 
 	protected exec(script: string)
