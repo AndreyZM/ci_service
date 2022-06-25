@@ -34,7 +34,7 @@
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "https": "1.0.0",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.7",
     "ps-tree": "1.2.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
